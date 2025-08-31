@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamente - Universal Dental Clinic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#71CAC4',
+                        accent: '#D3553F'
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'scale-in': 'scaleIn 0.5s ease-out'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(113, 202, 196, 0.1) 0%, rgba(113, 202, 196, 0.3) 100%);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes scaleIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        .treatment-card {
+            transition: all 0.3s ease;
+        }
+        
+        .treatment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .off-canvas-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .off-canvas-menu.open {
+            transform: translateX(0);
+        }
+        
+        .before-after {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .before-after:hover .overlay {
+            opacity: 1;
+        }
+        
+        .overlay {
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-lg relative z-40">
+        <!-- Top Bar -->
+        <div class="bg-gradient-to-r from-gray-50 to-gray-100 py-3">
+            <div class="container mx-auto px-4 flex justify-between items-center text-sm">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center shadow-lg">
+                        <i class="fas fa-tooth text-white"></i>
+                    </div>
+                    <span class="font-semibold text-gray-800">Dr. Universal Dental Clinic</span>
+                </div>
+                <div class="hidden lg:flex items-center space-x-2 text-gray-600">
+                    <i class="fas fa-phone text-primary"></i>
+                    <span data-lang-key="header.phone">telefon consultație gratuită</span>
+                    <span class="font-semibold text-gray-800">+373 68 123 456</span>
+                </div>
+                <div class="hidden lg:flex items-center space-x-2 text-gray-600">
+                    <i class="fas fa-clock text-primary"></i>
+                    <span data-lang-key="header.schedule">luni-vineri</span>
+                    <span class="font-semibold text-gray-800" data-lang-key="header.hours">09:00 - 18:00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav class="relative container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-2 hover:scale-105 transition-transform duration-300">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center shadow-lg">
+                        <i class="fas fa-tooth text-white text-lg"></i>
+                    </div>
+                    <span class="font-bold text-xl text-gray-800">UDC</span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <!-- Desktop Menu -->
+                    <ul class="flex space-x-8">
+                        <li><a href="index.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.home">Acasă</a></li>
+                        <li><a href="about.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.about">Despre Noi</a></li>
+                        <li><a href="treatments.html" class="text-gray-800 hover:text-primary border-b-2 border-primary transition-all duration-300" data-lang-key="nav.treatments">Tratamente</a></li>
+                        <li><a href="packages.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.packages">Pachete Dentare</a></li>
+                        <li><a href="contact.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.contact">Contact</a></li>
+                    </ul>
+                    
+                    <!-- Language Switcher -->
+                    <div class="relative">
+                        <button id="lang-dropdown-btn" class="flex items-center space-x-2 bg-primary text-white px-3 py-2 rounded-lg hover:bg-primary/90 transition-all duration-300">
+                            <i class="fas fa-globe"></i>
+                            <span id="current-lang">RO</span>
+                            <i class="fas fa-chevron-down text-sm"></i>
+                        </button>
+                        <div id="lang-dropdown" class="hidden absolute right-0 mt-2 bg-white shadow-lg rounded-lg py-2 min-w-[120px] z-50">
+                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="ro">🇷🇴 Română</button>
+                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="en">🇺🇸 English</button>
+                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="tr">🇹🇷 Türkçe</button>
+                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="ru">🇷🇺 Русский</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden relative z-50 transition-transform duration-300">
+                    <i id="menu-icon" class="fas fa-bars text-2xl text-gray-800"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Off-Canvas Mobile Menu -->
+    <div id="mobile-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300"></div>
+    <nav id="off-canvas-menu" class="fixed top-0 left-0 h-full w-80 bg-white shadow-2xl z-50 off-canvas-menu">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center">
+                        <i class="fas fa-tooth text-white"></i>
+                    </div>
+                    <span class="font-bold text-xl text-gray-800">UDC</span>
+                </div>
+                <button id="close-menu-btn" class="text-gray-600 hover:text-gray-800">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            
+            <ul class="space-y-4 mb-8">
+                <li><a href="index.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.home">Acasă</a></li>
+                <li><a href="about.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.about">Despre Noi</a></li>
+                <li><a href="treatments.html" class="block text-gray-800 py-3 px-4 rounded-lg bg-primary/10 border-l-4 border-primary font-medium" data-lang-key="nav.treatments">Tratamente</a></li>
+                <li><a href="packages.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.packages">Pachete Dentare</a></li>
+                <li><a href="contact.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.contact">Contact</a></li>
+            </ul>
+            
+            <!-- Mobile Language Switcher -->
+            <div class="border-t pt-6">
+                <h4 class="text-sm font-semibold text-gray-500 mb-3">LIMBĂ / LANGUAGE</h4>
+                <div class="space-y-2">
+                    <button class="lang-option w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-lang="ro">🇷🇴 Română</button>
+                    <button class="lang-option w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-lang="en">🇺🇸 English</button>
+                    <button class="lang-option w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-lang="tr">🇹🇷 Türkçe</button>
+                    <button class="lang-option w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-lang="ru">🇷🇺 Русский</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg py-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto animate-slide-up">
+                <h1 class="text-4xl lg:text-6xl font-bold text-gray-800 mb-6" data-lang-key="nav.treatments">
+                    Tratamente Dentare Avansate
+                </h1>
+                <p class="text-xl text-gray-600 leading-relaxed">
+                    Descoperă gama noastră completă de servicii dentare moderne, de la proceduri preventive la restaurări complexe
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Treatments Categories -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+                <button class="treatment-category active bg-primary text-white py-3 px-6 rounded-xl font-medium transition-all duration-300" data-category="all">
+                    Toate
+                </button>
+                <button class="treatment-category bg-gray-100 text-gray-600 py-3 px-6 rounded-xl font-medium hover:bg-gray-200 transition-all duration-300" data-category="cosmetic">
+                    Estetică
+                </button>
+                <button class="treatment-category bg-gray-100 text-gray-600 py-3 px-6 rounded-xl font-medium hover:bg-gray-200 transition-all duration-300" data-category="restorative">
+                    Restaurativă
+                </button>
+                <button class="treatment-category bg-gray-100 text-gray-600 py-3 px-6 rounded-xl font-medium hover:bg-gray-200 transition-all duration-300" data-category="preventive">
+                    Preventivă
+                </button>
+            </div>
+
+            <!-- Detailed Treatment Sections -->
+            <div class="space-y-20">
+                
+                <!-- Hollywood Smile -->
+                <div class="treatment-item cosmetic" data-category="cosmetic">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div class="animate-on-scroll opacity-0">
+                            <div class="bg-gradient-to-br from-accent/20 to-accent/10 rounded-3xl p-8 text-center shadow-xl">
+                                <i class="fas fa-smile text-6xl text-accent mb-6"></i>
+                                <div class="before-after relative">
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div class="bg-gray-200 rounded-xl p-4">
+                                            <h5 class="font-bold text-gray-800 mb-2">ÎNAINTE</h5>
+                                            <div class="h-32 bg-gray-300 rounded-lg flex items-center justify-center">
+                                                <i class="fas fa-frown text-gray-500 text-2xl"></i>
+                                            </div>
+                                        </div>
+                                        <div class="bg-gradient-to-br from-accent/10 to-primary/10 rounded-xl p-4">
+                                            <h5 class="font-bold text-gray-800 mb-2">DUPĂ</h5>
+                                            <div class="h-32 bg-white rounded-lg flex items-center justify-center border-2 border-accent/20">
+                                                <i class="fas fa-grin-beam text-accent text-2xl"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-6 animate-on-scroll opacity-0">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
+                                    <i class="fas fa-smile text-white"></i>
+                                </div>
+                                <h3 class="text-3xl font-bold text-gray-800" data-lang-key="service.hollywood">Hollywood Smile</h3>
+                            </div>
+                            
+                            <p class="text-lg text-gray-600 leading-relaxed">
+                                Transformă-ți complet zâmbetul cu cea mai avansată procedură de estetică dentară. Hollywood Smile-ul 
+                                combină fațetele de porțelan, albirea dentară și remodelarea gingivală pentru un rezultat spectaculos.
+                            </p>
+                            
+                            <div class="space-y-4">
+                                <h4 class="text-xl font-bold text-gray-800">Beneficiile tratamentului:</h4>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-check text-accent mt-1"></i>
+                                        <span class="text-gray-600">Zâmbet perfect simetric și strălucitor</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-check text-accent mt-1"></i>
+                                        <span class="text-gray-600">Corectarea formei, mărimii și culorii dinților</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-check text-accent mt-1"></i>
+                                        <span class="text-gray-600">Rezultate durabile și naturale</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-check text-accent mt-1"></i>
+                                        <span class="text-gray-600">Procedură minim invazivă</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                                <a href="contact.html" class="bg-accent text-white px-6 py-3 rounded-xl font-medium hover:bg-accent/90 hover:scale-105 transition-all duration-300 text-center">
+                                    Consultație gratuită
+                                </a>
+                                <button class="bg-gray-100 text-gray-800 px-6 py-3 rounded-xl font-medium hover:bg-gray-200 transition-all duration-300">
+                                    Află mai multe
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dental Implants -->
+                <div class="treatment-item restorative" data-category="restorative">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-6 animate-on-scroll opacity-0">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                                    <i class="fas fa-tooth text-white"></i>
+                                </div>
+                                <h3 class="text-3xl font-bold text-gray-800" data-lang-key="service.implants">Implanturi Dentare</h3>
+                            </div>
+                            
+                            <p class="text-lg text-gray-600 leading-relaxed">
+                                Soluția definitivă pentru înlocuirea dinților lipsă. Implanturile dentare oferă o bază solidă 
+                                și durabilă pentru coroane, punți sau proteze, restaurând complet funcția masticatorie.
+                            </p>
+                            
+                            <div class="space-y-4">
+                                <h4 class="text-xl font-bold text-gray-800">De ce să alegi implanturile:</h4>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-check text-primary mt-1"></i>
+                                        <span class="text-gray-600">Durabilitate pe viață cu îngrijire adecvată</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-check text-primary mt-1"></i>
+                                        <span class="text-gray-600">Menține structura osului maxilar</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-check text-primary mt-1"></i>
+                                        <span class="text-gray-600">Funcție masticatorie completă restaurată</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-check text-primary mt-1"></i>
+                                        <span class="text-gray-600">Aspect și senzație ca dinții naturali</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-primary/5 p-6 rounded-2xl">
+                                <h5 class="font-bold text-gray-800 mb-3">Procesul de implantare:</h5>
+                                <div class="space-y-2">
+                                    <p class="text-sm text-gray-600"><span class="font-medium">1.</span> Evaluare și planificare 3D</p>
+                                    <p class="text-sm text-gray-600"><span class="font-medium">2.</span> Inserarea implantului</p>
+                                    <p class="text-sm text-gray-600"><span class="font-medium">3.</span> Period de vindecare (2-6 luni)</p>
+                                    <p class="text-sm text-gray-600"><span class="font-medium">4.</span> Atașarea coroanei finale</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="animate-on-scroll opacity-0">
+                            <div class="bg-gradient-to-br from-primary/20 to-primary/10 rounded-3xl p-8 text-center shadow-xl">
+                                <i class="fas fa-tooth text-6xl text-primary mb-6"></i>
+                                <div class="space-y-6">
+                                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                                        <h5 class="font-bold text-gray-800 mb-3">Tipuri de implanturi</h5>
+                                        <div class="grid grid-cols-2 gap-4 text-sm">
+                                            <div class="text-center">
+                                                <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                                                    <i class="fas fa-tooth text-primary"></i>
+                                                </div>
+                                                <p class="text-gray-600">Implant singular</p>
+                                            </div>
+                                            <div class="text-center">
+                                                <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                                                    <i class="fas fa-teeth text-accent"></i>
+                                                </div>
+                                                <p class="text-gray-600">All-on-4</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teeth Whitening -->
+                <div class="treatment-item cosmetic" data-category="cosmetic">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div class="animate-on-scroll opacity-0">
+                            <div class="bg-gradient-to-br from-yellow-100 to-orange-50 rounded-3xl p-8 text-center shadow-xl">
+                                <i class="fas fa-sun text-6xl text-yellow-500 mb-6"></i>
+                                <div class="space-y-4">
+                                    <div class="bg-white p-4 rounded-2xl">
+                                        <h5 class="font-bold text-gray-800 mb-3">Metode de albire</h5>
+                                        <div class="grid grid-cols-1 gap-3">
+                                            <div class="flex items-center justify-between p-3 bg-yellow-50 rounded-lg">
+                                                <span class="text-sm text-gray-600">Albire în cabinet</span>
+                                                <span class="text-xs bg-yellow-200 text-yellow-800 px-2 py-1 rounded-full">1 ședință</span>
+                                            </div>
+                                            <div class="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
+                                                <span class="text-sm text-gray-600">Albire acasă</span>
+                                                <span class="text-xs bg-blue-200 text-blue-800 px-2 py-1 rounded-full">2 săptămâni</span>
+                                            </div>
+                                            <div class="flex items-center justify-between p-3 bg-purple-50 rounded-lg">
+                                                <span class="text-sm text-gray-600">Albire combinată</span>
+                                                <span class="text-xs bg-purple-200 text-purple-800 px-2 py-1 rounded-full">Rezultat maxim</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6 animate-on-scroll opacity-0">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-sun text-white"></i>
+                                </div>
+                                <h3 class="text-3xl font-bold text-gray-800" data-lang-key="service.whitening">Albire Dentară</h3>
+                            </div>
+                            
+                            <p class="text-lg text-gray-600 leading-relaxed">
+                                Redă strălucirea naturală a dinților tăi cu procedurile noastre profesionale de albire. 
+                                Folosim cele mai sigure și eficiente tehnici pentru rezultate rapide și durabile.
+                            </p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="bg-yellow-50 p-6 rounded-2xl">
+                                    <h5 class="font-bold text-gray-800 mb-3">Albire în cabinet</h5>
+                                    <ul class="space-y-1 text-sm text-gray-600">
+                                        <li>• Rezultate imediate</li>
+                                        <li>• 1-2 ședințe de 60 minute</li>
+                                        <li>• Albire cu 6-8 nuanțe</li>
+                                        <li>• Supervizare profesională</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-blue-50 p-6 rounded-2xl">
+                                    <h5 class="font-bold text-gray-800 mb-3">Albire acasă</h5>
+                                    <ul class="space-y-1 text-sm text-gray-600">
+                                        <li>• Gutiere personalizate</li>
+                                        <li>• Tratament 2-4 săptămâni</li>
+                                        <li>• Confort și flexibilitate</li>
+                                        <li>• Monitorizare regulată</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Laminate Veneers -->
+                <div class="treatment-item cosmetic" data-category="cosmetic">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-6 animate-on-scroll opacity-0">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
+                                    <i class="fas fa-gem text-white"></i>
+                                </div>
+                                <h3 class="text-3xl font-bold text-gray-800" data-lang-key="service.veneer">Fațete Laminare</h3>
+                            </div>
+                            
+                            <p class="text-lg text-gray-600 leading-relaxed">
+                                Fațetele laminare din porțelan sunt soluția ideală pentru corectarea defectelor estetice minore. 
+                                Ultra-subțiri și rezistente, ele oferă un aspect natural și o durabilitate excepțională.
+                            </p>
+                            
+                            <div class="space-y-4">
+                                <h4 class="text-xl font-bold text-gray-800">Probleme rezolvate:</h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="flex items-center space-x-2">
+                                        <i class="fas fa-arrow-right text-accent"></i>
+                                        <span class="text-gray-600">Dinți decolorați</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <i class="fas fa-arrow-right text-accent"></i>
+                                        <span class="text-gray-600">Spații între dinți</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <i class="fas fa-arrow-right text-accent"></i>
+                                        <span class="text-gray-600">Dinți ciobiti</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <i class="fas fa-arrow-right text-accent"></i>
+                                        <span class="text-gray-600">Formă neregulată</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="animate-on-scroll opacity-0">
+                            <div class="bg-gradient-to-br from-purple-100 to-pink-50 rounded-3xl p-8 text-center shadow-xl">
+                                <i class="fas fa-gem text-6xl text-purple-500 mb-6"></i>
+                                <div class="space-y-4">
+                                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                                        <h5 class="font-bold text-gray-800 mb-4">Durabilitate și garanție</h5>
+                                        <div class="grid grid-cols-3 gap-4 text-center">
+                                            <div>
+                                                <div class="text-2xl font-bold text-accent mb-1">10-15</div>
+                                                <div class="text-xs text-gray-600">ani durabilitate</div>
+                                            </div>
+                                            <div>
+                                                <div class="text-2xl font-bold text-primary mb-1">5</div>
+                                                <div class="text-xs text-gray-600">ani garanție</div>
+                                            </div>
+                                            <div>
+                                                <div class="text-2xl font-bold text-accent mb-1">98%</div>
+                                                <div class="text-xs text-gray-600">rată de succes</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Periodontology -->
+                <div class="treatment-item preventive" data-category="preventive">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div class="animate-on-scroll opacity-0">
+                            <div class="bg-gradient-to-br from-green-100 to-emerald-50 rounded-3xl p-8 text-center shadow-xl">
+                                <i class="fas fa-heart-pulse text-6xl text-green-500 mb-6"></i>
+                                <div class="space-y-4">
+                                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                                        <h5 class="font-bold text-gray-800 mb-4">Etapele tratamentului</h5>
+                                        <div class="space-y-3">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold">1</div>
+                                                <span class="text-sm text-gray-600">Evaluare parodontală</span>
+                                            </div>
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold">2</div>
+                                                <span class="text-sm text-gray-600">Detartraj profesional</span>
+                                            </div>
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold">3</div>
+                                                <span class="text-sm text-gray-600">Curetaj subgingival</span>
+                                            </div>
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold">4</div>
+                                                <span class="text-sm text-gray-600">Menținere și monitorizare</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6 animate-on-scroll opacity-0">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-heart-pulse text-white"></i>
+                                </div>
+                                <h3 class="text-3xl font-bold text-gray-800" data-lang-key="service.perio">Parodontologie</h3>
+                            </div>
+                            
+                            <p class="text-lg text-gray-600 leading-relaxed">
+                                Specialitatea medicală care se ocupă cu tratamentul și prevenirea afecțiunilor gingivale și 
+                                ale țesuturilor de susținere ale dinților. Sănătatea gingivală este fundamentală pentru un zâmbet sănătos.
+                            </p>
+                            
+                            <div class="space-y-4">
+                                <h4 class="text-xl font-bold text-gray-800">Semne de alarmare:</h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="flex items-start space-x-2">
+                                        <i class="fas fa-exclamation-triangle text-red-500 mt-1"></i>
+                                        <span class="text-gray-600">Sângerare la periaj</span>
+                                    </div>
+                                    <div class="flex items-start space-x-2">
+                                        <i class="fas fa-exclamation-triangle text-red-500 mt-1"></i>
+                                        <span class="text-gray-600">Gingii umflate sau roșii</span>
+                                    </div>
+                                    <div class="flex items-start space-x-2">
+                                        <i class="fas fa-exclamation-triangle text-red-500 mt-1"></i>
+                                        <span class="text-gray-600">Respirație urât mirositoare</span>
+                                    </div>
+                                    <div class="flex items-start space-x-2">
+                                        <i class="fas fa-exclamation-triangle text-red-500 mt-1"></i>
+                                        <span class="text-gray-600">Dinți mobili</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-accent text-white">
+        <div class="container mx-auto px-4 text-center animate-on-scroll opacity-0">
+            <h2 class="text-4xl font-bold mb-6">Programează-ți tratamentul ideal</h2>
+            <p class="text-xl mb-8 opacity-90">Consultația gratuită include examinare completă și plan de tratament personalizat</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="contact.html" class="bg-white text-primary px-8 py-4 rounded-xl font-bold hover:scale-105 transition-all duration-300 shadow-xl">
+                    Consultație gratuită
+                </a>
+                <a href="packages.html" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-primary transition-all duration-300">
+                    Vezi pachetele
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Column 1 - LOC -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center shadow-lg">
+                            <i class="fas fa-tooth text-white"></i>
+                        </div>
+                        <span class="font-bold text-2xl">UDC</span>
+                    </div>
+                    <div class="space-y-3 text-gray-300">
+                        <p class="flex items-start space-x-2">
+                            <i class="fas fa-map-marker-alt text-primary mt-1"></i>
+                            <span data-lang-key="footer.address">Strada Principală 123, Chișinău</span>
+                        </p>
+                        <p class="flex items-center space-x-2">
+                            <i class="fas fa-phone text-primary"></i>
+                            <span>+373 68 123 456</span>
+                        </p>
+                        <p class="flex items-center space-x-2">
+                            <i class="fas fa-envelope text-primary"></i>
+                            <span>contact@udc.md</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Column 2 - Despre -->
+                <div class="space-y-4">
+                    <h4 class="text-lg font-bold text-primary" data-lang-key="footer.about">Despre</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="about.html" class="hover:text-primary transition-colors" data-lang-key="nav.about">Despre noi</a></li>
+                        <li><a href="treatments.html" class="hover:text-primary transition-colors">Servicii</a></li>
+                        <li><a href="treatments.html" class="hover:text-primary transition-colors" data-lang-key="nav.treatments">Tratamente</a></li>
+                        <li><a href="packages.html" class="hover:text-primary transition-colors" data-lang-key="nav.packages">Pachete Dentare</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 - Acreditari -->
+                <div class="space-y-4">
+                    <h4 class="text-lg font-bold text-primary" data-lang-key="accred.title">Acreditări</h4>
+                    <div class="flex items-center justify-center w-24 h-24 bg-gradient-to-br from-accent to-accent/80 rounded-full shadow-xl">
+                        <i class="fas fa-ribbon text-white text-3xl"></i>
+                    </div>
+                    <p class="text-primary font-bold" data-lang-key="accred.awards">Numără premiile</p>
+                </div>
+
+                <!-- Column 4 - UDC Social -->
+                <div class="space-y-4">
+                    <h4 class="text-lg font-bold text-primary" data-lang-key="footer.social">UDC Social</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-300 text-sm">
+                <p data-lang-key="footer.copyright">&copy; 2025 Universal Dental Clinic. Toate drepturile rezervate.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-primary transition-colors" data-lang-key="footer.privacy">Politica de confidențialitate</a>
+                    <a href="#" class="hover:text-primary transition-colors" data-lang-key="footer.terms">Termeni și condiții</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/37368123456" target="_blank" class="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 z-50 animate-bounce">
+        <i class="fab fa-whatsapp text-white text-2xl"></i>
+    </a>
+
+    <script src="languages.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Treatment category filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryButtons = document.querySelectorAll('.treatment-category');
+            const treatmentItems = document.querySelectorAll('.treatment-item');
+
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const category = button.getAttribute('data-category');
+                    
+                    // Update active button
+                    categoryButtons.forEach(btn => {
+                        btn.classList.remove('active', 'bg-primary', 'text-white');
+                        btn.classList.add('bg-gray-100', 'text-gray-600');
+                    });
+                    button.classList.add('active', 'bg-primary', 'text-white');
+                    button.classList.remove('bg-gray-100', 'text-gray-600');
+                    
+                    // Filter treatments
+                    treatmentItems.forEach(item => {
+                        if (category === 'all' || item.classList.contains(category)) {
+                            item.style.display = 'block';
+                            item.classList.add('animate-fade-in');
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
