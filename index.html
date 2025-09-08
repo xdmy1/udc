@@ -78,6 +78,31 @@
             background-color: rgba(0, 0, 0, 0.5);
             transition: opacity 0.3s ease-in-out;
         }
+        
+        /* Responsive improvements for hero section */
+        @media (max-width: 640px) {
+            .hero-bg {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .gradient-card {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+            
+            h1 {
+                line-height: 1.2;
+            }
+        }
     </style>
 </head>
 <body class="font-sans">
@@ -188,41 +213,43 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="px-10 hero-bg py-20 overflow-hidden">
+    <section class="px-4 sm:px-6 lg:px-10 hero-bg py-12 sm:py-16 lg:py-20 overflow-hidden">
         <div class="container mx-auto px-4">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <!-- Left Content -->
-                <div class="animate-slide-up">
+                <div class="animate-slide-up text-center lg:text-left">
                     <p class="text-accent text-sm font-medium" data-lang-key="hero.subtitle">Clinica dentară de încredere</p>
-                    <p class="text-primary text-lg font-bold bg-yellow-100 px-4 py-2 rounded-lg inline-block mt-2" data-lang-key="hero.cheapest">Cea mai ieftină clinică din Moldova</p>
-                    <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-800 leading-tight mt-6">
+                    <p class="text-primary text-base sm:text-lg font-bold bg-yellow-100 px-3 sm:px-4 py-2 rounded-lg inline-block mt-2" data-lang-key="hero.cheapest">Cea mai ieftină clinică din Moldova</p>
+                    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800 leading-tight mt-4 sm:mt-6">
                         <span data-lang-key="hero.title1">Zâmbetul tău perfect</span><br>
                         <span data-lang-key="hero.title2" class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">începe de aici</span>
                     </h1>
-                    <div class="flex flex-col sm:flex-row gap-4 mt-8">
-                        <div class="flex items-center space-x-2">
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 justify-center lg:justify-start">
+                        <div class="flex items-center justify-center lg:justify-start space-x-2">
                             <i class="fas fa-check-circle text-accent"></i>
-                            <p class="text-gray-700 font-medium" data-lang-key="hero.text1">Proceduri fără durere</p>
+                            <p class="text-gray-700 font-medium text-sm sm:text-base" data-lang-key="hero.text1">Proceduri fără durere</p>
                         </div>
-                        <div class="flex items-center space-x-2">
+                        <div class="flex items-center justify-center lg:justify-start space-x-2">
                             <i class="fas fa-check-circle text-accent"></i>
-                            <p class="text-gray-700 font-medium" data-lang-key="hero.text2">Tehnologie de ultimă generație</p>
+                            <p class="text-gray-700 font-medium text-sm sm:text-base" data-lang-key="hero.text2">Tehnologie de ultimă generație</p>
                         </div>
                     </div>
-                    <button class="group bg-accent text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-medium hover:bg-accent/90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base mt-8" data-lang-key="hero.button">
-                        <span data-lang-key="hero.button">Vezi tratamentele</span>
-                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
-                    </button>
+                    <div class="mt-6 sm:mt-8 text-center lg:text-left">
+                        <button class="group bg-accent text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-medium hover:bg-accent/90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base" data-lang-key="hero.button">
+                            <span data-lang-key="hero.button">Vezi tratamentele</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Right Content - Consultation Form -->
-                <div class="animate-scale-in">
-                    <div class="gradient-card p-4 sm:p-6 lg:p-8 rounded-3xl">
-                        <div class="flex items-center space-x-3 mb-6">
-                            <div class="w-10 h-10 rounded-full overflow-hidden shadow-lg">
+                <div class="animate-scale-in mt-8 lg:mt-0">
+                    <div class="gradient-card p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl max-w-md mx-auto lg:max-w-none">
+                        <div class="flex items-center justify-center lg:justify-start space-x-3 mb-4 sm:mb-6">
+                            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-lg">
                                 <img src="./assets/logo.png" alt="UDC Logo" class="w-full h-full object-cover">
                             </div>
-                            <h3 class="text-lg sm:text-xl font-bold text-gray-800" data-lang-key="hero.consultation">Consultație gratuită</h3>
+                            <h3 class="text-base sm:text-lg lg:text-xl font-bold text-gray-800" data-lang-key="hero.consultation">Consultație gratuită</h3>
                         </div>
 
                         <form id="consultation-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-3 sm:space-y-4">
