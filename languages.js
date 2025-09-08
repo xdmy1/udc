@@ -14,6 +14,7 @@ const translations = {
         
         // Hero Section
         "hero.subtitle": "Clinica dentară de încredere",
+        "hero.cheapest": "Cea mai ieftină clinică din Moldova",
         "hero.title1": "Zâmbetul tău perfect",
         "hero.title2": "începe de aici",
         "hero.text1": "Proceduri fără durere",
@@ -145,6 +146,7 @@ const translations = {
         
         // Hero Section
         "hero.subtitle": "Trusted dental clinic",
+        "hero.cheapest": "The cheapest clinic in Moldova",
         "hero.title1": "Your perfect smile",
         "hero.title2": "starts here",
         "hero.text1": "Painless procedures",
@@ -276,6 +278,7 @@ const translations = {
         
         // Hero Section
         "hero.subtitle": "Güvenilir diş kliniği",
+        "hero.cheapest": "Moldova'daki en ucuz klinik",
         "hero.title1": "Mükemmel gülüşünüz",
         "hero.title2": "burada başlar",
         "hero.text1": "Ağrısız prosedürler",
@@ -407,6 +410,7 @@ const translations = {
         
         // Hero Section
         "hero.subtitle": "Надёжная стоматологическая клиника",
+        "hero.cheapest": "Самая дешевая клиника в Молдове",
         "hero.title1": "Ваша идеальная улыбка",
         "hero.title2": "начинается здесь",
         "hero.text1": "Безболезненные процедуры",

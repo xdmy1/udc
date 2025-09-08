@@ -187,8 +187,22 @@ class FormValidator {
         if (!this.form) return;
 
         this.form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            this.validateForm();
+            if (!this.validateForm()) {
+                e.preventDefault();
+                return;
+            }
+            
+            // If validation passes, let the form submit normally to W3Forms
+            // Remove redirect field to let W3Forms handle it normally, then redirect with JavaScript
+            const redirectField = this.form.querySelector('input[name="redirect"]');
+            if (redirectField) {
+                redirectField.remove();
+            }
+            
+            // Add a brief delay then redirect (W3Forms will process in background)
+            setTimeout(() => {
+                window.location.href = 'success.html';
+            }, 1000);
         });
 
         // Real-time validation
@@ -203,10 +217,11 @@ class FormValidator {
     validateForm() {
         this.clearAllErrors();
         
-        const nume = document.getElementById('nume');
-        const telefon = document.getElementById('telefon');
-        const email = document.getElementById('email');
-        const robot = document.getElementById('robot');
+        // Handle both consultation and contact forms
+        const nume = document.getElementById('nume') || document.getElementById('nume-contact');
+        const telefon = document.getElementById('telefon') || document.getElementById('telefon-contact');
+        const email = document.getElementById('email') || document.getElementById('email-contact');
+        const robot = document.getElementById('robot') || document.getElementById('robot-contact');
         
         let isValid = true;
         
@@ -220,7 +235,7 @@ class FormValidator {
         if (!telefon?.value.trim()) {
             this.showError(telefon, translations[currentLanguage]['validation.phone']);
             isValid = false;
-        } else if (!/^\\d{8,12}$/.test(telefon.value.replace(/\\s+/g, ''))) {
+        } else if (!/^[\d\s\-\+\(\)]{8,15}$/.test(telefon.value.trim())) {
             this.showError(telefon, translations[currentLanguage]['validation.phone.invalid']);
             isValid = false;
         }
@@ -229,7 +244,7 @@ class FormValidator {
         if (!email?.value.trim()) {
             this.showError(email, translations[currentLanguage]['validation.email']);
             isValid = false;
-        } else if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email.value)) {
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
             this.showError(email, translations[currentLanguage]['validation.email.invalid']);
             isValid = false;
         }
@@ -240,10 +255,7 @@ class FormValidator {
             isValid = false;
         }
         
-        if (isValid) {
-            this.showSuccessMessage();
-            this.form.reset();
-        }
+        return isValid;
     }
 
     validateField(field) {

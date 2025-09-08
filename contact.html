@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Universal Dental Clinic</title>
+    <title data-lang-key="contact.page.title">Contact - Stomatologie ieftină Chișinău, Moldova</title>
+    <link rel="icon" type="image/png" href="./assets/logo.png">
+    <meta name="description" content="Contactați clinica dentară UDC pentru consultație gratuită în Chișinău. Контакты стоматологической клиники в Кишинёве.">
+    <meta name="keywords" content="contact clinică dentară Chișinău, consultație stomatologie Moldova, контакты стоматология, консультация стоматолога Кишинёв">
+    <meta property="og:title" content="Contact - Stomatologie ieftină Chișinău">
+    <meta property="og:description" content="Consultație gratuită la clinica dentară UDC din Moldova.">
+    <meta property="og:image" content="./assets/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -75,20 +81,21 @@
         <div class="bg-gradient-to-r from-gray-50 to-gray-100 py-3">
             <div class="container mx-auto px-4 flex justify-between items-center text-sm">
                 <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center shadow-lg">
-                        <i class="fas fa-tooth text-white"></i>
+                    <div class="w-10 h-10 rounded-full overflow-hidden shadow-lg">
+                        <img src="./assets/logo.png" alt="UDC Logo" class="w-full h-full object-cover">
                     </div>
-                    <span class="font-semibold text-gray-800">Dr. Universal Dental Clinic</span>
+                    <span class="font-semibold text-gray-800" data-lang-key="header.clinic_name">UDC-Universal Dental Clinic</span>
                 </div>
                 <div class="hidden lg:flex items-center space-x-2 text-gray-600">
                     <i class="fas fa-phone text-primary"></i>
                     <span data-lang-key="header.phone">telefon consultație gratuită</span>
-                    <span class="font-semibold text-gray-800">+373 68 123 456</span>
+                    <span class="font-semibold text-gray-800">+37368961136</span>
                 </div>
                 <div class="hidden lg:flex items-center space-x-2 text-gray-600">
                     <i class="fas fa-clock text-primary"></i>
                     <span data-lang-key="header.schedule">luni-vineri</span>
                     <span class="font-semibold text-gray-800" data-lang-key="header.hours">09:00 - 18:00</span>
+                    <span class="text-red-600 font-bold ml-2" data-lang-key="header.emergency">| Urgențe 24/7</span>
                 </div>
             </div>
         </div>
@@ -97,10 +104,10 @@
         <nav class="relative container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
                 <a href="index.html" class="flex items-center space-x-2 hover:scale-105 transition-transform duration-300">
-                    <div class="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center shadow-lg">
-                        <i class="fas fa-tooth text-white text-lg"></i>
+                    <div class="w-12 h-12 rounded-full overflow-hidden shadow-lg">
+                        <img src="./assets/logo.png" alt="UDC Logo" class="w-full h-full object-cover">
                     </div>
-                    <span class="font-bold text-xl text-gray-800">UDC</span>
+                    <span class="font-bold text-xl text-gray-800" data-lang-key="header.logo">UDC</span>
                 </a>
                 
                 <div class="hidden md:flex items-center space-x-8">
@@ -117,13 +124,13 @@
                     <div class="relative">
                         <button id="lang-dropdown-btn" class="flex items-center space-x-2 bg-primary text-white px-3 py-2 rounded-lg hover:bg-primary/90 transition-all duration-300">
                             <i class="fas fa-globe"></i>
-                            <span id="current-lang">RO</span>
+                            <span id="current-lang" data-lang-key="lang.current">RO</span>
                             <i class="fas fa-chevron-down text-sm"></i>
                         </button>
                         <div id="lang-dropdown" class="hidden absolute right-0 mt-2 bg-white shadow-lg rounded-lg py-2 min-w-[120px] z-50">
-                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="ro">🇷🇴 Română</button>
-                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="en">🇺🇸 English</button>
-                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="tr">🇹🇷 Türkçe</button>
+                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="ro" data-lang-key="lang.ro">🇷🇴 Română</button>
+                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="en" data-lang-key="lang.en">🇺🇸 English</button>
+                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="tr" data-lang-key="lang.tr">🇹🇷 Türkçe</button>
                             <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="ru">🇷🇺 Русский</button>
                         </div>
                     </div>
@@ -143,10 +150,10 @@
         <div class="p-6">
             <div class="flex items-center justify-between mb-8">
                 <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center">
-                        <i class="fas fa-tooth text-white"></i>
+                    <div class="w-10 h-10 rounded-full overflow-hidden">
+                        <img src="./assets/logo.png" alt="UDC Logo" class="w-full h-full object-cover">
                     </div>
-                    <span class="font-bold text-xl text-gray-800">UDC</span>
+                    <span class="font-bold text-xl text-gray-800" data-lang-key="header.logo">UDC</span>
                 </div>
                 <button id="close-menu-btn" class="text-gray-600 hover:text-gray-800">
                     <i class="fas fa-times text-2xl"></i>
@@ -163,11 +170,11 @@
             
             <!-- Mobile Language Switcher -->
             <div class="border-t pt-6">
-                <h4 class="text-sm font-semibold text-gray-500 mb-3">LIMBĂ / LANGUAGE</h4>
+                <h4 class="text-sm font-semibold text-gray-500 mb-3" data-lang-key="lang.header">LIMBĂ / LANGUAGE</h4>
                 <div class="space-y-2">
-                    <button class="lang-option w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-lang="ro">🇷🇴 Română</button>
-                    <button class="lang-option w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-lang="en">🇺🇸 English</button>
-                    <button class="lang-option w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-lang="tr">🇹🇷 Türkçe</button>
+                    <button class="lang-option w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-lang="ro" data-lang-key="lang.ro">🇷🇴 Română</button>
+                    <button class="lang-option w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-lang="en" data-lang-key="lang.en">🇺🇸 English</button>
+                    <button class="lang-option w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-lang="tr" data-lang-key="lang.tr">🇹🇷 Türkçe</button>
                     <button class="lang-option w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-lang="ru">🇷🇺 Русский</button>
                 </div>
             </div>
@@ -179,10 +186,11 @@
         <div class="container mx-auto px-4 text-center">
             <div class="max-w-4xl mx-auto animate-slide-up">
                 <p class="text-accent text-sm font-medium mb-4" data-lang-key="contact.hero.subtitle">Suntem aici să îți răspundem la orice întrebare</p>
+                <p class="text-primary text-lg font-bold bg-yellow-100 px-4 py-2 rounded-lg inline-block mb-4" data-lang-key="hero.cheapest">Cea mai ieftină clinică din Moldova</p>
                 <h1 class="text-4xl lg:text-6xl font-bold text-gray-800 mb-6" data-lang-key="contact.hero.title">
                     Contactează-ne
                 </h1>
-                <p class="text-xl text-gray-600 leading-relaxed">
+                <p class="text-xl text-gray-600 leading-relaxed" data-lang-key="contact.hero.description">
                     Programează o consultație gratuită sau pune-ne orice întrebare despre tratamentele noastre
                 </p>
             </div>
@@ -204,69 +212,95 @@
                             <h3 class="text-2xl font-bold text-gray-800" data-lang-key="contact.form.title">Trimite-ne un mesaj</h3>
                         </div>
 
-                        <form id="contact-form" class="space-y-6">
+                        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                            <!-- W3Forms Access Key -->
+                            <input type="hidden" name="access_key" value="faf70b71-ac9a-4394-90da-57da43a0e557">
+                            <!-- Redirect to success page -->
+                            <input type="hidden" name="redirect" value="success.html">
+                            <!-- Form subject -->
+                            <input type="hidden" name="subject" value="Contact Form - UDC">
+                            <!-- Form type identifier -->
+                            <input type="hidden" name="from_name" value="UDC Website - Contact">
+                            <!-- Honeypot Spam Protection -->
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                            
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
-                                    <label for="nume-contact" class="block text-sm font-medium text-gray-700 mb-2">Nume complet *</label>
-                                    <input type="text" id="nume-contact" data-lang-key="form.name" placeholder="Nume" class="w-full p-4 border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300" required>
+                                    <label for="nume-contact" class="block text-sm font-medium text-gray-700 mb-2" data-lang-key="contact.form.name">Nume complet *</label>
+                                    <input type="text" id="nume-contact" name="name" data-lang-key="form.name" placeholder="Nume" class="w-full p-4 border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300" required>
                                 </div>
                                 <div>
-                                    <label for="email-contact" class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
-                                    <input type="email" id="email-contact" data-lang-key="form.email" placeholder="E-Mail" class="w-full p-4 border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300" required>
+                                    <label for="email-contact" class="block text-sm font-medium text-gray-700 mb-2" data-lang-key="contact.form.email">Email *</label>
+                                    <input type="email" id="email-contact" name="email" data-lang-key="form.email" placeholder="E-Mail" class="w-full p-4 border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300" required>
                                 </div>
                             </div>
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
-                                    <label for="telefon-contact" class="block text-sm font-medium text-gray-700 mb-2">Telefon *</label>
+                                    <label for="telefon-contact" class="block text-sm font-medium text-gray-700 mb-2" data-lang-key="contact.form.phone">Telefon *</label>
                                     <div class="flex space-x-2">
-                                        <select class="p-4 border border-gray-300 rounded-xl w-24 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300">
-                                            <option>+373</option>
-                                            <option>+40</option>
-                                            <option>+90</option>
-                                            <option>+7</option>
+                                        <select name="country_code" class="p-4 border border-gray-300 rounded-xl w-32 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300">
+                                            <option value="373">🇲🇩 +373</option>
+                                            <option value="40">🇷🇴 +40</option>
+                                            <option value="49">🇩🇪 +49</option>
+                                            <option value="33">🇫🇷 +33</option>
+                                            <option value="39">🇮🇹 +39</option>
+                                            <option value="34">🇪🇸 +34</option>
+                                            <option value="31">🇳🇱 +31</option>
+                                            <option value="32">🇧🇪 +32</option>
+                                            <option value="43">🇦🇹 +43</option>
+                                            <option value="41">🇨🇭 +41</option>
+                                            <option value="420">🇨🇿 +420</option>
+                                            <option value="48">🇵🇱 +48</option>
+                                            <option value="36">🇭🇺 +36</option>
+                                            <option value="90">🇹🇷 +90</option>
+                                            <option value="7">🇷🇺 +7</option>
+                                            <option value="380">🇺🇦 +380</option>
+                                            <option value="44">🇬🇧 +44</option>
                                         </select>
-                                        <input type="tel" id="telefon-contact" data-lang-key="form.phone" placeholder="Telefon" class="flex-1 p-4 border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300" required>
+                                        <input type="tel" id="telefon-contact" name="phone" data-lang-key="form.phone" placeholder="Telefon" pattern="[\d\s\-\+\(\)]{8,15}" title="Introduceți un număr de telefon valid (8-15 caractere)" class="flex-1 p-4 border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300" required>
                                     </div>
                                 </div>
                                 <div>
-                                    <label for="serviciu" class="block text-sm font-medium text-gray-700 mb-2">Serviciu de interes</label>
-                                    <select id="serviciu" class="w-full p-4 border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300">
-                                        <option>Consultație generală</option>
+                                    <label for="serviciu" class="block text-sm font-medium text-gray-700 mb-2" data-lang-key="contact.form.service">Serviciu de interes</label>
+                                    <select id="serviciu" name="service" class="w-full p-4 border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300">
+                                        <option data-lang-key="contact.form.consultation">Consultație generală</option>
                                         <option data-lang-key="service.hollywood">Hollywood Smile</option>
                                         <option data-lang-key="service.implants">Implanturi Dentare</option>
                                         <option data-lang-key="service.whitening">Albire Dentară</option>
                                         <option data-lang-key="service.veneer">Fațete Laminare</option>
+                                        <option data-lang-key="contact.form.cleaning">Curățire dentară</option>
+                                        <option data-lang-key="contact.form.corrective">Tratament corector</option>
                                         <option data-lang-key="service.perio">Parodontologie</option>
-                                        <option>Urgență dentară</option>
+                                        <option data-lang-key="contact.form.emergency">Urgență dentară</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div>
-                                <label for="mesaj-contact" class="block text-sm font-medium text-gray-700 mb-2">Mesajul tău</label>
-                                <textarea id="mesaj-contact" data-lang-key="form.message" placeholder="Descrie-ne problema sau întrebările tale..." rows="6" class="w-full p-4 border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 resize-none transition-all duration-300"></textarea>
+                                <label for="mesaj-contact" class="block text-sm font-medium text-gray-700 mb-2" data-lang-key="contact.form.message">Mesajul tău</label>
+                                <textarea id="mesaj-contact" name="message" data-lang-key="form.message" placeholder="Descrie-ne problema sau întrebările tale..." rows="6" class="w-full p-4 border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 resize-none transition-all duration-300"></textarea>
                             </div>
 
                             <div>
-                                <label for="data-programare" class="block text-sm font-medium text-gray-700 mb-2">Data preferată pentru programare</label>
-                                <input type="date" id="data-programare" class="w-full p-4 border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300">
+                                <label for="data-programare" class="block text-sm font-medium text-gray-700 mb-2" data-lang-key="contact.form.date">Data preferată pentru programare</label>
+                                <input type="date" id="data-programare" name="preferred_date" class="w-full p-4 border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300">
                             </div>
 
                             <div class="flex items-center space-x-2">
                                 <input type="checkbox" id="robot-contact" class="w-5 h-5 text-primary" required>
                                 <label for="robot-contact" class="text-sm text-gray-600" data-lang-key="form.robot">Nu sunt un robot</label>
-                                <div class="ml-auto w-20 h-8 bg-gray-200 rounded-lg flex items-center justify-center text-xs font-medium">reCAPTCHA</div>
+                                <div class="ml-auto w-20 h-8 bg-gray-200 rounded-lg flex items-center justify-center text-xs font-medium" data-lang-key="form.recaptcha">reCAPTCHA</div>
                             </div>
 
                             <div class="flex items-center space-x-2">
                                 <input type="checkbox" id="gdpr" class="w-5 h-5 text-primary" required>
-                                <label for="gdpr" class="text-sm text-gray-600">Accept <a href="#" class="text-primary hover:underline">politica de confidențialitate</a> și <a href="#" class="text-primary hover:underline">termenii de utilizare</a></label>
+                                <label for="gdpr" class="text-sm text-gray-600" data-lang-key="contact.form.gdpr">Accept <a href="#" class="text-primary hover:underline">politica de confidențialitate</a> și <a href="#" class="text-primary hover:underline">termenii de utilizare</a></label>
                             </div>
 
                             <button type="submit" class="w-full bg-primary text-white p-4 rounded-xl font-medium hover:bg-primary/90 hover:scale-105 transition-all duration-300 shadow-lg" data-lang-key="form.submit">
                                 <i class="fas fa-paper-plane mr-2"></i>
-                                Trimite mesajul
+                                <span data-lang-key="contact.form.submit">Trimite mesajul</span>
                             </button>
                         </form>
                     </div>
@@ -283,7 +317,7 @@
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold text-gray-800" data-lang-key="contact.info.title">Informații de contact</h4>
-                                <p class="text-gray-600">Vino să ne cunoști personal</p>
+                                <p class="text-gray-600" data-lang-key="contact.info.subtitle">Vino să ne cunoști personal</p>
                             </div>
                         </div>
                         
@@ -291,36 +325,36 @@
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-map-marker-alt text-primary mt-1"></i>
                                 <div>
-                                    <p class="font-medium text-gray-800">Adresa</p>
+                                    <p class="font-medium text-gray-800" data-lang-key="contact.info.address.title">Adresa</p>
                                     <p class="text-gray-600" data-lang-key="footer.address">Strada Principală 123, Chișinău</p>
-                                    <p class="text-sm text-gray-500">Moldova, MD-2001</p>
+                                    <p class="text-sm text-gray-500" data-lang-key="contact.info.address.details">Moldova, MD-2001</p>
                                 </div>
                             </div>
                             
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-phone text-primary mt-1"></i>
                                 <div>
-                                    <p class="font-medium text-gray-800">Telefon</p>
-                                    <p class="text-gray-600">+373 68 123 456</p>
-                                    <p class="text-sm text-gray-500">Luni - Vineri: 09:00 - 18:00</p>
+                                    <p class="font-medium text-gray-800" data-lang-key="contact.info.phone.title">Telefon</p>
+                                    <p class="text-gray-600">+37368961136</p>
+                                    <p class="text-sm text-gray-500" data-lang-key="contact.info.phone.hours">Luni - Vineri: 09:00 - 18:00</p>
                                 </div>
                             </div>
                             
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-envelope text-primary mt-1"></i>
                                 <div>
-                                    <p class="font-medium text-gray-800">Email</p>
-                                    <p class="text-gray-600">contact@udc.md</p>
-                                    <p class="text-sm text-gray-500">Răspundem în max 24h</p>
+                                    <p class="font-medium text-gray-800" data-lang-key="contact.info.email.title">Email</p>
+                                    <p class="text-gray-600" data-lang-key="footer.email">sandutilen@gmail.com</p>
+                                    <p class="text-sm text-gray-500" data-lang-key="contact.info.email.response">Răspundem în max 24h</p>
                                 </div>
                             </div>
                             
                             <div class="flex items-start space-x-3">
                                 <i class="fab fa-whatsapp text-green-500 mt-1"></i>
                                 <div>
-                                    <p class="font-medium text-gray-800">WhatsApp</p>
-                                    <p class="text-gray-600">+373 68 123 456</p>
-                                    <p class="text-sm text-gray-500">Mesaje rapide 24/7</p>
+                                    <p class="font-medium text-gray-800" data-lang-key="contact.info.whatsapp.title">WhatsApp</p>
+                                    <p class="text-gray-600">+37368961136</p>
+                                    <p class="text-sm text-gray-500" data-lang-key="contact.info.whatsapp.available">Mesaje rapide 24/7</p>
                                 </div>
                             </div>
                         </div>
@@ -334,25 +368,25 @@
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold text-gray-800" data-lang-key="contact.hours.title">Program de lucru</h4>
-                                <p class="text-gray-600">Suntem disponibili</p>
+                                <p class="text-gray-600" data-lang-key="contact.hours.subtitle">Suntem disponibili</p>
                             </div>
                         </div>
                         
                         <div class="space-y-3">
                             <div class="flex justify-between items-center py-2 border-b border-gray-200">
-                                <span class="text-gray-800 font-medium">Luni - Vineri</span>
-                                <span class="text-gray-600">09:00 - 18:00</span>
+                                <span class="text-gray-800 font-medium" data-lang-key="contact.hours.weekdays">Luni - Vineri</span>
+                                <span class="text-gray-600" data-lang-key="contact.hours.weekdays.time">09:00 - 18:00</span>
                             </div>
                             <div class="flex justify-between items-center py-2 border-b border-gray-200">
-                                <span class="text-gray-800 font-medium">Sâmbătă</span>
-                                <span class="text-gray-600">09:00 - 14:00</span>
+                                <span class="text-gray-800 font-medium" data-lang-key="contact.hours.saturday">Sâmbătă</span>
+                                <span class="text-gray-600" data-lang-key="contact.hours.saturday.time">09:00 - 14:00</span>
                             </div>
                             <div class="flex justify-between items-center py-2 border-b border-gray-200">
-                                <span class="text-gray-800 font-medium">Duminică</span>
-                                <span class="text-gray-600">Închis</span>
+                                <span class="text-gray-800 font-medium" data-lang-key="contact.hours.sunday">Duminică</span>
+                                <span class="text-gray-600" data-lang-key="contact.hours.sunday.closed">Închis</span>
                             </div>
                             <div class="flex justify-between items-center py-2">
-                                <span class="text-gray-800 font-medium">Urgențe</span>
+                                <span class="text-gray-800 font-medium" data-lang-key="contact.hours.emergency">Urgențe</span>
                                 <span class="text-accent font-bold">24/7</span>
                             </div>
                         </div>
@@ -365,17 +399,17 @@
                                 <i class="fas fa-ambulance text-white text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold">Urgențe dentare</h4>
-                                <p class="opacity-90">Disponibili 24/7</p>
+                                <h4 class="text-xl font-bold" data-lang-key="contact.emergency.title">Urgențe dentare</h4>
+                                <p class="opacity-90" data-lang-key="contact.emergency.available">Disponibili 24/7</p>
                             </div>
                         </div>
                         
                         <div class="space-y-4">
                             <p class="text-lg font-medium">+373 69 999 999</p>
-                            <p class="text-sm opacity-90">Pentru dureri acute, traumatisme dentare sau alte urgențe, suntem disponibili oricând.</p>
+                            <p class="text-sm opacity-90" data-lang-key="contact.emergency.description">Pentru dureri acute, traumatisme dentare sau alte urgențe, suntem disponibili oricând.</p>
                             <a href="tel:+37369999999" class="inline-block bg-white text-red-500 px-6 py-3 rounded-xl font-bold hover:scale-105 transition-all duration-300">
                                 <i class="fas fa-phone mr-2"></i>
-                                Sună pentru urgență
+                                <span data-lang-key="contact.emergency.call">Sună pentru urgență</span>
                             </a>
                         </div>
                     </div>
@@ -388,8 +422,8 @@
     <section class="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12 animate-on-scroll opacity-0">
-                <h2 class="text-4xl font-bold text-gray-800 mb-6">Cum să ne găsești</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold text-gray-800 mb-6" data-lang-key="contact.location.title">Cum să ne găsești</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-lang-key="contact.location.description">
                     Suntem localizați în centrul Chișinăului, cu acces facil cu transportul public și parcare disponibilă
                 </p>
             </div>
@@ -411,50 +445,50 @@
 
                 <div class="space-y-6 animate-on-scroll opacity-0">
                     <div class="bg-white p-6 rounded-2xl shadow-lg">
-                        <h4 class="text-lg font-bold text-gray-800 mb-4">Cum să ajungi</h4>
+                        <h4 class="text-lg font-bold text-gray-800 mb-4" data-lang-key="contact.directions.title">Cum să ajungi</h4>
                         <div class="space-y-3">
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-car text-primary mt-1"></i>
                                 <div>
-                                    <p class="font-medium text-gray-800">Cu mașina</p>
-                                    <p class="text-sm text-gray-600">Parcare gratuită disponibilă în curte</p>
+                                    <p class="font-medium text-gray-800" data-lang-key="contact.directions.car">Cu mașina</p>
+                                    <p class="text-sm text-gray-600" data-lang-key="contact.directions.car.parking">Parcare gratuită disponibilă în curte</p>
                                 </div>
                             </div>
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-bus text-primary mt-1"></i>
                                 <div>
-                                    <p class="font-medium text-gray-800">Transport public</p>
-                                    <p class="text-sm text-gray-600">Autobuze: 1, 5, 22, 27 - Stația "Centru"</p>
+                                    <p class="font-medium text-gray-800" data-lang-key="contact.directions.transport">Transport public</p>
+                                    <p class="text-sm text-gray-600" data-lang-key="contact.directions.transport.buses">Autobuze: 1, 5, 22, 27 - Stația "Centru"</p>
                                 </div>
                             </div>
                             <div class="flex items-start space-x-3">
                                 <i class="fas fa-walking text-primary mt-1"></i>
                                 <div>
-                                    <p class="font-medium text-gray-800">Pe jos</p>
-                                    <p class="text-sm text-gray-600">2 minute de la Piața Centrală</p>
+                                    <p class="font-medium text-gray-800" data-lang-key="contact.directions.walking">Pe jos</p>
+                                    <p class="text-sm text-gray-600" data-lang-key="contact.directions.walking.distance">2 minute de la Piața Centrală</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="bg-gradient-to-br from-primary to-accent p-6 rounded-2xl text-white shadow-lg">
-                        <h4 class="text-lg font-bold mb-4">Facilități</h4>
+                        <h4 class="text-lg font-bold mb-4" data-lang-key="contact.facilities.title">Facilități</h4>
                         <div class="grid grid-cols-2 gap-4 text-sm">
                             <div class="flex items-center space-x-2">
                                 <i class="fas fa-wifi"></i>
-                                <span>WiFi gratuit</span>
+                                <span data-lang-key="contact.facilities.wifi">WiFi gratuit</span>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <i class="fas fa-parking"></i>
-                                <span>Parcare gratuită</span>
+                                <span data-lang-key="contact.facilities.parking">Parcare gratuită</span>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <i class="fas fa-wheelchair"></i>
-                                <span>Acces handicap</span>
+                                <span data-lang-key="contact.facilities.handicap">Acces handicap</span>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <i class="fas fa-coffee"></i>
-                                <span>Cafea gratuită</span>
+                                <span data-lang-key="contact.facilities.coffee">Cafea gratuită</span>
                             </div>
                         </div>
                     </div>
@@ -467,8 +501,8 @@
     <section class="py-20">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 animate-on-scroll opacity-0">
-                <h2 class="text-4xl font-bold text-gray-800 mb-6">Întrebări frecvente</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold text-gray-800 mb-6" data-lang-key="contact.faq.title">Întrebări frecvente</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-lang-key="contact.faq.description">
                     Răspunsuri la cele mai comune întrebări despre serviciile noastre
                 </p>
             </div>
@@ -477,11 +511,11 @@
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden animate-on-scroll opacity-0">
                     <div class="faq-item border-b">
                         <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
-                            <span class="text-lg font-medium text-gray-800">Consultația este cu adevărat gratuită?</span>
+                            <span class="text-lg font-medium text-gray-800" data-lang-key="contact.faq.q1">Consultația este cu adevărat gratuită?</span>
                             <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
                         </button>
                         <div class="faq-content hidden p-6 pt-0 text-gray-600">
-                            <p>Da, prima consultație este complet gratuită și include examinare clinică, consultația cu specialistul și un plan de tratament preliminar. Nu există costuri ascunse.</p>
+                            <p data-lang-key="contact.faq.a1">Da, prima consultație este complet gratuită și include examinare clinică, consultația cu specialistul și un plan de tratament preliminar. Nu există costuri ascunse.</p>
                         </div>
                     </div>
                 </div>
@@ -489,11 +523,11 @@
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden animate-on-scroll opacity-0">
                     <div class="faq-item border-b">
                         <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
-                            <span class="text-lg font-medium text-gray-800">Acceptați asigurări medicale?</span>
+                            <span class="text-lg font-medium text-gray-800" data-lang-key="contact.faq.q2">Acceptați asigurări medicale?</span>
                             <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
                         </button>
                         <div class="faq-content hidden p-6 pt-0 text-gray-600">
-                            <p>Da, acceptăm majoritatea asigurărilor medicale private din Moldova și România. Vă rugăm să contactați asiguratorul pentru a verifica acoperirea serviciilor dentare.</p>
+                            <p data-lang-key="contact.faq.a2">Da, acceptăm majoritatea asigurărilor medicale private din Moldova și România. Vă rugăm să contactați asiguratorul pentru a verifica acoperirea serviciilor dentare.</p>
                         </div>
                     </div>
                 </div>
@@ -501,11 +535,11 @@
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden animate-on-scroll opacity-0">
                     <div class="faq-item border-b">
                         <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
-                            <span class="text-lg font-medium text-gray-800">Cât durează un tratament cu implanturi?</span>
+                            <span class="text-lg font-medium text-gray-800" data-lang-key="contact.faq.q3">Cât durează un tratament cu implanturi?</span>
                             <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
                         </button>
                         <div class="faq-content hidden p-6 pt-0 text-gray-600">
-                            <p>Durata variază în funcție de cazul individual, dar în general procesul complet durează 3-6 luni. Implantul se integrează în os în 2-4 luni, apoi se atașează coroana finală.</p>
+                            <p data-lang-key="contact.faq.a3">Durata variază în funcție de cazul individual, dar în general procesul complet durează 3-6 luni. Implantul se integrează în os în 2-4 luni, apoi se atașează coroana finală.</p>
                         </div>
                     </div>
                 </div>
@@ -520,10 +554,10 @@
                 <!-- Column 1 - LOC -->
                 <div class="space-y-4">
                     <div class="flex items-center space-x-2">
-                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center shadow-lg">
-                            <i class="fas fa-tooth text-white"></i>
+                        <div class="w-12 h-12 rounded-full overflow-hidden shadow-lg">
+                            <img src="./assets/logo.png" alt="UDC Logo" class="w-full h-full object-cover">
                         </div>
-                        <span class="font-bold text-2xl">UDC</span>
+                        <span class="font-bold text-2xl" data-lang-key="footer.logo">UDC</span>
                     </div>
                     <div class="space-y-3 text-gray-300">
                         <p class="flex items-start space-x-2">
@@ -532,11 +566,11 @@
                         </p>
                         <p class="flex items-center space-x-2">
                             <i class="fas fa-phone text-primary"></i>
-                            <span>+373 68 123 456</span>
+                            <span>+37368961136</span>
                         </p>
                         <p class="flex items-center space-x-2">
                             <i class="fas fa-envelope text-primary"></i>
-                            <span>contact@udc.md</span>
+                            <span data-lang-key="footer.email">sandutilen@gmail.com</span>
                         </p>
                     </div>
                 </div>
@@ -546,7 +580,7 @@
                     <h4 class="text-lg font-bold text-primary" data-lang-key="footer.about">Despre</h4>
                     <ul class="space-y-3 text-gray-300">
                         <li><a href="about.html" class="hover:text-primary transition-colors" data-lang-key="nav.about">Despre noi</a></li>
-                        <li><a href="treatments.html" class="hover:text-primary transition-colors">Servicii</a></li>
+                        <li><a href="treatments.html" class="hover:text-primary transition-colors" data-lang-key="footer.services">Servicii</a></li>
                         <li><a href="treatments.html" class="hover:text-primary transition-colors" data-lang-key="nav.treatments">Tratamente</a></li>
                         <li><a href="packages.html" class="hover:text-primary transition-colors" data-lang-key="nav.packages">Pachete Dentare</a></li>
                     </ul>
@@ -581,19 +615,18 @@
                 </div>
             </div>
 
-            <!-- Bottom Bar -->
-            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-300 text-sm">
-                <p data-lang-key="footer.copyright">&copy; 2025 Universal Dental Clinic. Toate drepturile rezervate.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-primary transition-colors" data-lang-key="footer.privacy">Politica de confidențialitate</a>
-                    <a href="#" class="hover:text-primary transition-colors" data-lang-key="footer.terms">Termeni și condiții</a>
-                </div>
-            </div>
         </div>
     </footer>
 
+    <!-- Made with love bar -->
+    <div class="bg-gray-800 border-t border-gray-700 py-2">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-xs text-gray-400" data-lang-key="footer.made_with_love">Made with love by <a href="https://landings.md/" target="_blank" class="text-gray-300 hover:text-primary transition-colors underline">Landings.md</a></p>
+        </div>
+    </div>
+
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/37368123456" target="_blank" class="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 z-50 animate-bounce">
+    <a href="https://wa.me/37368961136" target="_blank" class="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 z-50 animate-bounce">
         <i class="fab fa-whatsapp text-white text-2xl"></i>
     </a>
 

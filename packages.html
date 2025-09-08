@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pachete Dentare - Universal Dental Clinic</title>
+    <title data-lang-key="packages.page.title">Pachete dentare ieftine - All on 6, All on 4 Chișinău</title>
+    <link rel="icon" type="image/png" href="./assets/logo.png">
+    <meta name="description" content="Pachete dentare cu prețuri mici: All on 6, All on 4 cu implanturi din Turcia și Coreea. Пакеты стоматологического лечения в Кишинёве.">
+    <meta name="keywords" content="All on 6 Moldova, All on 4 Chișinău, pachete dentare ieftine, алл он 6 Молдова, алл он 4 Кишинёв, стоматологические пакеты">
+    <meta property="og:title" content="Pachete dentare ieftine Chișinău">
+    <meta property="og:description" content="All on 6 și All on 4 cu prețuri accesibile în Moldova.">
+    <meta property="og:image" content="./assets/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -76,20 +82,21 @@
         <div class="bg-gradient-to-r from-gray-50 to-gray-100 py-3">
             <div class="container mx-auto px-4 flex justify-between items-center text-sm">
                 <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center shadow-lg">
-                        <i class="fas fa-tooth text-white"></i>
+                    <div class="w-10 h-10 rounded-full overflow-hidden shadow-lg">
+                        <img src="./assets/logo.png" alt="UDC Logo" class="w-full h-full object-cover">
                     </div>
-                    <span class="font-semibold text-gray-800">Dr. Universal Dental Clinic</span>
+                    <span class="font-semibold text-gray-800" data-lang-key="header.clinic_name">UDC-Universal Dental Clinic</span>
                 </div>
                 <div class="hidden lg:flex items-center space-x-2 text-gray-600">
                     <i class="fas fa-phone text-primary"></i>
                     <span data-lang-key="header.phone">telefon consultație gratuită</span>
-                    <span class="font-semibold text-gray-800">+373 68 123 456</span>
+                    <span class="font-semibold text-gray-800">+37368961136</span>
                 </div>
                 <div class="hidden lg:flex items-center space-x-2 text-gray-600">
                     <i class="fas fa-clock text-primary"></i>
                     <span data-lang-key="header.schedule">luni-vineri</span>
                     <span class="font-semibold text-gray-800" data-lang-key="header.hours">09:00 - 18:00</span>
+                    <span class="text-red-600 font-bold ml-2" data-lang-key="header.emergency">| Urgențe 24/7</span>
                 </div>
             </div>
         </div>
@@ -98,10 +105,10 @@
         <nav class="relative container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
                 <a href="index.html" class="flex items-center space-x-2 hover:scale-105 transition-transform duration-300">
-                    <div class="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center shadow-lg">
-                        <i class="fas fa-tooth text-white text-lg"></i>
+                    <div class="w-12 h-12 rounded-full overflow-hidden shadow-lg">
+                        <img src="./assets/logo.png" alt="UDC Logo" class="w-full h-full object-cover">
                     </div>
-                    <span class="font-bold text-xl text-gray-800">UDC</span>
+                    <span class="font-bold text-xl text-gray-800" data-lang-key="header.logo">UDC</span>
                 </a>
                 
                 <div class="hidden md:flex items-center space-x-8">
@@ -118,13 +125,13 @@
                     <div class="relative">
                         <button id="lang-dropdown-btn" class="flex items-center space-x-2 bg-primary text-white px-3 py-2 rounded-lg hover:bg-primary/90 transition-all duration-300">
                             <i class="fas fa-globe"></i>
-                            <span id="current-lang">RO</span>
+                            <span id="current-lang" data-lang-key="lang.current">RO</span>
                             <i class="fas fa-chevron-down text-sm"></i>
                         </button>
                         <div id="lang-dropdown" class="hidden absolute right-0 mt-2 bg-white shadow-lg rounded-lg py-2 min-w-[120px] z-50">
-                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="ro">🇷🇴 Română</button>
-                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="en">🇺🇸 English</button>
-                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="tr">🇹🇷 Türkçe</button>
+                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="ro" data-lang-key="lang.ro">🇷🇴 Română</button>
+                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="en" data-lang-key="lang.en">🇺🇸 English</button>
+                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="tr" data-lang-key="lang.tr">🇹🇷 Türkçe</button>
                             <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="ru">🇷🇺 Русский</button>
                         </div>
                     </div>
@@ -144,10 +151,10 @@
         <div class="p-6">
             <div class="flex items-center justify-between mb-8">
                 <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center">
-                        <i class="fas fa-tooth text-white"></i>
+                    <div class="w-10 h-10 rounded-full overflow-hidden">
+                        <img src="./assets/logo.png" alt="UDC Logo" class="w-full h-full object-cover">
                     </div>
-                    <span class="font-bold text-xl text-gray-800">UDC</span>
+                    <span class="font-bold text-xl text-gray-800" data-lang-key="header.logo">UDC</span>
                 </div>
                 <button id="close-menu-btn" class="text-gray-600 hover:text-gray-800">
                     <i class="fas fa-times text-2xl"></i>
@@ -164,11 +171,11 @@
             
             <!-- Mobile Language Switcher -->
             <div class="border-t pt-6">
-                <h4 class="text-sm font-semibold text-gray-500 mb-3">LIMBĂ / LANGUAGE</h4>
+                <h4 class="text-sm font-semibold text-gray-500 mb-3" data-lang-key="lang.header">LIMBĂ / LANGUAGE</h4>
                 <div class="space-y-2">
-                    <button class="lang-option w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-lang="ro">🇷🇴 Română</button>
-                    <button class="lang-option w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-lang="en">🇺🇸 English</button>
-                    <button class="lang-option w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-lang="tr">🇹🇷 Türkçe</button>
+                    <button class="lang-option w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-lang="ro" data-lang-key="lang.ro">🇷🇴 Română</button>
+                    <button class="lang-option w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-lang="en" data-lang-key="lang.en">🇺🇸 English</button>
+                    <button class="lang-option w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-lang="tr" data-lang-key="lang.tr">🇹🇷 Türkçe</button>
                     <button class="lang-option w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-lang="ru">🇷🇺 Русский</button>
                 </div>
             </div>
@@ -180,6 +187,7 @@
         <div class="container mx-auto px-4 text-center">
             <div class="max-w-4xl mx-auto animate-slide-up">
                 <p class="text-accent text-sm font-medium mb-4" data-lang-key="packages.hero.subtitle">Oferte speciale și pachete personalizate</p>
+                <p class="text-primary text-lg font-bold bg-yellow-100 px-4 py-2 rounded-lg inline-block mb-4" data-lang-key="hero.cheapest">Cea mai ieftină clinică din Moldova</p>
                 <h1 class="text-4xl lg:text-6xl font-bold text-gray-800 mb-6" data-lang-key="nav.packages">
                     Pachete Dentare
                 </h1>
@@ -190,227 +198,199 @@
         </div>
     </section>
 
-    <!-- Featured Package -->
-    <section class="py-20">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <div class="package-card bg-gradient-to-r from-primary to-accent rounded-3xl p-8 text-white text-center shadow-2xl animate-on-scroll opacity-0">
-                    <div class="relative">
-                        <div class="absolute -top-4 right-8">
-                            <div class="bg-yellow-400 text-gray-900 px-4 py-2 rounded-full text-sm font-bold transform rotate-12">
-                                CEL MAI POPULAR
-                            </div>
-                        </div>
-                        <i class="fas fa-crown text-6xl mb-6 opacity-90"></i>
-                        <h2 class="text-3xl lg:text-4xl font-bold mb-4" data-lang-key="packages.complete.title">Complete Smile Makeover</h2>
-                        <p class="text-xl opacity-90 mb-8" data-lang-key="packages.complete.subtitle">Transformare completă a zâmbetului</p>
-                        
-                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
-                            <div class="space-y-4">
-                                <h4 class="text-lg font-bold">Include:</h4>
-                                <ul class="space-y-2 text-left">
-                                    <li class="flex items-center space-x-2">
-                                        <i class="fas fa-check text-yellow-300"></i>
-                                        <span class="text-sm">Consultație și examinare 3D</span>
-                                    </li>
-                                    <li class="flex items-center space-x-2">
-                                        <i class="fas fa-check text-yellow-300"></i>
-                                        <span class="text-sm">Detartraj profesional</span>
-                                    </li>
-                                    <li class="flex items-center space-x-2">
-                                        <i class="fas fa-check text-yellow-300"></i>
-                                        <span class="text-sm">Albire dentară profesională</span>
-                                    </li>
-                                    <li class="flex items-center space-x-2">
-                                        <i class="fas fa-check text-yellow-300"></i>
-                                        <span class="text-sm">8 fațete laminare</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="space-y-4">
-                                <h4 class="text-lg font-bold">Plus:</h4>
-                                <ul class="space-y-2 text-left">
-                                    <li class="flex items-center space-x-2">
-                                        <i class="fas fa-check text-yellow-300"></i>
-                                        <span class="text-sm">Gingivoplastie (dacă e necesar)</span>
-                                    </li>
-                                    <li class="flex items-center space-x-2">
-                                        <i class="fas fa-check text-yellow-300"></i>
-                                        <span class="text-sm">Protecție dentară de noapte</span>
-                                    </li>
-                                    <li class="flex items-center space-x-2">
-                                        <i class="fas fa-check text-yellow-300"></i>
-                                        <span class="text-sm">3 controale gratuite</span>
-                                    </li>
-                                    <li class="flex items-center space-x-2">
-                                        <i class="fas fa-check text-yellow-300"></i>
-                                        <span class="text-sm">Garanție extinsă 5 ani</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="text-center">
-                                <div class="mb-4">
-                                    <div class="text-3xl font-bold line-through opacity-60">€4,500</div>
-                                    <div class="text-4xl font-bold">€3,200</div>
-                                    <div class="text-sm opacity-80">Economie: €1,300</div>
-                                </div>
-                                <div class="bg-yellow-400 text-gray-900 px-4 py-2 rounded-full text-sm font-bold mb-4">
-                                    REDUCERE 29%
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <a href="contact.html" class="inline-block bg-white text-primary px-8 py-4 rounded-xl font-bold hover:scale-105 transition-all duration-300 shadow-xl">
-                            Programează consultația
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Package Categories -->
+    <!-- Dental Packages Section -->
     <section class="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 animate-on-scroll opacity-0">
-                <h2 class="text-4xl font-bold text-gray-800 mb-6" data-lang-key="packages.categories.title">Pachete pentru fiecare nevoie</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-lang-key="packages.categories.subtitle">
-                    Alege pachetul ideal pentru tine. Toate pachetele includ consultație gratuită și plan de tratament personalizat
+                <h2 class="text-4xl font-bold text-gray-800 mb-6" data-lang-key="packages.main.title">Pachete Dentare Premium</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-lang-key="packages.main.description">
+                    4 pachete specializate pentru transformarea completă a zâmbetului
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <!-- Family Package -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- All on 6 Turkish -->
                 <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg animate-on-scroll opacity-0">
-                    <div class="bg-gradient-to-br from-blue-500 to-blue-600 p-8 text-white text-center">
-                        <i class="fas fa-users text-4xl mb-4"></i>
-                        <h3 class="text-2xl font-bold mb-2" data-lang-key="packages.family.title">Pachet Familie</h3>
-                        <p class="opacity-90" data-lang-key="packages.family.subtitle">Pentru toată familia</p>
+                    <div class="bg-gradient-to-br from-red-600 to-red-700 p-8 text-white text-center">
+                        <div class="flex justify-center items-center mb-4">
+                            <span class="text-4xl mr-2">🇹🇷</span>
+                            <i class="fas fa-teeth text-3xl ml-2"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2" data-lang-key="packages.allon6tr.title">All on 6 Turkish</h3>
+                        <p class="opacity-90" data-lang-key="packages.allon6tr.subtitle">Implanturi premium din Turcia</p>
                     </div>
                     <div class="p-8">
                         <div class="text-center mb-6">
-                            <div class="text-3xl font-bold pricing-highlight">€450</div>
-                            <div class="text-sm text-gray-500">în loc de €600</div>
+                            <div class="text-3xl font-bold pricing-highlight">€3,500</div>
+                            <div class="text-sm text-gray-500" data-lang-key="packages.price.perarch">pentru o arcadă</div>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start space-x-2">
+                                <i class="fas fa-check text-red-600 mt-1"></i>
+                                <span class="text-gray-600" data-lang-key="packages.allon6tr.feature1">6 implanturi premium turci</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <i class="fas fa-check text-red-600 mt-1"></i>
+                                <span class="text-gray-600" data-lang-key="packages.allon6tr.feature2">Proteza fixă din zirconiu</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <i class="fas fa-check text-red-600 mt-1"></i>
+                                <span class="text-gray-600" data-lang-key="packages.allon6tr.feature3">Planificare 3D computerizată</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <i class="fas fa-check text-red-600 mt-1"></i>
+                                <span class="text-gray-600" data-lang-key="packages.allon6tr.feature4">Garanție 15 ani</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <i class="fas fa-check text-red-600 mt-1"></i>
+                                <span class="text-gray-600" data-lang-key="packages.allon6tr.feature5">Controale gratuite 2 ani</span>
+                            </li>
+                        </ul>
+                        
+                        <button class="w-full bg-red-600 text-white py-3 rounded-xl font-medium hover:bg-red-700 hover:scale-105 transition-all duration-300">
+                            <span data-lang-key="packages.allon6tr.button">Rezervă consultația</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- All on 4 Turkish -->
+                <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg animate-on-scroll opacity-0">
+                    <div class="bg-gradient-to-br from-red-500 to-red-600 p-8 text-white text-center">
+                        <div class="flex justify-center items-center mb-4">
+                            <span class="text-4xl mr-2">🇹🇷</span>
+                            <i class="fas fa-tooth text-3xl ml-2"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2" data-lang-key="packages.allon4tr.title">All on 4 Turkish</h3>
+                        <p class="opacity-90" data-lang-key="packages.allon4tr.subtitle">Soluția economică din Turcia</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-center mb-6">
+                            <div class="text-3xl font-bold pricing-highlight">€2,800</div>
+                            <div class="text-sm text-gray-500" data-lang-key="packages.price.perarch">pentru o arcadă</div>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start space-x-2">
+                                <i class="fas fa-check text-red-500 mt-1"></i>
+                                <span class="text-gray-600" data-lang-key="packages.allon4tr.feature1">4 implanturi Turkish de calitate</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <i class="fas fa-check text-red-500 mt-1"></i>
+                                <span class="text-gray-600" data-lang-key="packages.allon4tr.feature2">Proteza fixă din porțelan</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <i class="fas fa-check text-red-500 mt-1"></i>
+                                <span class="text-gray-600" data-lang-key="packages.allon4tr.feature3">Radiografie 3D inclusă</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <i class="fas fa-check text-red-500 mt-1"></i>
+                                <span class="text-gray-600" data-lang-key="packages.allon4tr.feature4">Garanție 10 ani</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <i class="fas fa-check text-red-500 mt-1"></i>
+                                <span class="text-gray-600" data-lang-key="packages.allon4tr.feature5">Controale incluse 1 an</span>
+                            </li>
+                        </ul>
+                        
+                        <button class="w-full bg-red-500 text-white py-3 rounded-xl font-medium hover:bg-red-600 hover:scale-105 transition-all duration-300">
+                            <span data-lang-key="packages.allon4tr.button">Programează-te</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- All on 6 Korean -->
+                <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg animate-on-scroll opacity-0 relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <div class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-6 py-2 rounded-full text-sm font-bold">
+                            <span data-lang-key="packages.premium.badge">PREMIUM QUALITY</span>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-600 to-blue-700 p-8 text-white text-center">
+                        <div class="flex justify-center items-center mb-4">
+                            <span class="text-4xl mr-2">🇰🇷</span>
+                            <i class="fas fa-teeth text-3xl ml-2"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2" data-lang-key="packages.allon6kr.title">All on 6 Korean</h3>
+                        <p class="opacity-90" data-lang-key="packages.allon6kr.subtitle">Top quality din Coreea de Sud</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-center mb-6">
+                            <div class="text-3xl font-bold pricing-highlight">€4,200</div>
+                            <div class="text-sm text-gray-500" data-lang-key="packages.price.perarch">pentru o arcadă</div>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start space-x-2">
+                                <i class="fas fa-check text-blue-600 mt-1"></i>
+                                <span class="text-gray-600" data-lang-key="packages.allon6kr.feature1">6 implanturi Korean premium</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <i class="fas fa-check text-blue-600 mt-1"></i>
+                                <span class="text-gray-600" data-lang-key="packages.allon6kr.feature2">Proteza din zirconiu premium</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <i class="fas fa-check text-blue-600 mt-1"></i>
+                                <span class="text-gray-600" data-lang-key="packages.allon6kr.feature3">Tehnologie de vârf coreeană</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <i class="fas fa-check text-blue-600 mt-1"></i>
+                                <span class="text-gray-600" data-lang-key="packages.allon6kr.feature4">Garanție pe viață</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <i class="fas fa-check text-blue-600 mt-1"></i>
+                                <span class="text-gray-600" data-lang-key="packages.allon6kr.feature5">Controale gratuite 3 ani</span>
+                            </li>
+                        </ul>
+                        
+                        <button class="w-full bg-blue-600 text-white py-3 rounded-xl font-medium hover:bg-blue-700 hover:scale-105 transition-all duration-300">
+                            <span data-lang-key="packages.allon6kr.button">Rezervă premium</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- All on 4 Korean -->
+                <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg animate-on-scroll opacity-0">
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-600 p-8 text-white text-center">
+                        <div class="flex justify-center items-center mb-4">
+                            <span class="text-4xl mr-2">🇰🇷</span>
+                            <i class="fas fa-tooth text-3xl ml-2"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2" data-lang-key="packages.allon4kr.title">All on 4 Korean</h3>
+                        <p class="opacity-90" data-lang-key="packages.allon4kr.subtitle">Calitate coreeană superioară</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-center mb-6">
+                            <div class="text-3xl font-bold pricing-highlight">€3,600</div>
+                            <div class="text-sm text-gray-500" data-lang-key="packages.price.perarch">pentru o arcadă</div>
                         </div>
                         
                         <ul class="space-y-3 mb-8">
                             <li class="flex items-start space-x-2">
                                 <i class="fas fa-check text-blue-500 mt-1"></i>
-                                <span class="text-gray-600">Consultație pentru 4 persoane</span>
+                                <span class="text-gray-600" data-lang-key="packages.allon4kr.feature1">4 implanturi Korean superioare</span>
                             </li>
                             <li class="flex items-start space-x-2">
                                 <i class="fas fa-check text-blue-500 mt-1"></i>
-                                <span class="text-gray-600">Detartraj profesional x4</span>
+                                <span class="text-gray-600" data-lang-key="packages.allon4kr.feature2">Proteza din ceramică premium</span>
                             </li>
                             <li class="flex items-start space-x-2">
                                 <i class="fas fa-check text-blue-500 mt-1"></i>
-                                <span class="text-gray-600">Fluorurare x4</span>
+                                <span class="text-gray-600" data-lang-key="packages.allon4kr.feature3">Precizie coreeană înaltă</span>
                             </li>
                             <li class="flex items-start space-x-2">
                                 <i class="fas fa-check text-blue-500 mt-1"></i>
-                                <span class="text-gray-600">Radiografie panoramică x4</span>
+                                <span class="text-gray-600" data-lang-key="packages.allon4kr.feature4">Garanție 20 ani</span>
                             </li>
                             <li class="flex items-start space-x-2">
                                 <i class="fas fa-check text-blue-500 mt-1"></i>
-                                <span class="text-gray-600">Plan de îngrijire personalizat</span>
+                                <span class="text-gray-600" data-lang-key="packages.allon4kr.feature5">Controale gratuite 2 ani</span>
                             </li>
                         </ul>
                         
                         <button class="w-full bg-blue-500 text-white py-3 rounded-xl font-medium hover:bg-blue-600 hover:scale-105 transition-all duration-300">
-                            Alege acest pachet
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Wedding Package -->
-                <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg animate-on-scroll opacity-0 relative">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <div class="bg-gradient-to-r from-pink-500 to-rose-500 text-white px-6 py-2 rounded-full text-sm font-bold">
-                            MOST POPULAR
-                        </div>
-                    </div>
-                    <div class="bg-gradient-to-br from-pink-500 to-rose-500 p-8 text-white text-center">
-                        <i class="fas fa-heart text-4xl mb-4"></i>
-                        <h3 class="text-2xl font-bold mb-2" data-lang-key="packages.wedding.title">Wedding Smile Prep</h3>
-                        <p class="opacity-90" data-lang-key="packages.wedding.subtitle">Perfect pentru nuntă</p>
-                    </div>
-                    <div class="p-8">
-                        <div class="text-center mb-6">
-                            <div class="text-3xl font-bold pricing-highlight">€1,200</div>
-                            <div class="text-sm text-gray-500">în loc de €1,650</div>
-                        </div>
-                        
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-start space-x-2">
-                                <i class="fas fa-check text-pink-500 mt-1"></i>
-                                <span class="text-gray-600">Consultație și planificare 3D</span>
-                            </li>
-                            <li class="flex items-start space-x-2">
-                                <i class="fas fa-check text-pink-500 mt-1"></i>
-                                <span class="text-gray-600">Igienă dentară profesională</span>
-                            </li>
-                            <li class="flex items-start space-x-2">
-                                <i class="fas fa-check text-pink-500 mt-1"></i>
-                                <span class="text-gray-600">Albire dentară premium</span>
-                            </li>
-                            <li class="flex items-start space-x-2">
-                                <i class="fas fa-check text-pink-500 mt-1"></i>
-                                <span class="text-gray-600">Conturare gingivală</span>
-                            </li>
-                            <li class="flex items-start space-x-2">
-                                <i class="fas fa-check text-pink-500 mt-1"></i>
-                                <span class="text-gray-600">Kit de menținere acasă</span>
-                            </li>
-                            <li class="flex items-start space-x-2">
-                                <i class="fas fa-check text-pink-500 mt-1"></i>
-                                <span class="text-gray-600">Retușuri post-nuntă gratuite</span>
-                            </li>
-                        </ul>
-                        
-                        <button class="w-full bg-gradient-to-r from-pink-500 to-rose-500 text-white py-3 rounded-xl font-medium hover:scale-105 transition-all duration-300 shadow-lg">
-                            Rezervă acum
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Senior Care Package -->
-                <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg animate-on-scroll opacity-0">
-                    <div class="bg-gradient-to-br from-green-500 to-emerald-600 p-8 text-white text-center">
-                        <i class="fas fa-leaf text-4xl mb-4"></i>
-                        <h3 class="text-2xl font-bold mb-2" data-lang-key="packages.senior.title">Pachet Senior Care</h3>
-                        <p class="opacity-90" data-lang-key="packages.senior.subtitle">Îngrijire specializată 55+</p>
-                    </div>
-                    <div class="p-8">
-                        <div class="text-center mb-6">
-                            <div class="text-3xl font-bold pricing-highlight">€320</div>
-                            <div class="text-sm text-gray-500">în loc de €480</div>
-                        </div>
-                        
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-start space-x-2">
-                                <i class="fas fa-check text-green-500 mt-1"></i>
-                                <span class="text-gray-600">Evaluare parodontală detaliată</span>
-                            </li>
-                            <li class="flex items-start space-x-2">
-                                <i class="fas fa-check text-green-500 mt-1"></i>
-                                <span class="text-gray-600">Detartraj gentle cu ultrasunete</span>
-                            </li>
-                            <li class="flex items-start space-x-2">
-                                <i class="fas fa-check text-green-500 mt-1"></i>
-                                <span class="text-gray-600">Fluorurare preventivă</span>
-                            </li>
-                            <li class="flex items-start space-x-2">
-                                <i class="fas fa-check text-green-500 mt-1"></i>
-                                <span class="text-gray-600">Consultație protetică</span>
-                            </li>
-                            <li class="flex items-start space-x-2">
-                                <i class="fas fa-check text-green-500 mt-1"></i>
-                                <span class="text-gray-600">Controale regulate 6 luni</span>
-                            </li>
-                        </ul>
-                        
-                        <button class="w-full bg-green-500 text-white py-3 rounded-xl font-medium hover:bg-green-600 hover:scale-105 transition-all duration-300">
-                            Programează-te
+                            <span data-lang-key="packages.allon4kr.button">Alege calitatea</span>
                         </button>
                     </div>
                 </div>
@@ -418,228 +398,21 @@
         </div>
     </section>
 
-    <!-- Additional Packages -->
-    <section class="py-20">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <!-- Implant Package -->
-                <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg animate-on-scroll opacity-0">
-                    <div class="bg-gradient-to-br from-purple-500 to-indigo-600 p-6 text-white">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <i class="fas fa-tooth text-3xl mb-3"></i>
-                                <h3 class="text-xl font-bold" data-lang-key="packages.implant.title">Pachet Implant</h3>
-                                <p class="text-sm opacity-90" data-lang-key="packages.implant.subtitle">Soluție completă</p>
-                            </div>
-                            <div class="text-right">
-                                <div class="text-2xl font-bold">€890</div>
-                                <div class="text-xs line-through opacity-60">€1,200</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <ul class="space-y-2 mb-6">
-                            <li class="flex items-center space-x-2 text-sm">
-                                <i class="fas fa-check text-purple-500"></i>
-                                <span class="text-gray-600">Implant premium + coroană</span>
-                            </li>
-                            <li class="flex items-center space-x-2 text-sm">
-                                <i class="fas fa-check text-purple-500"></i>
-                                <span class="text-gray-600">Radiografie 3D</span>
-                            </li>
-                            <li class="flex items-center space-x-2 text-sm">
-                                <i class="fas fa-check text-purple-500"></i>
-                                <span class="text-gray-600">Vindecare monitorizată</span>
-                            </li>
-                            <li class="flex items-center space-x-2 text-sm">
-                                <i class="fas fa-check text-purple-500"></i>
-                                <span class="text-gray-600">Garanție 10 ani</span>
-                            </li>
-                        </ul>
-                        <button class="w-full bg-purple-500 text-white py-2 rounded-lg font-medium hover:bg-purple-600 transition-colors">
-                            Rezervă consultația
-                        </button>
-                    </div>
-                </div>
 
-                <!-- Orthodontic Package -->
-                <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg animate-on-scroll opacity-0">
-                    <div class="bg-gradient-to-br from-orange-500 to-red-500 p-6 text-white">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <i class="fas fa-teeth text-3xl mb-3"></i>
-                                <h3 class="text-xl font-bold" data-lang-key="packages.ortho.title">Pachet Ortodonție</h3>
-                                <p class="text-sm opacity-90" data-lang-key="packages.ortho.subtitle">Alignere invizibile</p>
-                            </div>
-                            <div class="text-right">
-                                <div class="text-2xl font-bold">€2,100</div>
-                                <div class="text-xs line-through opacity-60">€2,800</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <ul class="space-y-2 mb-6">
-                            <li class="flex items-center space-x-2 text-sm">
-                                <i class="fas fa-check text-orange-500"></i>
-                                <span class="text-gray-600">Plan de tratament 3D</span>
-                            </li>
-                            <li class="flex items-center space-x-2 text-sm">
-                                <i class="fas fa-check text-orange-500"></i>
-                                <span class="text-gray-600">Set complet alignere</span>
-                            </li>
-                            <li class="flex items-center space-x-2 text-sm">
-                                <i class="fas fa-check text-orange-500"></i>
-                                <span class="text-gray-600">Controale lunare incluse</span>
-                            </li>
-                            <li class="flex items-center space-x-2 text-sm">
-                                <i class="fas fa-check text-orange-500"></i>
-                                <span class="text-gray-600">Retentor final gratuit</span>
-                            </li>
-                        </ul>
-                        <button class="w-full bg-orange-500 text-white py-2 rounded-lg font-medium hover:bg-orange-600 transition-colors">
-                            Află mai multe
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Preventive Package -->
-                <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg animate-on-scroll opacity-0">
-                    <div class="bg-gradient-to-br from-teal-500 to-cyan-600 p-6 text-white">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <i class="fas fa-shield-alt text-3xl mb-3"></i>
-                                <h3 class="text-xl font-bold" data-lang-key="packages.preventive.title">Pachet Preventiv</h3>
-                                <p class="text-sm opacity-90" data-lang-key="packages.preventive.subtitle">Îngrijire anuală</p>
-                            </div>
-                            <div class="text-right">
-                                <div class="text-2xl font-bold">€180</div>
-                                <div class="text-xs line-through opacity-60">€250</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <ul class="space-y-2 mb-6">
-                            <li class="flex items-center space-x-2 text-sm">
-                                <i class="fas fa-check text-teal-500"></i>
-                                <span class="text-gray-600">2 consultații anuale</span>
-                            </li>
-                            <li class="flex items-center space-x-2 text-sm">
-                                <i class="fas fa-check text-teal-500"></i>
-                                <span class="text-gray-600">2 detartraje profesionale</span>
-                            </li>
-                            <li class="flex items-center space-x-2 text-sm">
-                                <i class="fas fa-check text-teal-500"></i>
-                                <span class="text-gray-600">Fluorurare preventivă</span>
-                            </li>
-                            <li class="flex items-center space-x-2 text-sm">
-                                <i class="fas fa-check text-teal-500"></i>
-                                <span class="text-gray-600">Radiografii de control</span>
-                            </li>
-                        </ul>
-                        <button class="w-full bg-teal-500 text-white py-2 rounded-lg font-medium hover:bg-teal-600 transition-colors">
-                            Începe programul
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Emergency Package -->
-                <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg animate-on-scroll opacity-0">
-                    <div class="bg-gradient-to-br from-red-500 to-pink-600 p-6 text-white">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <i class="fas fa-ambulance text-3xl mb-3"></i>
-                                <h3 class="text-xl font-bold" data-lang-key="packages.emergency.title">Pachet Urgență</h3>
-                                <p class="text-sm opacity-90" data-lang-key="packages.emergency.subtitle">24/7 disponibil</p>
-                            </div>
-                            <div class="text-right">
-                                <div class="text-2xl font-bold">€150</div>
-                                <div class="text-xs opacity-60">o singură plată</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <ul class="space-y-2 mb-6">
-                            <li class="flex items-center space-x-2 text-sm">
-                                <i class="fas fa-check text-red-500"></i>
-                                <span class="text-gray-600">Acces prioritar 24/7</span>
-                            </li>
-                            <li class="flex items-center space-x-2 text-sm">
-                                <i class="fas fa-check text-red-500"></i>
-                                <span class="text-gray-600">Consultație de urgență</span>
-                            </li>
-                            <li class="flex items-center space-x-2 text-sm">
-                                <i class="fas fa-check text-red-500"></i>
-                                <span class="text-gray-600">Radiografie diagnostică</span>
-                            </li>
-                            <li class="flex items-center space-x-2 text-sm">
-                                <i class="fas fa-check text-red-500"></i>
-                                <span class="text-gray-600">Tratament urgent inclus</span>
-                            </li>
-                        </ul>
-                        <button class="w-full bg-red-500 text-white py-2 rounded-lg font-medium hover:bg-red-600 transition-colors">
-                            Activează acum
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Financing Options -->
-    <section class="py-20">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16 animate-on-scroll opacity-0">
-                <h2 class="text-4xl font-bold text-gray-800 mb-6" data-lang-key="packages.financing.title">Opțiuni de finanțare</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-lang-key="packages.financing.subtitle">
-                    Facem tratamentul dental accesibil prin diverse opțiuni de plată flexibile
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 animate-on-scroll opacity-0">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-credit-card text-2xl text-green-600"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-gray-800 mb-4">Plată în rate</h4>
-                    <p class="text-gray-600 mb-6">Împarte costul tratamentului în până la 24 de rate fără dobândă</p>
-                    <div class="text-2xl font-bold text-green-600">0% dobândă</div>
-                </div>
-
-                <div class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 animate-on-scroll opacity-0">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-handshake text-2xl text-blue-600"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-gray-800 mb-4">Planuri personalizate</h4>
-                    <p class="text-gray-600 mb-6">Creăm un plan de plată adaptat situației tale financiare</p>
-                    <div class="text-2xl font-bold text-blue-600">Flexibilitate</div>
-                </div>
-
-                <div class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 animate-on-scroll opacity-0">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-percentage text-2xl text-purple-600"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-gray-800 mb-4">Reduceri speciale</h4>
-                    <p class="text-gray-600 mb-6">Reduceri pentru studenți, seniori și familii numeroase</p>
-                    <div class="text-2xl font-bold text-purple-600">Până la -20%</div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- CTA Section -->
     <section class="py-20 bg-gradient-to-r from-primary to-accent text-white">
         <div class="container mx-auto px-4 text-center animate-on-scroll opacity-0">
             <h2 class="text-4xl font-bold mb-6" data-lang-key="packages.cta.title">Gata să începi?</h2>
-            <p class="text-xl mb-8 opacity-90" data-lang-key="packages.cta.text">Contactează-ne pentru o consultație gratuită și descoperă pachetul ideal pentru tine</p>
+            <p class="text-xl mb-8 opacity-90" data-lang-key="packages.cta.description">Contactează-ne pentru o consultație gratuită și descoperă pachetul ideal pentru tine</p>
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
                 <a href="contact.html" class="bg-white text-primary px-8 py-4 rounded-xl font-bold hover:scale-105 transition-all duration-300 shadow-xl">
                     <i class="fas fa-calendar mr-2"></i>
-                    Programează consultația
+                    <span data-lang-key="packages.cta.consultation">Programează consultația</span>
                 </a>
                 <a href="tel:+37368123456" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-primary transition-all duration-300">
                     <i class="fas fa-phone mr-2"></i>
-                    Sună acum
+                    <span data-lang-key="packages.cta.call">Sună acum</span>
                 </a>
             </div>
         </div>
@@ -652,10 +425,10 @@
                 <!-- Column 1 - LOC -->
                 <div class="space-y-4">
                     <div class="flex items-center space-x-2">
-                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center shadow-lg">
-                            <i class="fas fa-tooth text-white"></i>
+                        <div class="w-12 h-12 rounded-full overflow-hidden shadow-lg">
+                            <img src="./assets/logo.png" alt="UDC Logo" class="w-full h-full object-cover">
                         </div>
-                        <span class="font-bold text-2xl">UDC</span>
+                        <span class="font-bold text-2xl" data-lang-key="footer.logo">UDC</span>
                     </div>
                     <div class="space-y-3 text-gray-300">
                         <p class="flex items-start space-x-2">
@@ -664,11 +437,11 @@
                         </p>
                         <p class="flex items-center space-x-2">
                             <i class="fas fa-phone text-primary"></i>
-                            <span>+373 68 123 456</span>
+                            <span>+37368961136</span>
                         </p>
                         <p class="flex items-center space-x-2">
                             <i class="fas fa-envelope text-primary"></i>
-                            <span>contact@udc.md</span>
+                            <span data-lang-key="footer.email">sandutilen@gmail.com</span>
                         </p>
                     </div>
                 </div>
@@ -678,7 +451,7 @@
                     <h4 class="text-lg font-bold text-primary" data-lang-key="footer.about">Despre</h4>
                     <ul class="space-y-3 text-gray-300">
                         <li><a href="about.html" class="hover:text-primary transition-colors" data-lang-key="nav.about">Despre noi</a></li>
-                        <li><a href="treatments.html" class="hover:text-primary transition-colors">Servicii</a></li>
+                        <li><a href="treatments.html" class="hover:text-primary transition-colors" data-lang-key="footer.services">Servicii</a></li>
                         <li><a href="treatments.html" class="hover:text-primary transition-colors" data-lang-key="nav.treatments">Tratamente</a></li>
                         <li><a href="packages.html" class="hover:text-primary transition-colors" data-lang-key="nav.packages">Pachete Dentare</a></li>
                     </ul>
@@ -713,19 +486,18 @@
                 </div>
             </div>
 
-            <!-- Bottom Bar -->
-            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-300 text-sm">
-                <p data-lang-key="footer.copyright">&copy; 2025 Universal Dental Clinic. Toate drepturile rezervate.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-primary transition-colors" data-lang-key="footer.privacy">Politica de confidențialitate</a>
-                    <a href="#" class="hover:text-primary transition-colors" data-lang-key="footer.terms">Termeni și condiții</a>
-                </div>
-            </div>
         </div>
     </footer>
 
+    <!-- Made with love bar -->
+    <div class="bg-gray-800 border-t border-gray-700 py-2">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-xs text-gray-400" data-lang-key="footer.made_with_love">Made with love by <a href="https://landings.md/" target="_blank" class="text-gray-300 hover:text-primary transition-colors underline">Landings.md</a></p>
+        </div>
+    </div>
+
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/37368123456" target="_blank" class="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 z-50 animate-bounce">
+    <a href="https://wa.me/37368961136" target="_blank" class="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 z-50 animate-bounce">
         <i class="fab fa-whatsapp text-white text-2xl"></i>
     </a>
 

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="success.page.title">Mesaj trimis cu succes - UDC</title>
+    <link rel="icon" type="image/png" href="./assets/logo.png">
+    <meta name="description" content="Mesajul dumneavoastră a fost trimis cu succes către clinica dentară UDC din Chișinău.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#71CAC4',
+                        accent: '#D3553F'
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'scale-in': 'scaleIn 0.5s ease-out',
+                        'bounce-in': 'bounceIn 1s ease-out'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(113, 202, 196, 0.1) 0%, rgba(113, 202, 196, 0.3) 100%);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes scaleIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            70% { transform: scale(0.9); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .success-icon {
+            animation: bounceIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    
+    <!-- Success Section -->
+    <section class="min-h-screen flex items-center justify-center py-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-2xl mx-auto bg-white rounded-3xl p-8 lg:p-12 shadow-2xl">
+                
+                <!-- Success Icon -->
+                <div class="success-icon mb-8">
+                    <div class="w-24 h-24 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto shadow-xl">
+                        <i class="fas fa-check text-white text-4xl"></i>
+                    </div>
+                </div>
+
+                <!-- Success Message -->
+                <div class="space-y-6 animate-slide-up">
+                    <h1 class="text-3xl lg:text-4xl font-bold text-gray-800" data-lang-key="success.title">
+                        Mesaj trimis cu succes!
+                    </h1>
+                    
+                    <p class="text-lg text-gray-600 leading-relaxed" data-lang-key="success.message">
+                        Vă mulțumim pentru încrederea acordată! Mesajul dumneavoastră a fost trimis cu succes către echipa noastră de specialiști.
+                    </p>
+                    
+                    <div class="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-6 space-y-4">
+                        <div class="flex items-center justify-center space-x-3 mb-4">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                                <i class="fas fa-clock text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800" data-lang-key="success.response.title">
+                                Ce urmează?
+                            </h3>
+                        </div>
+                        
+                        <div class="space-y-3 text-left">
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-envelope text-primary mt-1"></i>
+                                <p class="text-gray-700" data-lang-key="success.response.email">
+                                    Veți primi un email de confirmare în următoarele minute
+                                </p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-phone text-primary mt-1"></i>
+                                <p class="text-gray-700" data-lang-key="success.response.call">
+                                    Un specialist vă va contacta în maximum 2 ore lucrătoare
+                                </p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-calendar-check text-primary mt-1"></i>
+                                <p class="text-gray-700" data-lang-key="success.response.appointment">
+                                    Veți primi propuneri pentru programarea consultației gratuite
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="mt-8 pt-8 border-t border-gray-200">
+                    <p class="text-sm text-gray-500 mb-4" data-lang-key="success.urgent">
+                        Aveți o urgență dentară?
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4">
+                        <a href="tel:+37368961136" class="bg-accent text-white px-6 py-3 rounded-xl font-medium hover:bg-accent/90 hover:scale-105 transition-all duration-300 shadow-lg">
+                            <i class="fas fa-phone mr-2"></i>
+                            <span data-lang-key="success.call_now">Sună acum: +373 68 961 136</span>
+                        </a>
+                        <a href="https://wa.me/37368961136" target="_blank" class="bg-green-500 text-white px-6 py-3 rounded-xl font-medium hover:bg-green-600 hover:scale-105 transition-all duration-300 shadow-lg">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            <span data-lang-key="success.whatsapp">WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="mt-8 pt-8 border-t border-gray-200">
+                    <div class="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4">
+                        <a href="index.html" class="bg-primary text-white px-8 py-3 rounded-xl font-medium hover:bg-primary/90 hover:scale-105 transition-all duration-300 shadow-lg">
+                            <i class="fas fa-home mr-2"></i>
+                            <span data-lang-key="success.back_home">Înapoi acasă</span>
+                        </a>
+                        <a href="treatments.html" class="bg-white text-primary border-2 border-primary px-8 py-3 rounded-xl font-medium hover:bg-primary hover:text-white hover:scale-105 transition-all duration-300">
+                            <i class="fas fa-teeth mr-2"></i>
+                            <span data-lang-key="success.view_treatments">Vezi tratamentele</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/37368961136" target="_blank" class="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 z-50 animate-bounce">
+        <i class="fab fa-whatsapp text-white text-2xl"></i>
+    </a>
+
+    <script src="languages.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
