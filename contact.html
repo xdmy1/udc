@@ -222,17 +222,10 @@
                             <!-- Form type identifier -->
                             <input type="hidden" name="from_name" value="UDC Website - Contact">
                             <!-- Honeypot Spam Protection -->
-                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                             
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
-                                    <label for="nume-contact" class="block text-sm font-medium text-gray-700 mb-2" data-lang-key="contact.form.name">Nume complet *</label>
-                                    <input type="text" id="nume-contact" name="name" data-lang-key="form.name" placeholder="Nume" class="w-full p-4 border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300" required>
-                                </div>
-                                <div>
-                                    <label for="email-contact" class="block text-sm font-medium text-gray-700 mb-2" data-lang-key="contact.form.email">Email *</label>
-                                    <input type="email" id="email-contact" name="email" data-lang-key="form.email" placeholder="E-Mail" class="w-full p-4 border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300" required>
-                                </div>
+                            <div>
+                                <label for="nume-contact" class="block text-sm font-medium text-gray-700 mb-2" data-lang-key="contact.form.name">Nume complet *</label>
+                                <input type="text" id="nume-contact" name="name" data-lang-key="form.name" placeholder="Nume" class="w-full p-4 border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300" required>
                             </div>
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -287,16 +280,6 @@
                                 <input type="date" id="data-programare" name="preferred_date" class="w-full p-4 border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300">
                             </div>
 
-                            <div class="flex items-center space-x-2">
-                                <input type="checkbox" id="robot-contact" class="w-5 h-5 text-primary" required>
-                                <label for="robot-contact" class="text-sm text-gray-600" data-lang-key="form.robot">Nu sunt un robot</label>
-                                <div class="ml-auto w-20 h-8 bg-gray-200 rounded-lg flex items-center justify-center text-xs font-medium" data-lang-key="form.recaptcha">reCAPTCHA</div>
-                            </div>
-
-                            <div class="flex items-center space-x-2">
-                                <input type="checkbox" id="gdpr" class="w-5 h-5 text-primary" required>
-                                <label for="gdpr" class="text-sm text-gray-600" data-lang-key="contact.form.gdpr">Accept <a href="#" class="text-primary hover:underline">politica de confidențialitate</a> și <a href="#" class="text-primary hover:underline">termenii de utilizare</a></label>
-                            </div>
 
                             <button type="submit" class="w-full bg-primary text-white p-4 rounded-xl font-medium hover:bg-primary/90 hover:scale-105 transition-all duration-300 shadow-lg">
                                 <i class="fas fa-paper-plane mr-2"></i>
@@ -432,7 +415,7 @@
                 <div class="lg:col-span-2 animate-on-scroll opacity-0">
                     <div class="map-container">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2719.5!2d28.8356!3d47.0105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97c3628b769a1%3A0x9b4d4b1e1e1e1e1e!2sBulevardul%20%C8%98tefan%20cel%20Mare%20%C8%99i%20Sf%C3%A2nt%20123%2C%20Chi%C8%99in%C4%83u%2C%20Moldova!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2719.3!2d28.8270!3d47.0200!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97c3a7e5b1c01%3A0x8f4e8d5b7a9c3e2f!2sStrada%20Mitropolit%20Varlam%2074%2C%20Chi%C8%99in%C4%83u%2C%20Moldova!5e0!3m2!1sen!2s!4v1640995200000!5m2!1sen!2s"
                             width="100%" 
                             height="400" 
                             style="border:0;" 

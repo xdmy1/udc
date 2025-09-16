@@ -25,9 +25,7 @@ const translations = {
         // Form
         "form.name": "Nume",
         "form.phone": "Telefon",
-        "form.email": "E-Mail",
         "form.message": "Mesajul dumneavoastră",
-        "form.robot": "Nu sunt un robot",
         "form.submit": "Trimite",
         "form.success": "Mulțumim! Mesajul dumneavoastră a fost trimis cu succes. Vă vom contacta în curând.",
         
@@ -42,7 +40,7 @@ const translations = {
         // CTA Section
         "cta.subtitle": "De ce să ne alegeți pe noi?",
         "cta.title1": "Experiență de peste",
-        "cta.title2": "15 ani",
+        "cta.title2": "10 ani",
         "cta.button": "Programează-te acum",
         "video.title": "VIDEO CLINICA",
         
@@ -79,7 +77,7 @@ const translations = {
         "footer.copyright": "© 2024 Universal Dental Clinic. Toate drepturile rezervate.",
         "footer.privacy": "Politica de confidențialitate",
         "footer.terms": "Termeni și condiții",
-        "footer.address": "Strada Principală 123, Chișinău",
+        "footer.address": "str. Mitropolit Varlam 74, Chișinău",
         
         // About Page
         "about.hero.title": "Despre Universal Dental Clinic",
@@ -137,7 +135,6 @@ const translations = {
         "header.emergency": "| Urgențe 24/7",
         "lang.header": "LIMBĂ / LANGUAGE",
         "lang.current": "RO",
-        "form.recaptcha": "reCAPTCHA",
         "footer.logo": "UDC",
         "footer.phone": "+37368961136",
         "footer.email": "sandutilen@gmail.com",
@@ -451,16 +448,16 @@ const translations = {
         "about.gallery.relaxation.description": "Confort maxim pentru pacienți",
         "about.testimonials.title": "Ce spun pacienții noștri",
         "about.testimonials.description": "Mărturiile pacienților noștri reflectă angajamentul nostru pentru excelență",
-        "about.testimonials.customer1.name": "Ana Radu",
-        "about.testimonials.customer1.review": "Experiență extraordinară! Echipa este foarte profesională și m-au pus să mă simt foarte confortabil pe toată durata tratamentului.",
-        "about.testimonials.customer2.name": "Mihai Constantin",
-        "about.testimonials.customer2.review": "Implanturile dentare s-au integrat perfect. Sunt extrem de mulțumit de rezultat și de îngrijirea primită la UDC.",
-        "about.testimonials.customer3.name": "Carmen Diaconu",
-        "about.testimonials.customer3.review": "Hollywood Smile-ul meu arată fantastic! Recomand cu încredere această clinică tuturor celor care vor o schimbare.",
+        "about.testimonials.customer1.name": "Maria Popescu",
+        "about.testimonials.customer1.review": "Am fost foarte plăcut surprinsă de profesionalismul echipei. Doctorul mi-a explicat totul în detaliu înainte de procedură și personalul a fost foarte atent cu mine. Acum am din nou încredere să zâmbesc!",
+        "about.testimonials.customer2.name": "Alexandru Ionescu",
+        "about.testimonials.customer2.review": "Căutam o soluție pentru dinții lipsă de mult timp. La UDC am găsit nu doar profesionalism, ci și înțelegere. Implanturile s-au vindecat rapid și acum pot mânca din nou orice îmi place. Mulțumesc!",
+        "about.testimonials.customer3.name": "Elena Văcărescu",
+        "about.testimonials.customer3.review": "Mi-am dorit dintotdeauna un zâmbet ca în filme. Echipa de aici mi-a făcut exact ce am visat - un Hollywood Smile perfect! Am primit multe complimente și mă simt mult mai încrezătoare. 10/10!",
         "about.cta.title": "Ready să îți transformi zâmbetul?",
         "about.cta.description": "Programează o consultație gratuită și descoperă cum te putem ajuta",
         "about.cta.button": "Programează-te acum",
-        "footer.address": "Strada Principală 123, Chișinău",
+        "footer.address": "str. Mitropolit Varlam 74, Chișinău",
 
         // Specific Packages (matching HTML keys)
         "packages.main.title": "Pachete Dentare Premium",
@@ -471,41 +468,25 @@ const translations = {
         // All on 6 Turkish Package
         "packages.allon6tr.title": "All on 6 Turkish",
         "packages.allon6tr.subtitle": "Implanturi premium din Turcia",
-        "packages.allon6tr.feature1": "6 implanturi premium turci",
-        "packages.allon6tr.feature2": "Proteza fixă din zirconiu",
-        "packages.allon6tr.feature3": "Planificare 3D computerizată",
-        "packages.allon6tr.feature4": "Garanție 15 ani",
-        "packages.allon6tr.feature5": "Controale gratuite 2 ani",
+        "packages.allon6tr.description": "Soluție dentară completă cu 6 implanturi premium din Turcia și proteză fixă.",
         "packages.allon6tr.button": "Rezervă consultația",
 
         // All on 4 Turkish Package
         "packages.allon4tr.title": "All on 4 Turkish",
         "packages.allon4tr.subtitle": "Soluția economică din Turcia",
-        "packages.allon4tr.feature1": "4 implanturi Turkish de calitate",
-        "packages.allon4tr.feature2": "Proteza fixă din porțelan",
-        "packages.allon4tr.feature3": "Radiografie 3D inclusă",
-        "packages.allon4tr.feature4": "Garanție 10 ani",
-        "packages.allon4tr.feature5": "Controale incluse 1 an",
+        "packages.allon4tr.description": "Restaurare dentară accesibilă cu 4 implanturi de calitate din Turcia.",
         "packages.allon4tr.button": "Programează-te",
 
         // All on 6 Korean Package
         "packages.allon6kr.title": "All on 6 Korean",
         "packages.allon6kr.subtitle": "Top quality din Coreea de Sud",
-        "packages.allon6kr.feature1": "6 implanturi Korean premium",
-        "packages.allon6kr.feature2": "Proteza din zirconiu premium",
-        "packages.allon6kr.feature3": "Tehnologie de vârf coreeană",
-        "packages.allon6kr.feature4": "Garanție pe viață",
-        "packages.allon6kr.feature5": "Controale gratuite 3 ani",
+        "packages.allon6kr.description": "Calitate premium coreeană cu 6 implanturi avansate pentru rezultate superioare.",
         "packages.allon6kr.button": "Rezervă premium",
 
         // All on 4 Korean Package
         "packages.allon4kr.title": "All on 4 Korean",
         "packages.allon4kr.subtitle": "Calitate coreeană superioară",
-        "packages.allon4kr.feature1": "4 implanturi Korean superioare",
-        "packages.allon4kr.feature2": "Proteza din ceramică premium",
-        "packages.allon4kr.feature3": "Precizie coreeană înaltă",
-        "packages.allon4kr.feature4": "Garanție 20 ani",
-        "packages.allon4kr.feature5": "Controale gratuite 2 ani",
+        "packages.allon4kr.description": "Tehnologie coreeană superioară cu 4 implanturi de precizie înaltă.",
         "packages.allon4kr.button": "Alege calitatea"
     },
     
@@ -535,9 +516,7 @@ const translations = {
         // Form
         "form.name": "Name",
         "form.phone": "Phone",
-        "form.email": "E-Mail",
         "form.message": "Your message",
-        "form.robot": "I'm not a robot",
         "form.submit": "Send",
         "form.success": "Thank you! Your message has been sent successfully. We will contact you soon.",
         
@@ -551,7 +530,7 @@ const translations = {
         
         // CTA Section
         "cta.subtitle": "Why choose us?",
-        "cta.title1": "Over 15 years",
+        "cta.title1": "Over 10 years",
         "cta.title2": "of experience",
         "cta.button": "Book appointment",
         "video.title": "CLINIC VIDEO",
@@ -589,7 +568,7 @@ const translations = {
         "footer.copyright": "© 2024 Universal Dental Clinic. All rights reserved.",
         "footer.privacy": "Privacy Policy",
         "footer.terms": "Terms of Service",
-        "footer.address": "Main Street 123, Chisinau",
+        "footer.address": "Mitropolit Varlam St. 74, Chisinau",
         
         // About Page
         "about.hero.title": "About Universal Dental Clinic",
@@ -647,7 +626,6 @@ const translations = {
         "header.emergency": "| Emergencies 24/7",
         "lang.header": "LANGUAGE / JĘZYK",
         "lang.current": "EN",
-        "form.recaptcha": "reCAPTCHA",
         "footer.logo": "UDC",
         "footer.phone": "+37368961136",
         "footer.email": "sandutilen@gmail.com",
@@ -961,16 +939,16 @@ const translations = {
         "about.gallery.relaxation.description": "Maximum comfort for patients",
         "about.testimonials.title": "What our patients say",
         "about.testimonials.description": "Our patients' testimonials reflect our commitment to excellence",
-        "about.testimonials.customer1.name": "Ana Radu",
-        "about.testimonials.customer1.review": "Extraordinary experience! The team is very professional and made me feel very comfortable throughout the treatment.",
-        "about.testimonials.customer2.name": "Mihai Constantin",
-        "about.testimonials.customer2.review": "The dental implants integrated perfectly. I am extremely satisfied with the result and the care I received at UDC.",
-        "about.testimonials.customer3.name": "Carmen Diaconu",
-        "about.testimonials.customer3.review": "My Hollywood Smile looks fantastic! I confidently recommend this clinic to everyone who wants a change.",
+        "about.testimonials.customer1.name": "Maria Popescu",
+        "about.testimonials.customer1.review": "I was pleasantly surprised by the professionalism of the team. The doctor explained everything in detail before the procedure and the staff was very attentive to me. Now I have confidence to smile again!",
+        "about.testimonials.customer2.name": "Alexandru Ionescu",
+        "about.testimonials.customer2.review": "I was looking for a solution for missing teeth for a long time. At UDC I found not only professionalism, but also understanding. The implants healed quickly and now I can eat anything I like again. Thank you!",
+        "about.testimonials.customer3.name": "Elena Văcărescu",
+        "about.testimonials.customer3.review": "I've always wanted a smile like in the movies. The team here made exactly what I dreamed of - a perfect Hollywood Smile! I've received many compliments and feel much more confident. 10/10!",
         "about.cta.title": "Ready to transform your smile?",
         "about.cta.description": "Schedule a free consultation and discover how we can help you",
         "about.cta.button": "Book now",
-        "footer.address": "Main Street 123, Chisinau",
+        "footer.address": "Mitropolit Varlam St. 74, Chisinau",
 
         // Specific Packages (matching HTML keys)
         "packages.main.title": "Premium Dental Packages",
@@ -981,41 +959,25 @@ const translations = {
         // All on 6 Turkish Package
         "packages.allon6tr.title": "All on 6 Turkish",
         "packages.allon6tr.subtitle": "Premium implants from Turkey",
-        "packages.allon6tr.feature1": "6 premium Turkish implants",
-        "packages.allon6tr.feature2": "Fixed zirconia prosthesis",
-        "packages.allon6tr.feature3": "Computerized 3D planning",
-        "packages.allon6tr.feature4": "15-year warranty",
-        "packages.allon6tr.feature5": "Free check-ups for 2 years",
+        "packages.allon6tr.description": "Complete dental solution with 6 premium Turkish implants and fixed prosthesis.",
         "packages.allon6tr.button": "Book consultation",
 
         // All on 4 Turkish Package
         "packages.allon4tr.title": "All on 4 Turkish",
         "packages.allon4tr.subtitle": "Economic solution from Turkey",
-        "packages.allon4tr.feature1": "4 quality Turkish implants",
-        "packages.allon4tr.feature2": "Fixed porcelain prosthesis",
-        "packages.allon4tr.feature3": "3D radiography included",
-        "packages.allon4tr.feature4": "10-year warranty",
-        "packages.allon4tr.feature5": "1-year check-ups included",
+        "packages.allon4tr.description": "Affordable dental restoration with 4 quality Turkish implants.",
         "packages.allon4tr.button": "Schedule",
 
         // All on 6 Korean Package
         "packages.allon6kr.title": "All on 6 Korean",
         "packages.allon6kr.subtitle": "Top quality from South Korea",
-        "packages.allon6kr.feature1": "6 premium Korean implants",
-        "packages.allon6kr.feature2": "Premium zirconia prosthesis",
-        "packages.allon6kr.feature3": "Korean cutting-edge technology",
-        "packages.allon6kr.feature4": "Lifetime warranty",
-        "packages.allon6kr.feature5": "Free check-ups for 3 years",
+        "packages.allon6kr.description": "Premium Korean quality with 6 advanced implants for superior results.",
         "packages.allon6kr.button": "Reserve premium",
 
         // All on 4 Korean Package
         "packages.allon4kr.title": "All on 4 Korean",
         "packages.allon4kr.subtitle": "Superior Korean quality",
-        "packages.allon4kr.feature1": "4 superior Korean implants",
-        "packages.allon4kr.feature2": "Premium ceramic prosthesis",
-        "packages.allon4kr.feature3": "High Korean precision",
-        "packages.allon4kr.feature4": "20-year warranty",
-        "packages.allon4kr.feature5": "Free check-ups for 2 years",
+        "packages.allon4kr.description": "Superior Korean technology with 4 high-precision implants.",
         "packages.allon4kr.button": "Choose quality"
     },
     
@@ -1045,9 +1007,7 @@ const translations = {
         // Form
         "form.name": "Ad",
         "form.phone": "Telefon",
-        "form.email": "E-Posta",
         "form.message": "Mesajınız",
-        "form.robot": "Robot değilim",
         "form.submit": "Gönder",
         "form.success": "Teşekkürler! Mesajınız başarıyla gönderildi. En kısa sürede sizinle iletişime geçeceğiz.",
         
@@ -1061,7 +1021,7 @@ const translations = {
         
         // CTA Section
         "cta.subtitle": "Neden bizi seçmelisiniz?",
-        "cta.title1": "15 yıldan fazla",
+        "cta.title1": "10 yıldan fazla",
         "cta.title2": "deneyim",
         "cta.button": "Randevu al",
         "video.title": "KLİNİK VİDEOSU",
@@ -1099,7 +1059,7 @@ const translations = {
         "footer.copyright": "© 2024 Universal Dental Clinic. Tüm hakları saklıdır.",
         "footer.privacy": "Gizlilik Politikası",
         "footer.terms": "Hizmet Şartları",
-        "footer.address": "Ana Cadde 123, Kişinev",
+        "footer.address": "Mitropolit Varlam Cad. 74, Kişinev",
         
         // About Page
         "about.hero.subtitle": "2009'dan beri diş bakımında mükemmellik",
@@ -1135,12 +1095,12 @@ const translations = {
         "about.gallery.relaxation.description": "Hastalar için maksimum konfor",
         "about.testimonials.title": "Hastalarımız ne diyor",
         "about.testimonials.description": "Hastalarımızın tanıklıkları mükemmelliğe olan bağlılığımızı yansıtır",
-        "about.testimonials.customer1.name": "Ana Radu",
-        "about.testimonials.customer1.review": "Olağanüstü deneyim! Ekip çok profesyonel ve tedavi boyunca kendimi çok rahat hissettirdiler.",
-        "about.testimonials.customer2.name": "Mihai Constantin",
-        "about.testimonials.customer2.review": "Diş implantları mükemmel şekilde entegre oldu. Sonuçtan ve UDC'de aldığım bakımdan son derece memnunum.",
-        "about.testimonials.customer3.name": "Carmen Diaconu",
-        "about.testimonials.customer3.review": "Hollywood Smile'ım fantastik görünüyor! Bu kliniği değişiklik isteyen herkese güvenle tavsiye ederim.",
+        "about.testimonials.customer1.name": "Maria Popescu",
+        "about.testimonials.customer1.review": "Ekibin profesyonelliği karşısında çok şaşırdım. Doktor işlemden önce her şeyi ayrıntılı olarak açıkladı ve personel benimle çok ilgiliydi. Artık tekrar gülme özgüvenim var!",
+        "about.testimonials.customer2.name": "Alexandru Ionescu",
+        "about.testimonials.customer2.review": "Eksik dişler için uzun zamandır bir çözüm arıyordum. UDC'de sadece profesyonellik değil, anlayış da buldum. İmplantlar hızla iyileşti ve artık tekrar istediğim her şeyi yiyebiliyorum. Teşekkür ederim!",
+        "about.testimonials.customer3.name": "Elena Văcărescu",
+        "about.testimonials.customer3.review": "Her zaman filmlerdeki gibi bir gülümseme istemiştim. Buradaki ekip tam da hayalini kurduğum şeyi yaptı - mükemmel bir Hollywood Smile! Birçok iltifat aldım ve çok daha kendimden emin hissediyorum. 10/10!",
         "about.cta.title": "Gülüşünüzü değiştirmeye hazır mısınız?",
         "about.cta.description": "Ücretsiz konsültasyon planlayın ve size nasıl yardımcı olabileceğimizi keşfedin",
         "about.cta.button": "Şimdi rezervasyon yap",
@@ -1195,7 +1155,6 @@ const translations = {
         "header.emergency": "| 24/7 Acil Durum",
         "lang.header": "DİL / LANGUAGE",
         "lang.current": "TR",
-        "form.recaptcha": "reCAPTCHA",
         "footer.logo": "UDC",
         "footer.phone": "+37368961136",
         "footer.email": "sandutilen@gmail.com",
@@ -1381,41 +1340,25 @@ const translations = {
         // All on 6 Turkish Package
         "packages.allon6tr.title": "All on 6 Turkish",
         "packages.allon6tr.subtitle": "Türkiye'den premium implantlar",
-        "packages.allon6tr.feature1": "6 premium Türk implantı",
-        "packages.allon6tr.feature2": "Zirkon sabit protez",
-        "packages.allon6tr.feature3": "Bilgisayarlı 3D planlama",
-        "packages.allon6tr.feature4": "15 yıl garanti",
-        "packages.allon6tr.feature5": "2 yıl ücretsiz kontroller",
+        "packages.allon6tr.description": "6 premium Türk implantı ve sabit protez ile tam diş çözümü.",
         "packages.allon6tr.button": "Konsültasyon rezerve et",
 
         // All on 4 Turkish Package
         "packages.allon4tr.title": "All on 4 Turkish",
         "packages.allon4tr.subtitle": "Türkiye'den ekonomik çözüm",
-        "packages.allon4tr.feature1": "4 kaliteli Türk implantı",
-        "packages.allon4tr.feature2": "Porselen sabit protez",
-        "packages.allon4tr.feature3": "3D röntgen dahil",
-        "packages.allon4tr.feature4": "10 yıl garanti",
-        "packages.allon4tr.feature5": "1 yıl kontroller dahil",
+        "packages.allon4tr.description": "4 kaliteli Türk implantı ile uygun fiyatlı diş restore edilmesi.",
         "packages.allon4tr.button": "Randevu al",
 
         // All on 6 Korean Package
         "packages.allon6kr.title": "All on 6 Korean",
         "packages.allon6kr.subtitle": "Güney Kore'den en yüksek kalite",
-        "packages.allon6kr.feature1": "6 premium Kore implantı",
-        "packages.allon6kr.feature2": "Premium zirkon protez",
-        "packages.allon6kr.feature3": "Kore ileri teknolojisi",
-        "packages.allon6kr.feature4": "Ömür boyu garanti",
-        "packages.allon6kr.feature5": "3 yıl ücretsiz kontroller",
+        "packages.allon6kr.description": "6 gelişmiş implant ile üstün sonuçlar için premium Kore kalitesi.",
         "packages.allon6kr.button": "Premium rezerve et",
 
         // All on 4 Korean Package
         "packages.allon4kr.title": "All on 4 Korean",
         "packages.allon4kr.subtitle": "Üstün Kore kalitesi",
-        "packages.allon4kr.feature1": "4 üstün Kore implantı",
-        "packages.allon4kr.feature2": "Premium seramik protez",
-        "packages.allon4kr.feature3": "Yüksek Kore hassasiyeti",
-        "packages.allon4kr.feature4": "20 yıl garanti",
-        "packages.allon4kr.feature5": "2 yıl ücretsiz kontroller",
+        "packages.allon4kr.description": "4 yüksek hassasiyetli implant ile üstün Kore teknolojisi.",
         "packages.allon4kr.button": "Kaliteyi seç",
 
         // Premium Packages
@@ -1548,9 +1491,7 @@ const translations = {
         // Form
         "form.name": "Имя",
         "form.phone": "Телефон",
-        "form.email": "Электронная почта",
         "form.message": "Ваше сообщение",
-        "form.robot": "Я не робот",
         "form.submit": "Отправить",
         "form.success": "Спасибо! Ваше сообщение успешно отправлено. Мы свяжемся с вами в ближайшее время.",
         
@@ -1564,7 +1505,7 @@ const translations = {
         
         // CTA Section
         "cta.subtitle": "Почему выбирают нас?",
-        "cta.title1": "Более 15 лет",
+        "cta.title1": "Более 10 лет",
         "cta.title2": "опыта",
         "cta.button": "Записаться на приём",
         "video.title": "ВИДЕО КЛИНИКИ",
@@ -1602,7 +1543,7 @@ const translations = {
         "footer.copyright": "© 2024 Universal Dental Clinic. Все права защищены.",
         "footer.privacy": "Политика конфиденциальности",
         "footer.terms": "Условия обслуживания",
-        "footer.address": "Главная улица 123, Кишинёв",
+        "footer.address": "ул. Митрополит Варлам 74, Кишинёв",
         
         // About Page
         "about.hero.subtitle": "Совершенство в стоматологической помощи с 2009 года",
@@ -1638,12 +1579,12 @@ const translations = {
         "about.gallery.relaxation.description": "Максимальный комфорт для пациентов",
         "about.testimonials.title": "Что говорят наши пациенты",
         "about.testimonials.description": "Отзывы наших пациентов отражают нашу приверженность к совершенству",
-        "about.testimonials.customer1.name": "Ана Раду",
-        "about.testimonials.customer1.review": "Превосходный опыт! Команда очень профессиональная и заставила меня чувствовать себя очень комфортно на протяжении всего лечения.",
-        "about.testimonials.customer2.name": "Михай Константин",
-        "about.testimonials.customer2.review": "Зубные имплантаты интегрировались идеально. Я крайне доволен результатом и уходом, который получил в UDC.",
-        "about.testimonials.customer3.name": "Кармен Дьякону",
-        "about.testimonials.customer3.review": "Моя Голливудская улыбка выглядит фантастически! Уверенно рекомендую эту клинику всем, кто хочет перемен.",
+        "about.testimonials.customer1.name": "Мария Попеску",
+        "about.testimonials.customer1.review": "Я была очень приятно удивлена профессионализмом команды. Врач объяснил всё детально перед процедурой, а персонал был очень внимателен ко мне. Теперь у меня снова есть уверенность в своёй улыбке!",
+        "about.testimonials.customer2.name": "Александру Ионеску",
+        "about.testimonials.customer2.review": "Я долго искал решение для отсутствующих зубов. В UDC я нашёл не только профессионализм, но и понимание. Импланты зажили быстро, и теперь я могу снова есть всё, что люблю. Спасибо!",
+        "about.testimonials.customer3.name": "Елена Вэкэреску",
+        "about.testimonials.customer3.review": "Я всегда мечтала о улыбке как в фильмах. Команда здесь сделала именно то, о чём я мечтала - идеальную Голливудскую улыбку! Я получаю много комплиментов и чувствую себя гораздо увереннее. 10/10!",
         "about.cta.title": "Готовы изменить свою улыбку?",
         "about.cta.description": "Запишитесь на бесплатную консультацию и узнайте, как мы можем вам помочь",
         "about.cta.button": "Записаться сейчас",
@@ -1698,7 +1639,6 @@ const translations = {
         "header.emergency": "| Экстренная помощь 24/7",
         "lang.header": "ЯЗЫК / LANGUAGE",
         "lang.current": "RU",
-        "form.recaptcha": "reCAPTCHA",
         "footer.logo": "UDC",
         "footer.phone": "+37368961136",
         "footer.email": "sandutilen@gmail.com",
@@ -1884,41 +1824,25 @@ const translations = {
         // All on 6 Turkish Package
         "packages.allon6tr.title": "All on 6 Turkish",
         "packages.allon6tr.subtitle": "Премиум импланты из Турции",
-        "packages.allon6tr.feature1": "6 премиум турецких имплантов",
-        "packages.allon6tr.feature2": "Несъемный циркониевый протез",
-        "packages.allon6tr.feature3": "Компьютеризированное 3D планирование",
-        "packages.allon6tr.feature4": "15-летняя гарантия",
-        "packages.allon6tr.feature5": "Бесплатные осмотры 2 года",
+        "packages.allon6tr.description": "Полное стоматологическое решение с 6 премиум турецкими имплантами и несъемным протезом.",
         "packages.allon6tr.button": "Записаться на консультацию",
 
         // All on 4 Turkish Package
         "packages.allon4tr.title": "All on 4 Turkish",
         "packages.allon4tr.subtitle": "Экономичное решение из Турции",
-        "packages.allon4tr.feature1": "4 качественных турецких импланта",
-        "packages.allon4tr.feature2": "Несъемный фарфоровый протез",
-        "packages.allon4tr.feature3": "3D рентген включен",
-        "packages.allon4tr.feature4": "10-летняя гарантия",
-        "packages.allon4tr.feature5": "Осмотры включены на 1 год",
+        "packages.allon4tr.description": "Доступная стоматологическая реставрация с 4 качественными турецкими имплантами.",
         "packages.allon4tr.button": "Записаться",
 
         // All on 6 Korean Package
         "packages.allon6kr.title": "All on 6 Korean",
         "packages.allon6kr.subtitle": "Высшее качество из Южной Кореи",
-        "packages.allon6kr.feature1": "6 премиум корейских имплантов",
-        "packages.allon6kr.feature2": "Премиум циркониевый протез",
-        "packages.allon6kr.feature3": "Передовые корейские технологии",
-        "packages.allon6kr.feature4": "Пожизненная гарантия",
-        "packages.allon6kr.feature5": "Бесплатные осмотры 3 года",
+        "packages.allon6kr.description": "Премиум корейское качество с 6 продвинутыми имплантами для превосходных результатов.",
         "packages.allon6kr.button": "Резервировать премиум",
 
         // All on 4 Korean Package
         "packages.allon4kr.title": "All on 4 Korean",
         "packages.allon4kr.subtitle": "Превосходное корейское качество",
-        "packages.allon4kr.feature1": "4 превосходных корейских импланта",
-        "packages.allon4kr.feature2": "Премиум керамический протез",
-        "packages.allon4kr.feature3": "Высокая корейская точность",
-        "packages.allon4kr.feature4": "20-летняя гарантия",
-        "packages.allon4kr.feature5": "Бесплатные осмотры 2 года",
+        "packages.allon4kr.description": "Превосходная корейская технология с 4 высокоточными имплантами.",
         "packages.allon4kr.button": "Выбрать качество",
 
         // Premium Packages
