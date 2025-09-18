@@ -5,6 +5,7 @@ const translations = {
         "nav.about": "Despre Noi",
         "nav.treatments": "Tratamente",
         "nav.packages": "Pachete Dentare",
+        "nav.program": "Program",
         "nav.contact": "Contact",
         
         // Header
@@ -14,9 +15,9 @@ const translations = {
         
         // Hero Section
         "hero.subtitle": "Clinica dentară de încredere",
-        "hero.cheapest": "Cea mai ieftină clinică din Moldova",
-        "hero.title1": "Zâmbetul tău perfect",
-        "hero.title2": "începe de aici",
+        "hero.cheapest": "Servicii stomatologice la cele mai accesibile prețuri",
+        "hero.title1": "Stomatologie premiala cu rafinament turcesc",
+        "hero.title2": "",
         "hero.text1": "Proceduri fără durere",
         "hero.text2": "Tehnologie de ultimă generație",
         "hero.button": "Vezi tratamentele",
@@ -28,6 +29,47 @@ const translations = {
         "form.message": "Mesajul dumneavoastră",
         "form.submit": "Trimite",
         "form.success": "Mulțumim! Mesajul dumneavoastră a fost trimis cu succes. Vă vom contacta în curând.",
+        
+        // Why Choose UDC Section
+        "why.title": "De ce să alegi UDC Clinic",
+        "why.subtitle": "Expertiză românească cu standardele medicale turce de excelență",
+        "why.turkey.title": "Conexiune directă cu Turcia",
+        "why.turkey.desc": "Colaborăm direct cu clinici de top din Turcia, aducând aceleași standarde înalte și tehnologii avansate în Moldova.",
+        "why.quality.title": "Calitate turcească premium",
+        "why.quality.desc": "Implementăm protocoalele și standardele de calitate din clinicile de lux din Istanbul și Ankara.",
+        "why.technology.title": "Tehnologie de ultimă generație",
+        "why.technology.desc": "Echipamente medicale importate din Turcia, pentru rezultate excepționale.",
+        "why.price.title": "Prețuri accesibile",
+        "why.price.desc": "Calitatea turcească la prețuri moldovenești - economisești până la 70% față de clinicile din Turcia.",
+        
+        // Working Hours Slider
+        "slider.monday": "Luni: 12:00-18:00",
+        "slider.tuesday_friday": "Marți-Vineri: 09:00-18:00",
+        "slider.saturday": "Sâmbătă: 09:00-14:00",
+        "slider.emergency": "Urgențe 24/7 - Sunați oricând!",
+        
+        // Program Page
+        "program.page.title": "Program - Orar de lucru UDC Clinic",
+        "program.hero.subtitle": "Orarul nostru complet",
+        "program.hero.title": "Program de Lucru",
+        "program.hero.text": "Aflați când suntem disponibili pentru consultații, tratamente și urgențe dentare",
+        "program.details.title": "Orarul Detaliat",
+        "program.details.subtitle": "Programul nostru flexibil pentru a vă fi disponibili când aveți nevoie",
+        "program.monday.title": "Luni",
+        "program.monday.hours": "12:00 - 18:00",
+        "program.monday.note": "Program redus",
+        "program.weekdays.title": "Marți - Vineri",
+        "program.weekdays.hours": "09:00 - 18:00",
+        "program.weekdays.note": "Program complet",
+        "program.saturday.title": "Sâmbătă",
+        "program.saturday.hours": "09:00 - 14:00",
+        "program.saturday.note": "Jumătate de zi",
+        "program.emergency.title": "Urgențe",
+        "program.emergency.hours": "24/7",
+        "program.emergency.note": "Mereu disponibili",
+        "program.contact.title": "Informații de Contact",
+        "program.contact.address": "Chișinău, str. Mitropolit Varlam 74",
+        "program.contact.note": "Pentru urgențe dentare, sunați la numărul de mai sus în orice moment din zi sau noapte.",
         
         // Services Icons
         "services.icon1": "Îngrijire completă",
@@ -496,6 +538,7 @@ const translations = {
         "nav.about": "About Us",
         "nav.treatments": "Treatments",
         "nav.packages": "Dental Packages",
+        "nav.program": "Schedule",
         "nav.contact": "Contact",
         
         // Header
@@ -505,9 +548,9 @@ const translations = {
         
         // Hero Section
         "hero.subtitle": "Trusted dental clinic",
-        "hero.cheapest": "The cheapest clinic in Moldova",
-        "hero.title1": "Your perfect smile",
-        "hero.title2": "starts here",
+        "hero.cheapest": "Dental services at the most affordable prices",
+        "hero.title1": "Premium dentistry with Turkish refinement",
+        "hero.title2": "",
         "hero.text1": "Painless procedures",
         "hero.text2": "State-of-the-art technology",
         "hero.button": "View treatments",
@@ -519,6 +562,47 @@ const translations = {
         "form.message": "Your message",
         "form.submit": "Send",
         "form.success": "Thank you! Your message has been sent successfully. We will contact you soon.",
+        
+        // Why Choose UDC Section
+        "why.title": "Why Choose UDC Clinic",
+        "why.subtitle": "Romanian expertise with Turkish medical excellence standards",
+        "why.turkey.title": "Direct connection with Turkey",
+        "why.turkey.desc": "We collaborate directly with top clinics from Turkey, bringing the same high standards and advanced technologies to Moldova.",
+        "why.quality.title": "Premium Turkish quality",
+        "why.quality.desc": "We implement protocols and quality standards from luxury clinics in Istanbul and Ankara.",
+        "why.technology.title": "Latest generation technology",
+        "why.technology.desc": "Medical equipment imported from Turkey, for exceptional results.",
+        "why.price.title": "Affordable prices",
+        "why.price.desc": "Turkish quality at Moldovan prices - save up to 70% compared to clinics in Turkey.",
+        
+        // Working Hours Slider
+        "slider.monday": "Monday: 12:00-18:00",
+        "slider.tuesday_friday": "Tuesday-Friday: 09:00-18:00",
+        "slider.saturday": "Saturday: 09:00-14:00",
+        "slider.emergency": "Emergency 24/7 - Call anytime!",
+        
+        // Program Page
+        "program.page.title": "Schedule - UDC Clinic Working Hours",
+        "program.hero.subtitle": "Our complete schedule",
+        "program.hero.title": "Working Hours",
+        "program.hero.text": "Find out when we are available for consultations, treatments and dental emergencies",
+        "program.details.title": "Detailed Schedule",
+        "program.details.subtitle": "Our flexible schedule to be available when you need us",
+        "program.monday.title": "Monday",
+        "program.monday.hours": "12:00 - 18:00",
+        "program.monday.note": "Reduced hours",
+        "program.weekdays.title": "Tuesday - Friday",
+        "program.weekdays.hours": "09:00 - 18:00",
+        "program.weekdays.note": "Full schedule",
+        "program.saturday.title": "Saturday",
+        "program.saturday.hours": "09:00 - 14:00",
+        "program.saturday.note": "Half day",
+        "program.emergency.title": "Emergency",
+        "program.emergency.hours": "24/7",
+        "program.emergency.note": "Always available",
+        "program.contact.title": "Contact Information",
+        "program.contact.address": "Chisinau, str. Mitropolit Varlam 74",
+        "program.contact.note": "For dental emergencies, call the number above at any time of day or night.",
         
         // Services Icons
         "services.icon1": "Complete care",
@@ -659,7 +743,7 @@ const translations = {
         "accred.secure": "Secure",
 
         // Page titles
-        "site.title": "UDC - The cheapest dental clinic in Moldova",
+        "site.title": "UDC - Dental services at the most affordable prices in Moldova",
         "about.page.title": "About Us - Cheap dentistry Chisinau, Moldova",
         "treatments.page.title": "Cheap dental treatments Chisinau, Moldova - Dentistry",
         "packages.page.title": "Cheap dental packages Chisinau, Moldova - Dentistry",
@@ -987,6 +1071,7 @@ const translations = {
         "nav.about": "Hakkımızda",
         "nav.treatments": "Tedaviler",
         "nav.packages": "Diş Paketleri",
+        "nav.program": "Program",
         "nav.contact": "İletişim",
         
         // Header
@@ -996,9 +1081,9 @@ const translations = {
         
         // Hero Section
         "hero.subtitle": "Güvenilir diş kliniği",
-        "hero.cheapest": "Moldova'daki en ucuz klinik",
-        "hero.title1": "Mükemmel gülüşünüz",
-        "hero.title2": "burada başlar",
+        "hero.cheapest": "En uygun fiyatlarla diş hekimliği hizmetleri",
+        "hero.title1": "Türk inceliği ile premium diş hekimliği",
+        "hero.title2": "",
         "hero.text1": "Ağrısız prosedürler",
         "hero.text2": "Son teknoloji cihazlar",
         "hero.button": "Tedavileri gör",
@@ -1010,6 +1095,47 @@ const translations = {
         "form.message": "Mesajınız",
         "form.submit": "Gönder",
         "form.success": "Teşekkürler! Mesajınız başarıyla gönderildi. En kısa sürede sizinle iletişime geçeceğiz.",
+        
+        // Why Choose UDC Section
+        "why.title": "Neden UDC Clinic'i Seçmelisiniz",
+        "why.subtitle": "Türk tıbbi mükemmellik standartları ile Romanya uzmanlığı",
+        "why.turkey.title": "Türkiye ile doğrudan bağlantı",
+        "why.turkey.desc": "Türkiye'nin en iyi klinikleriyle doğrudan işbirliği yaparak, aynı yüksek standartları ve gelişmiş teknolojileri Moldova'ya getiriyoruz.",
+        "why.quality.title": "Premium Türk kalitesi",
+        "why.quality.desc": "İstanbul ve Ankara'daki lüks kliniklerden protokolleri ve kalite standartlarını uyguluyoruz.",
+        "why.technology.title": "Son nesil teknoloji",
+        "why.technology.desc": "Türkiye'dan ithal edilen tıbbi ekipmanlar, olağanüstü sonuçlar için.",
+        "why.price.title": "Uygun fiyatlar",
+        "why.price.desc": "Moldova fiyatlarında Türk kalitesi - Türkiye'deki kliniklere kıyasla %70'e varan tasarruf.",
+        
+        // Working Hours Slider
+        "slider.monday": "Pazartesi: 12:00-18:00",
+        "slider.tuesday_friday": "Salı-Cuma: 09:00-18:00",
+        "slider.saturday": "Cumartesi: 09:00-14:00",
+        "slider.emergency": "Acil Durum 24/7 - İstediğiniz zaman arayın!",
+        
+        // Program Page
+        "program.page.title": "Program - UDC Klinik Çalışma Saatleri",
+        "program.hero.subtitle": "Tam programımız",
+        "program.hero.title": "Çalışma Saatleri",
+        "program.hero.text": "Konsültasyonlar, tedaviler ve diş acil durumları için ne zaman müsait olduğumuzu öğrenin",
+        "program.details.title": "Detaylı Program",
+        "program.details.subtitle": "İhtiyacınız olduğunda müsait olmak için esnek programımız",
+        "program.monday.title": "Pazartesi",
+        "program.monday.hours": "12:00 - 18:00",
+        "program.monday.note": "Kısaltılmış saatler",
+        "program.weekdays.title": "Salı - Cuma",
+        "program.weekdays.hours": "09:00 - 18:00",
+        "program.weekdays.note": "Tam program",
+        "program.saturday.title": "Cumartesi",
+        "program.saturday.hours": "09:00 - 14:00",
+        "program.saturday.note": "Yarım gün",
+        "program.emergency.title": "Acil Durum",
+        "program.emergency.hours": "24/7",
+        "program.emergency.note": "Her zaman müsait",
+        "program.contact.title": "İletişim Bilgileri",
+        "program.contact.address": "Kişinev, str. Mitropolit Varlam 74",
+        "program.contact.note": "Diş acil durumları için, gece gündüz herhangi bir saatte yukarıdaki numarayı arayın.",
         
         // Services Icons
         "services.icon1": "Kapsamlı bakım",
@@ -1471,6 +1597,7 @@ const translations = {
         "nav.about": "О нас",
         "nav.treatments": "Лечение",
         "nav.packages": "Пакеты услуг",
+        "nav.program": "Расписание",
         "nav.contact": "Контакты",
         
         // Header
@@ -1480,9 +1607,9 @@ const translations = {
         
         // Hero Section
         "hero.subtitle": "Надёжная стоматологическая клиника",
-        "hero.cheapest": "Самая дешевая клиника в Молдове",
-        "hero.title1": "Ваша идеальная улыбка",
-        "hero.title2": "начинается здесь",
+        "hero.cheapest": "Стоматологические услуги по самым доступным ценам",
+        "hero.title1": "Премиальная стоматология с турецким изяществом",
+        "hero.title2": "",
         "hero.text1": "Безболезненные процедуры",
         "hero.text2": "Современные технологии",
         "hero.button": "Посмотреть лечение",
@@ -1494,6 +1621,47 @@ const translations = {
         "form.message": "Ваше сообщение",
         "form.submit": "Отправить",
         "form.success": "Спасибо! Ваше сообщение успешно отправлено. Мы свяжемся с вами в ближайшее время.",
+        
+        // Why Choose UDC Section
+        "why.title": "Почему стоит выбрать UDC Clinic",
+        "why.subtitle": "Румынская экспертиза со стандартами турецкого медицинского совершенства",
+        "why.turkey.title": "Прямая связь с Турцией",
+        "why.turkey.desc": "Мы сотрудничаем напрямую с ведущими клиниками Турции, внедряя те же высокие стандарты и передовые технологии в Молдове.",
+        "why.quality.title": "Премиальное турецкое качество",
+        "why.quality.desc": "Мы внедряем протоколы и стандарты качества из роскошных клиник Стамбула и Анкары.",
+        "why.technology.title": "Технологии последнего поколения",
+        "why.technology.desc": "Медицинское оборудование, импортированное из Турции, для исключительных результатов.",
+        "why.price.title": "Доступные цены",
+        "why.price.desc": "Турецкое качество по молдавским ценам - экономия до 70% по сравнению с клиниками в Турции.",
+        
+        // Working Hours Slider
+        "slider.monday": "Понедельник: 12:00-18:00",
+        "slider.tuesday_friday": "Вторник-Пятница: 09:00-18:00",
+        "slider.saturday": "Суббота: 09:00-14:00",
+        "slider.emergency": "Экстренные случаи 24/7 - Звоните в любое время!",
+        
+        // Program Page
+        "program.page.title": "Расписание - Часы работы UDC Clinic",
+        "program.hero.subtitle": "Наше полное расписание",
+        "program.hero.title": "Часы работы",
+        "program.hero.text": "Узнайте, когда мы доступны для консультаций, лечения и экстренных случаев",
+        "program.details.title": "Подробное расписание",
+        "program.details.subtitle": "Наше гибкое расписание, чтобы быть доступными когда вам нужно",
+        "program.monday.title": "Понедельник",
+        "program.monday.hours": "12:00 - 18:00",
+        "program.monday.note": "Сокращенные часы",
+        "program.weekdays.title": "Вторник - Пятница",
+        "program.weekdays.hours": "09:00 - 18:00",
+        "program.weekdays.note": "Полное расписание",
+        "program.saturday.title": "Суббота",
+        "program.saturday.hours": "09:00 - 14:00",
+        "program.saturday.note": "Полдня",
+        "program.emergency.title": "Экстренные случаи",
+        "program.emergency.hours": "24/7",
+        "program.emergency.note": "Всегда доступны",
+        "program.contact.title": "Контактная информация",
+        "program.contact.address": "Кишинев, ул. Митрополит Варлам 74",
+        "program.contact.note": "Для экстренных случаев звоните по указанному номеру в любое время дня и ночи.",
         
         // Services Icons
         "services.icon1": "Полный уход",

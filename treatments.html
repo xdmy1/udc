@@ -49,6 +49,21 @@
             to { transform: scale(1); opacity: 1; }
         }
         
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .animate-scroll {
+            animation: scroll 20s linear infinite;
+        }
+        
+        .slider-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        
         .treatment-card {
             transition: all 0.3s ease;
         }
@@ -66,77 +81,131 @@
         .off-canvas-menu.open {
             transform: translateX(0);
         }
+        
+        /* Fix scroll position to prevent content going under fixed nav */
+        html {
+            scroll-padding-top: 10rem; /* 160px - matches mt-40 */
+        }
+        
+        /* Ensure hero section starts at correct position */
+        .hero-section {
+            margin-top: 0;
+            padding-top: 0;
+        }
     </style>
 </head>
 <body class="font-sans">
-    <!-- Header -->
-    <header class="bg-white shadow-lg relative z-40">
-        <!-- Top Bar -->
-        <div class="bg-gradient-to-r from-gray-50 to-gray-100 py-3">
-            <div class="container mx-auto px-4 flex justify-between items-center text-sm">
-                <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 rounded-full overflow-hidden shadow-lg">
-                        <img src="./assets/logo.png" alt="UDC Logo" class="w-full h-full object-cover">
+    <!-- Fixed Navigation System - Never Hides -->
+    <div class="fixed top-0 left-0 right-0 z-50 w-full">
+        <!-- Main Navigation Bar -->
+        <header class="bg-white shadow-lg w-full">
+            <nav class="w-full">
+                <div class="container mx-auto px-4 py-4">
+                    <div class="flex justify-between items-center">
+                        <a href="index.html" class="flex items-center space-x-2 hover:scale-105 transition-transform duration-300">
+                            <div class="w-16 h-16 rounded-full overflow-hidden shadow-lg">
+                                <img src="./assets/logo.png" alt="UDC Logo" class="w-full h-full object-cover">
+                            </div>
+                            <span class="font-bold text-xl text-gray-800" data-lang-key="header.logo">UDC</span>
+                        </a>
+                        
+                        <div class="hidden md:flex items-center space-x-8">
+                            <!-- Desktop Menu -->
+                            <ul class="flex space-x-8">
+                                <li><a href="index.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.home">Acasă</a></li>
+                                <li><a href="about.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.about">Despre Noi</a></li>
+                                <li><a href="treatments.html" class="text-gray-800 hover:text-primary border-b-2 border-primary transition-all duration-300" data-lang-key="nav.treatments">Tratamente</a></li>
+                                <li><a href="packages.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.packages">Pachete Dentare</a></li>
+                                <li><a href="program.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.program">Program</a></li>
+                                <li><a href="contact.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.contact">Contact</a></li>
+                            </ul>
+                            
+                            <!-- Language Switcher -->
+                            <div class="relative">
+                                <button id="lang-dropdown-btn" class="flex items-center space-x-2 bg-primary text-white px-3 py-2 rounded-lg hover:bg-primary/90 transition-all duration-300">
+                                    <i class="fas fa-globe"></i>
+                                    <span id="current-lang" data-lang-key="lang.current">RO</span>
+                                    <i class="fas fa-chevron-down text-sm"></i>
+                                </button>
+                                <div id="lang-dropdown" class="hidden absolute right-0 mt-2 bg-white shadow-lg rounded-lg py-2 min-w-[120px] z-50">
+                                    <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="ro" data-lang-key="lang.ro">🇷🇴 Română</button>
+                                    <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="en" data-lang-key="lang.en">🇺🇸 English</button>
+                                    <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="tr" data-lang-key="lang.tr">🇹🇷 Türkçe</button>
+                                    <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="ru" data-lang-key="lang.ru">🇷🇺 Русский</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Menu Button -->
+                        <button id="mobile-menu-btn" class="md:hidden relative z-50 transition-transform duration-300">
+                            <i id="menu-icon" class="fas fa-bars text-2xl text-gray-800"></i>
+                        </button>
                     </div>
-                    <span class="font-semibold text-gray-800" data-lang-key="header.clinic_name">UDC-Universal Dental Clinic</span>
                 </div>
-                <div class="hidden lg:flex items-center space-x-2 text-gray-600">
-                    <i class="fas fa-phone text-primary"></i>
-                    <span data-lang-key="header.phone">telefon consultație gratuită</span>
-                    <span class="font-semibold text-gray-800">+37368961136</span>
-                </div>
-                <div class="hidden lg:flex items-center space-x-2 text-gray-600">
-                    <i class="fas fa-clock text-primary"></i>
-                    <span data-lang-key="header.schedule">luni-vineri</span>
-                    <span class="font-semibold text-gray-800" data-lang-key="header.hours">09:00 - 18:00</span>
-                    <span class="text-red-600 font-bold ml-2" data-lang-key="header.emergency">| Urgențe 24/7</span>
+            </nav>
+        </header>
+
+        <!-- Working Hours Slider - Directly Under Navigation -->
+        <div class="bg-gradient-to-r from-primary/90 to-accent/90 text-white py-2 overflow-hidden w-full">
+            <div class="slider-container">
+                <div class="slider-track flex whitespace-nowrap animate-scroll">
+                    <div class="slider-item flex items-center space-x-8 px-8">
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-clock"></i>
+                            <span data-lang-key="slider.monday">Luni: 12:00-18:00</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span data-lang-key="slider.tuesday_friday">Marți-Vineri: 09:00-18:00</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-calendar-check"></i>
+                            <span data-lang-key="slider.saturday">Sâmbătă: 09:00-14:00</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-exclamation-triangle text-red-300"></i>
+                            <span data-lang-key="slider.emergency">Urgențe 24/7 - Sunați oricând!</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-phone"></i>
+                            <span>+37368961136</span>
+                        </span>
+                    </div>
+                    <!-- Duplicate for infinite scroll -->
+                    <div class="slider-item flex items-center space-x-8 px-8">
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-clock"></i>
+                            <span data-lang-key="slider.monday">Luni: 12:00-18:00</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span data-lang-key="slider.tuesday_friday">Marți-Vineri: 09:00-18:00</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-calendar-check"></i>
+                            <span data-lang-key="slider.saturday">Sâmbătă: 09:00-14:00</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-exclamation-triangle text-red-300"></i>
+                            <span data-lang-key="slider.emergency">Urgențe 24/7 - Sunați oricând!</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-phone"></i>
+                            <span>+37368961136</span>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <!-- Main Navigation -->
-        <nav class="relative container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="flex items-center space-x-2 hover:scale-105 transition-transform duration-300">
-                    <div class="w-12 h-12 rounded-full overflow-hidden shadow-lg">
-                        <img src="./assets/logo.png" alt="UDC Logo" class="w-full h-full object-cover">
-                    </div>
-                    <span class="font-bold text-xl text-gray-800" data-lang-key="header.logo">UDC</span>
-                </a>
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <!-- Desktop Menu -->
-                    <ul class="flex space-x-8">
-                        <li><a href="index.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.home">Acasă</a></li>
-                        <li><a href="about.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.about">Despre Noi</a></li>
-                        <li><a href="treatments.html" class="text-gray-800 hover:text-primary border-b-2 border-primary transition-all duration-300" data-lang-key="nav.treatments">Tratamente</a></li>
-                        <li><a href="packages.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.packages">Pachete Dentare</a></li>
-                        <li><a href="contact.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.contact">Contact</a></li>
-                    </ul>
-                    
-                    <!-- Language Switcher -->
-                    <div class="relative">
-                        <button id="lang-dropdown-btn" class="flex items-center space-x-2 bg-primary text-white px-3 py-2 rounded-lg hover:bg-primary/90 transition-all duration-300">
-                            <i class="fas fa-globe"></i>
-                            <span id="current-lang" data-lang-key="lang.current">RO</span>
-                            <i class="fas fa-chevron-down text-sm"></i>
-                        </button>
-                        <div id="lang-dropdown" class="hidden absolute right-0 mt-2 bg-white shadow-lg rounded-lg py-2 min-w-[120px] z-50">
-                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="ro" data-lang-key="lang.ro">🇷🇴 Română</button>
-                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="en" data-lang-key="lang.en">🇺🇸 English</button>
-                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="tr" data-lang-key="lang.tr">🇹🇷 Türkçe</button>
-                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="ru" data-lang-key="lang.ru">🇷🇺 Русский</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden relative z-50 transition-transform duration-300">
-                    <i id="menu-icon" class="fas fa-bars text-2xl text-gray-800"></i>
-                </button>
-            </div>
-        </nav>
-    </header>
+    </div>
 
     <!-- Off-Canvas Mobile Menu -->
     <div id="mobile-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300"></div>
@@ -144,7 +213,7 @@
         <div class="p-6">
             <div class="flex items-center justify-between mb-8">
                 <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 rounded-full overflow-hidden">
+                    <div class="w-14 h-14 rounded-full overflow-hidden">
                         <img src="./assets/logo.png" alt="UDC Logo" class="w-full h-full object-cover">
                     </div>
                     <span class="font-bold text-xl text-gray-800" data-lang-key="header.logo">UDC</span>
@@ -159,6 +228,7 @@
                 <li><a href="about.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.about">Despre Noi</a></li>
                 <li><a href="treatments.html" class="block text-gray-800 py-3 px-4 rounded-lg bg-primary/10 border-l-4 border-primary font-medium" data-lang-key="nav.treatments">Tratamente</a></li>
                 <li><a href="packages.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.packages">Pachete Dentare</a></li>
+                <li><a href="program.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.program">Program</a></li>
                 <li><a href="contact.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.contact">Contact</a></li>
             </ul>
             
@@ -176,11 +246,11 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-bg py-20">
+    <section class="hero-section mt-40 hero-bg py-20">
         <div class="container mx-auto px-4 text-center">
             <div class="max-w-4xl mx-auto animate-slide-up">
                 <p class="text-accent text-sm font-medium mb-4" data-lang-key="treatments.hero.subtitle">Servicii complete de stomatologie</p>
-                <p class="text-primary text-lg font-bold bg-yellow-100 px-4 py-2 rounded-lg inline-block mb-4" data-lang-key="hero.cheapest">Cea mai ieftină clinică din Moldova</p>
+                <p class="text-accent text-lg font-semibold border-2 border-accent/30 px-4 py-2 rounded-lg inline-block mb-4 bg-gradient-to-r from-accent/10 to-accent/5" data-lang-key="hero.cheapest">Cea mai ieftină clinică din Moldova</p>
                 <h1 class="text-4xl lg:text-6xl font-bold text-gray-800 mb-6" data-lang-key="nav.treatments">
                     Tratamente Dentare
                 </h1>
@@ -507,7 +577,7 @@
                 <!-- Column 1 - LOC -->
                 <div class="space-y-4">
                     <div class="flex items-center space-x-2">
-                        <div class="w-12 h-12 rounded-full overflow-hidden shadow-lg">
+                        <div class="w-16 h-16 rounded-full overflow-hidden shadow-lg">
                             <img src="./assets/logo.png" alt="UDC Logo" class="w-full h-full object-cover">
                         </div>
                         <span class="font-bold text-2xl" data-lang-key="footer.logo">UDC</span>

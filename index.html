@@ -33,7 +33,28 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         .hero-bg {
-            background: linear-gradient(135deg, rgba(113, 202, 196, 0.1) 0%, rgba(113, 202, 196, 0.3) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(113, 202, 196, 0.8) 0%, rgba(113, 202, 196, 0.6) 50%, rgba(255, 255, 255, 0.7) 100%);
+            z-index: -1;
         }
         
         @keyframes fadeIn {
@@ -49,6 +70,21 @@
         @keyframes scaleIn {
             from { transform: scale(0.9); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .animate-scroll {
+            animation: scroll 20s linear infinite;
+        }
+        
+        .slider-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
         }
         
         .gradient-card {
@@ -103,77 +139,130 @@
                 line-height: 1.2;
             }
         }
+        /* Fix scroll position to prevent content going under fixed nav */
+        html {
+            scroll-padding-top: 10rem; /* 160px - matches pt-40 */
+        }
+        
+        /* Ensure hero section starts at correct position */
+        .hero-section {
+            margin-top: 0;
+            padding-top: 0;
+        }
     </style>
 </head>
 <body class="font-sans">
-    <!-- Header -->
-    <header class="bg-white shadow-lg relative z-40">
-        <!-- Top Bar -->
-        <div class="bg-gradient-to-r from-gray-50 to-gray-100 py-3">
-            <div class="container mx-auto px-4 flex justify-between items-center text-sm">
-                <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 rounded-full overflow-hidden shadow-lg">
-                        <img src="./assets/logo.png" alt="UDC Logo" class="w-full h-full object-cover">
+    <!-- Fixed Navigation System - Never Hides -->
+    <div class="fixed top-0 left-0 right-0 z-50 w-full">
+        <!-- Main Navigation Bar -->
+        <header class="bg-white shadow-lg w-full">
+            <nav class="w-full">
+                <div class="container mx-auto px-4 py-4">
+                    <div class="flex justify-between items-center">
+                        <a href="index.html" class="flex items-center space-x-2 hover:scale-105 transition-transform duration-300">
+                            <div class="w-16 h-16 rounded-full overflow-hidden shadow-lg">
+                                <img src="./assets/logo.png" alt="UDC Logo" class="w-full h-full object-cover">
+                            </div>
+                            <span class="font-bold text-xl text-gray-800" data-lang-key="header.logo">UDC</span>
+                        </a>
+                        
+                        <div class="hidden md:flex items-center space-x-8">
+                            <!-- Desktop Menu -->
+                            <ul class="flex space-x-8">
+                                <li><a href="index.html" class="text-gray-800 hover:text-primary border-b-2 border-primary transition-all duration-300" data-lang-key="nav.home">Acasă</a></li>
+                                <li><a href="about.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.about">Despre Noi</a></li>
+                                <li><a href="treatments.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.treatments">Tratamente</a></li>
+                                <li><a href="packages.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.packages">Pachete Dentare</a></li>
+                                <li><a href="program.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.program">Program</a></li>
+                                <li><a href="contact.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.contact">Contact</a></li>
+                            </ul>
+                            
+                            <!-- Language Switcher -->
+                            <div class="relative">
+                                <button id="lang-dropdown-btn" class="flex items-center space-x-2 bg-primary text-white px-3 py-2 rounded-lg hover:bg-primary/90 transition-all duration-300">
+                                    <i class="fas fa-globe"></i>
+                                    <span id="current-lang" data-lang-key="lang.current">RO</span>
+                                    <i class="fas fa-chevron-down text-sm"></i>
+                                </button>
+                                <div id="lang-dropdown" class="hidden absolute right-0 mt-2 bg-white shadow-lg rounded-lg py-2 min-w-[120px] z-50">
+                                    <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="ro" data-lang-key="lang.ro">🇷🇴 Română</button>
+                                    <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="en" data-lang-key="lang.en">🇺🇸 English</button>
+                                    <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="tr" data-lang-key="lang.tr">🇹🇷 Türkçe</button>
+                                    <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="ru" data-lang-key="lang.ru">🇷🇺 Русский</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Menu Button -->
+                        <button id="mobile-menu-btn" class="md:hidden relative z-50 transition-transform duration-300">
+                            <i id="menu-icon" class="fas fa-bars text-2xl text-gray-800"></i>
+                        </button>
                     </div>
-                    <span class="font-semibold text-gray-800" data-lang-key="header.clinic_name">UDC-Universal Dental Clinic</span>
                 </div>
-                <div class="hidden lg:flex items-center space-x-2 text-gray-600">
-                    <i class="fas fa-phone text-primary"></i>
-                    <span data-lang-key="header.phone">telefon consultație gratuită</span>
-                    <span class="font-semibold text-gray-800">+37368961136</span>
-                </div>
-                <div class="hidden lg:flex items-center space-x-2 text-gray-600">
-                    <i class="fas fa-clock text-primary"></i>
-                    <span data-lang-key="header.schedule">luni-vineri</span>
-                    <span class="font-semibold text-gray-800" data-lang-key="header.hours">09:00 - 18:00</span>
-                    <span class="text-red-600 font-bold ml-2" data-lang-key="header.emergency">| Urgențe 24/7</span>
+            </nav>
+        </header>
+
+        <!-- Working Hours Slider - Directly Under Navigation -->
+        <div class="bg-gradient-to-r from-primary/90 to-accent/90 text-white py-2 overflow-hidden w-full">
+            <div class="slider-container">
+                <div class="slider-track flex whitespace-nowrap animate-scroll">
+                    <div class="slider-item flex items-center space-x-8 px-8">
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-clock"></i>
+                            <span data-lang-key="slider.monday">Luni: 12:00-18:00</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span data-lang-key="slider.tuesday_friday">Marți-Vineri: 09:00-18:00</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-calendar-check"></i>
+                            <span data-lang-key="slider.saturday">Sâmbătă: 09:00-14:00</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-exclamation-triangle text-red-300"></i>
+                            <span data-lang-key="slider.emergency">Urgențe 24/7 - Sunați oricând!</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-phone"></i>
+                            <span>+37368961136</span>
+                        </span>
+                    </div>
+                    <!-- Duplicate for infinite scroll -->
+                    <div class="slider-item flex items-center space-x-8 px-8">
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-clock"></i>
+                            <span data-lang-key="slider.monday">Luni: 12:00-18:00</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span data-lang-key="slider.tuesday_friday">Marți-Vineri: 09:00-18:00</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-calendar-check"></i>
+                            <span data-lang-key="slider.saturday">Sâmbătă: 09:00-14:00</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-exclamation-triangle text-red-300"></i>
+                            <span data-lang-key="slider.emergency">Urgențe 24/7 - Sunați oricând!</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-phone"></i>
+                            <span>+37368961136</span>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <!-- Main Navigation -->
-        <nav class="relative container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="flex items-center space-x-2 hover:scale-105 transition-transform duration-300">
-                    <div class="w-12 h-12 rounded-full overflow-hidden shadow-lg">
-                        <img src="./assets/logo.png" alt="UDC Logo" class="w-full h-full object-cover">
-                    </div>
-                    <span class="font-bold text-xl text-gray-800" data-lang-key="header.logo">UDC</span>
-                </a>
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <!-- Desktop Menu -->
-                    <ul class="flex space-x-8">
-                        <li><a href="index.html" class="text-gray-800 hover:text-primary border-b-2 border-primary transition-all duration-300" data-lang-key="nav.home">Acasă</a></li>
-                        <li><a href="about.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.about">Despre Noi</a></li>
-                        <li><a href="treatments.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.treatments">Tratamente</a></li>
-                        <li><a href="packages.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.packages">Pachete Dentare</a></li>
-                        <li><a href="contact.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.contact">Contact</a></li>
-                    </ul>
-                    
-                    <!-- Language Switcher -->
-                    <div class="relative">
-                        <button id="lang-dropdown-btn" class="flex items-center space-x-2 bg-primary text-white px-3 py-2 rounded-lg hover:bg-primary/90 transition-all duration-300">
-                            <i class="fas fa-globe"></i>
-                            <span id="current-lang" data-lang-key="lang.current">RO</span>
-                            <i class="fas fa-chevron-down text-sm"></i>
-                        </button>
-                        <div id="lang-dropdown" class="hidden absolute right-0 mt-2 bg-white shadow-lg rounded-lg py-2 min-w-[120px] z-50">
-                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="ro" data-lang-key="lang.ro">🇷🇴 Română</button>
-                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="en" data-lang-key="lang.en">🇺🇸 English</button>
-                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="tr" data-lang-key="lang.tr">🇹🇷 Türkçe</button>
-                            <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="ru" data-lang-key="lang.ru">🇷🇺 Русский</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden relative z-50 transition-transform duration-300">
-                    <i id="menu-icon" class="fas fa-bars text-2xl text-gray-800"></i>
-                </button>
-            </div>
-        </nav>
-    </header>
+    </div>
 
     <!-- Off-Canvas Mobile Menu -->
     <div id="mobile-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300"></div>
@@ -181,7 +270,7 @@
         <div class="p-6">
             <div class="flex items-center justify-between mb-8">
                 <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 rounded-full overflow-hidden">
+                    <div class="w-14 h-14 rounded-full overflow-hidden">
                         <img src="./assets/logo.png" alt="UDC Logo" class="w-full h-full object-cover">
                     </div>
                     <span class="font-bold text-xl text-gray-800" data-lang-key="header.logo">UDC</span>
@@ -196,6 +285,7 @@
                 <li><a href="about.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.about">Despre Noi</a></li>
                 <li><a href="treatments.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.treatments">Tratamente</a></li>
                 <li><a href="packages.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.packages">Pachete Dentare</a></li>
+                <li><a href="program.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.program">Program</a></li>
                 <li><a href="contact.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.contact">Contact</a></li>
             </ul>
             
@@ -213,16 +303,21 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="px-4 sm:px-6 lg:px-10 hero-bg py-12 sm:py-16 lg:py-20 overflow-hidden">
+    <section class="px-4 sm:px-6 lg:px-10 hero-bg py-12 sm:py-16 lg:py-20 overflow-hidden hero-section mt-40">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="./assets/1758043168877972.MP4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <!-- Left Content -->
                 <div class="animate-slide-up text-center lg:text-left">
-                    <p class="text-accent text-sm font-medium" data-lang-key="hero.subtitle">Clinica dentară de încredere</p>
-                    <p class="text-primary text-base sm:text-lg font-bold bg-yellow-100 px-3 sm:px-4 py-2 rounded-lg inline-block mt-2" data-lang-key="hero.cheapest">Cea mai ieftină clinică din Moldova</p>
-                    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800 leading-tight mt-4 sm:mt-6">
-                        <span data-lang-key="hero.title1">Zâmbetul tău perfect</span><br>
-                        <span data-lang-key="hero.title2" class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">începe de aici</span>
+                    <div class="mb-6">
+                        <p class="text-accent text-base sm:text-lg font-semibold uppercase tracking-wide mb-3" data-lang-key="hero.subtitle">Clinica dentară de încredere</p>
+                        <p class="text-accent text-base sm:text-lg font-semibold border-2 border-accent/30 px-4 py-3 rounded-xl inline-block bg-gradient-to-r from-accent/10 to-accent/5 shadow-lg" data-lang-key="hero.cheapest">Servicii stomatologice la cele mai accesibile prețuri</p>
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-800 leading-tight mb-6" data-lang-key="hero.title1">
+                        Stomatologie premiala cu rafinament turcesc
                     </h1>
                     <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 justify-center lg:justify-start">
                         <div class="flex items-center justify-center lg:justify-start space-x-2">
@@ -267,7 +362,7 @@
                             <input type="text" id="nume" name="name" data-lang-key="form.name" placeholder="Nume" class="w-full p-3 sm:p-4 border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300 text-sm sm:text-base" required>
                             
                             <div class="flex space-x-1 sm:space-x-2">
-                                <select name="country_code" class="p-3 sm:p-4 border border-gray-300 rounded-xl w-20 sm:w-24 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300 text-sm sm:text-base">
+                                <select name="country_code" class="p-3 sm:p-4 border border-gray-300 rounded-xl w-24 sm:w-28 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300 text-sm sm:text-base">
                                     <option value="373">🇲🇩 373</option>
                                     <option value="40">🇷🇴 40</option>
                                     <option value="49">🇩🇪 49</option>
@@ -295,6 +390,81 @@
                                 <span data-lang-key="form.submit">Trimite</span>
                             </button>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose UDC Clinic Section -->
+    <section class="px-10 py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-6" data-lang-key="why.title">De ce să alegi UDC Clinic</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-lang-key="why.subtitle">Expertiză românească cu standardele medicale turce de excelență</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Left Content -->
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-flag text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2" data-lang-key="why.turkey.title">Conexiune directă cu Turcia</h3>
+                            <p class="text-gray-600" data-lang-key="why.turkey.desc">Colaborăm direct cu clinici de top din Turcia, aducând aceleași standarde înalte și tehnologii avansate în Moldova.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-award text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2" data-lang-key="why.quality.title">Calitate turcească premium</h3>
+                            <p class="text-gray-600" data-lang-key="why.quality.desc">Implementăm protocoalele și standardele de calitate din clinicile de lux din Istanbul și Ankara.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-accent to-accent/80 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-tools text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2" data-lang-key="why.technology.title">Tehnologie de ultimă generație</h3>
+                            <p class="text-gray-600" data-lang-key="why.technology.desc">Echipamente medicale importate din Turcia și Germania, pentru rezultate excepționale.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-euro-sign text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2" data-lang-key="why.price.title">Prețuri accesibile</h3>
+                            <p class="text-gray-600" data-lang-key="why.price.desc">Calitatea turcească la prețuri moldovenești - economisești până la 70% față de clinicile din Turcia.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Content - Images -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <div class="rounded-2xl overflow-hidden shadow-xl">
+                            <img src="./assets/all-on-4-dental-turkey-1200x900.jpg" alt="All-on-4 Turkey Connection" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-xl">
+                            <img src="./assets/cabinet.jpg" alt="Modern Clinic" class="w-full h-32 object-cover">
+                        </div>
+                    </div>
+                    <div class="space-y-4 mt-8">
+                        <div class="rounded-2xl overflow-hidden shadow-xl">
+                            <img src="./assets/All-on-6-dental-Implants-in-Turkey.jpg" alt="All-on-6 Turkey Technology" class="w-full h-32 object-cover">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-xl">
+                            <img src="./assets/laborator.jpg" alt="Laboratory" class="w-full h-48 object-cover">
+                        </div>
                     </div>
                 </div>
             </div>
