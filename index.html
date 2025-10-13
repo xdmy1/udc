@@ -303,7 +303,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="px-4 sm:px-6 lg:px-10 hero-bg py-12 sm:py-16 lg:py-20 overflow-hidden hero-section mt-40">
+    <section class="px-4 sm:px-6 lg:px-10 hero-bg py-12 sm:py-16 lg:py-20 overflow-hidden hero-section pt-32 sm:pt-36 lg:pt-40">
         <video class="hero-video" autoplay muted loop playsinline>
             <source src="./assets/1758043168877972.MP4" type="video/mp4">
         </video>
@@ -344,20 +344,20 @@
 
     <!-- De ce noi? Section with Background Image and Sticky Text -->
     <section class="relative min-h-screen overflow-hidden">
-        <!-- Large Background Image -->
-        <div class="absolute inset-0 bg-cover bg-center bg-fixed" style="background-image: url('./assets/cabinet.jpg');">
+        <!-- Large Background Image - Fixed for mobile -->
+        <div class="absolute inset-0 bg-cover bg-center md:bg-fixed bg-local" style="background-image: url('./assets/cabinet.jpg');">
             <div class="absolute inset-0 bg-black bg-opacity-60"></div>
         </div>
         
         <!-- Content -->
-        <div class="relative z-10 min-h-screen flex items-center py-20">
+        <div class="relative z-10 min-h-screen flex items-center py-12 md:py-20">
             <div class="container mx-auto px-4">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                     <!-- Left - Text Content -->
                     <div class="text-white">
-                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8" data-lang-key="story.title">Clinica noastră – unde pasiunea pentru stomatologie întâlnește căldura unui concept turcesc</h2>
+                        <h2 class="text-2xl sm:text-3xl lg:text-5xl font-bold mb-6 lg:mb-8" data-lang-key="story.title">Clinica noastră – unde pasiunea pentru stomatologie întâlnește căldura unui concept turcesc</h2>
                         
-                        <div class="space-y-6 text-lg leading-relaxed">
+                        <div class="space-y-4 lg:space-y-6 text-sm sm:text-base lg:text-lg leading-relaxed">
                             <p data-lang-key="story.paragraph1">
                                 Clinica noastră a luat naștere dintr-o poveste care îmbină pasiunea pentru medicină cu atașamentul sincer față de oameni. Fondatorul și directorul clinicii, Murat Atbinici, a venit din Turcia pentru a-și urma visul în domeniul stomatologiei, alegând să studieze în Republica Moldova. Aici însă, viața i-a oferit mai mult decât o carieră – i-a oferit o familie. S-a îndrăgostit nu doar de profesie, ci și de loc, de oameni și de o femeie care avea să-i devină soție. Astăzi, alături de copilul lor, Moldova este acasă pentru el.
                             </p>
@@ -503,7 +503,7 @@
     </section>
 
     <!-- Registration Form Section -->
-    <section class="px-10 py-20 bg-gradient-to-br from-primary/10 to-accent/10">
+    <section class="px-2 py-20 bg-gradient-to-br from-primary/10 to-accent/10">
         <div class="container mx-auto px-4">
             <div class="max-w-2xl mx-auto text-center">
                 <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-6" data-lang-key="form.title">Programează-te pentru o consultație</h2>
@@ -593,15 +593,15 @@
                     </div>
                     <div class="space-y-3 text-gray-300">
                         <p class="flex items-start space-x-2">
-                            <i class="fas fa-map-marker-alt text-primary mt-1"></i>
+                            <i class="fas fa-map-marker-alt text-white mt-1"></i>
                             <span data-lang-key="footer.address">Strada Principală 123, Chișinău</span>
                         </p>
                         <p class="flex items-center space-x-2">
-                            <i class="fas fa-phone text-primary"></i>
+                            <i class="fas fa-phone text-white"></i>
                             <span data-lang-key="footer.phone">+37368961136</span>
                         </p>
                         <p class="flex items-center space-x-2">
-                            <i class="fas fa-envelope text-primary"></i>
+                            <i class="fas fa-envelope text-white"></i>
                             <span data-lang-key="footer.email">sandutilen@gmail.com</span>
                         </p>
                     </div>
@@ -609,18 +609,18 @@
 
                 <!-- Column 2 - Despre -->
                 <div class="space-y-4">
-                    <h4 class="text-lg font-bold text-primary" data-lang-key="footer.about">Despre</h4>
+                    <h4 class="text-lg font-bold text-white" data-lang-key="footer.about">Despre</h4>
                     <ul class="space-y-3 text-gray-300">
-                        <li><a href="about.html" class="hover:text-primary transition-colors" data-lang-key="nav.about">Despre noi</a></li>
-                        <li><a href="treatments.html" class="hover:text-primary transition-colors" data-lang-key="nav.services">Servicii</a></li>
-                        <li><a href="blog.html" class="hover:text-primary transition-colors" data-lang-key="nav.blog">Blog</a></li>
-                        <li><a href="program.html" class="hover:text-primary transition-colors" data-lang-key="nav.program">Program</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors" data-lang-key="nav.about">Despre noi</a></li>
+                        <li><a href="treatments.html" class="hover:text-white transition-colors" data-lang-key="nav.services">Servicii</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition-colors" data-lang-key="nav.blog">Blog</a></li>
+                        <li><a href="program.html" class="hover:text-white transition-colors" data-lang-key="nav.program">Program</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 3 - Program -->
                 <div class="space-y-4">
-                    <h4 class="text-lg font-bold text-primary" data-lang-key="footer.schedule">Program</h4>
+                    <h4 class="text-lg font-bold text-white" data-lang-key="footer.schedule">Program</h4>
                     <div class="space-y-2 text-gray-300 text-sm">
                         <p><span class="font-medium">Luni:</span> 12:00-18:00</p>
                         <p><span class="font-medium">Marți-Vineri:</span> 09:00-18:00</p>
@@ -635,7 +635,7 @@
 
                 <!-- Column 4 - UDC Social -->
                 <div class="space-y-4">
-                    <h4 class="text-lg font-bold text-primary" data-lang-key="footer.social">UDC Social</h4>
+                    <h4 class="text-lg font-bold text-white" data-lang-key="footer.social">UDC Social</h4>
                     <div class="flex space-x-4">
                         <a href="#" class="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg">
                             <i class="fab fa-facebook-f"></i>
@@ -659,7 +659,7 @@
     <!-- Made with love bar -->
     <div class="bg-gray-800 border-t border-gray-700 py-2">
         <div class="container mx-auto px-4 text-center">
-            <p class="text-xs text-gray-400">Made with love by <a href="https://landings.md/" target="_blank" class="text-gray-300 hover:text-primary transition-colors underline">Landings.md</a></p>
+            <p class="text-xs text-gray-400">Made with love by <a href="https://landings.md/" target="_blank" class="text-gray-300 hover:text-white transition-colors underline">Landings.md</a></p>
         </div>
     </div>
 
