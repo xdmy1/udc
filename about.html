@@ -16,8 +16,8 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#71CAC4',
-                        accent: '#D3553F'
+                        primary: '#1B5E20',
+                        accent: '#4CAF50'
                     },
                     animation: {
                         'fade-in': 'fadeIn 0.6s ease-in-out',
@@ -151,8 +151,8 @@
                             <ul class="flex space-x-8">
                                 <li><a href="index.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.home">Acasă</a></li>
                                 <li><a href="about.html" class="text-gray-800 hover:text-primary border-b-2 border-primary transition-all duration-300" data-lang-key="nav.about">Despre Noi</a></li>
-                                <li><a href="treatments.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.treatments">Tratamente</a></li>
-                                <li><a href="packages.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.packages">Pachete Dentare</a></li>
+                                <li><a href="treatments.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.services">Servicii</a></li>
+                                <li><a href="blog.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.blog">Blog</a></li>
                                 <li><a href="program.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.program">Program</a></li>
                                 <li><a href="contact.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.contact">Contact</a></li>
                             </ul>
@@ -263,8 +263,8 @@
             <ul class="space-y-4 mb-8">
                 <li><a href="index.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.home">Acasă</a></li>
                 <li><a href="about.html" class="block text-gray-800 py-3 px-4 rounded-lg bg-primary/10 border-l-4 border-primary font-medium" data-lang-key="nav.about">Despre Noi</a></li>
-                <li><a href="treatments.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.treatments">Tratamente</a></li>
-                <li><a href="packages.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.packages">Pachete Dentare</a></li>
+                <li><a href="treatments.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.services">Servicii</a></li>
+                <li><a href="blog.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.blog">Blog</a></li>
                 <li><a href="program.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.program">Program</a></li>
                 <li><a href="contact.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.contact">Contact</a></li>
             </ul>
@@ -283,17 +283,20 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section mt-40 hero-bg py-20">
+    <section class="hero-section mt-40 py-20 bg-white">
         <div class="container mx-auto px-4 text-center">
             <div class="max-w-4xl mx-auto animate-slide-up">
-                <p class="text-accent text-sm font-medium mb-4" data-lang-key="about.hero.subtitle">Excelență în îngrijirea dentară din 2009</p>
-                <p class="text-accent text-lg font-semibold border-2 border-accent/30 px-4 py-2 rounded-lg inline-block mb-4 bg-gradient-to-r from-accent/10 to-accent/5" data-lang-key="hero.cheapest">Cea mai ieftină clinică din Moldova</p>
                 <h1 class="text-4xl lg:text-6xl font-bold text-gray-800 mb-6" data-lang-key="about.hero.title">
                     Despre Universal Dental Clinic
                 </h1>
-                <p class="text-xl text-gray-600 leading-relaxed" data-lang-key="about.hero.description">
+                <p class="text-lg font-semibold text-gray-800 mb-6">
+                    De la tratamente preventive la restaurări complexe, oferim o gamă completă de servicii dentare cu cele mai moderne tehnologii și tehnici. Echipa noastră de specialiști vă garantează rezultate excepționale.
+                </p>
+                <p class="text-xl text-gray-600 leading-relaxed mb-8" data-lang-key="about.hero.description">
                     Oferim servicii dentare de înaltă calitate cu o abordare personalizată pentru fiecare pacient
                 </p>
+                <!-- Subtle divider line -->
+                <div class="w-24 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mx-auto"></div>
             </div>
         </div>
     </section>
@@ -449,6 +452,103 @@
                     <div class="p-4">
                         <h4 class="font-bold text-gray-800 mb-2" data-lang-key="about.gallery.relaxation.title">Zona de relaxare</h4>
                         <p class="text-sm text-gray-600" data-lang-key="about.gallery.relaxation.description">Confort maxim pentru pacienți</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-on-scroll opacity-0">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-6" data-lang-key="team.title">Echipa noastră</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8" data-lang-key="team.subtitle">Medici profesionaliști cu experiență vastă în stomatologie</p>
+                <div class="max-w-4xl mx-auto text-lg text-gray-600 leading-relaxed">
+                    <p class="mb-4">Echipa noastră este formată din specialiști cu experiență internațională, dedicați să vă ofere cele mai bune servicii dentare. Fiecare membru al echipei participă constant la cursuri de perfecționare și conferințe internaționale pentru a se menține la curent cu cele mai noi tehnici și tehnologii din domeniu.</p>
+                    <p>Abordarea noastră personalizată și atenția acordată fiecărui pacient ne diferențiază, asigurându-ne că fiecare tratament este adaptat nevoilor specifice ale fiecăruia.</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 lg:gap-8">
+                <!-- Doctor 1 -->
+                <div class="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 text-center hover:scale-105 transition-all duration-300 shadow-lg animate-on-scroll opacity-0">
+                    <div class="w-24 h-24 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl">
+                        <i class="fas fa-user-md text-white text-3xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2" data-lang-key="doctor1.name">Dr. Alexandru Popescu</h3>
+                    <p class="text-sm text-gray-600 mb-2" data-lang-key="doctor1.specialty">Specialist Implantologie</p>
+                    <p class="text-xs text-gray-500 mb-3" data-lang-key="doctor1.experience">15 ani experiență</p>
+                    <p class="text-xs text-gray-600">Membru al Asociației Europene de Implantologie. Specializat în implantologie complexă și reconstrucție osoasă.</p>
+                </div>
+                <!-- Doctor 2 -->
+                <div class="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 text-center hover:scale-105 transition-all duration-300 shadow-lg animate-on-scroll opacity-0">
+                    <div class="w-24 h-24 bg-gradient-to-br from-accent to-accent/80 rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl">
+                        <i class="fas fa-user-md text-white text-3xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2" data-lang-key="doctor2.name">Dr. Maria Ionescu</h3>
+                    <p class="text-sm text-gray-600 mb-2" data-lang-key="doctor2.specialty">Specialist Ortodonție</p>
+                    <p class="text-xs text-gray-500 mb-3" data-lang-key="doctor2.experience">12 ani experiență</p>
+                    <p class="text-xs text-gray-600">Expert în ortodonție modernă și alignere invizibile. Formată la clinici de top din Germania.</p>
+                </div>
+                <!-- Doctor 3 -->
+                <div class="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 text-center hover:scale-105 transition-all duration-300 shadow-lg animate-on-scroll opacity-0">
+                    <div class="w-24 h-24 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl">
+                        <i class="fas fa-user-md text-white text-3xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2" data-lang-key="doctor3.name">Dr. Mihai Dumitru</h3>
+                    <p class="text-sm text-gray-600 mb-2" data-lang-key="doctor3.specialty">Specialist Chirurgie Orală</p>
+                    <p class="text-xs text-gray-500 mb-3" data-lang-key="doctor3.experience">18 ani experiență</p>
+                    <p class="text-xs text-gray-600">Specialist în chirurgie orală avansată și extracții complexe. Experiență în clinici din Austria.</p>
+                </div>
+                <!-- Doctor 4 -->
+                <div class="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 text-center hover:scale-105 transition-all duration-300 shadow-lg animate-on-scroll opacity-0">
+                    <div class="w-24 h-24 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl">
+                        <i class="fas fa-user-md text-white text-3xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2" data-lang-key="doctor4.name">Dr. Elena Radu</h3>
+                    <p class="text-sm text-gray-600 mb-2" data-lang-key="doctor4.specialty">Specialist Endodonție</p>
+                    <p class="text-xs text-gray-500 mb-3" data-lang-key="doctor4.experience">10 ani experiență</p>
+                    <p class="text-xs text-gray-600">Expert în tratamente de canal și salvarea dinților. Certificată în tehnici endodontice moderne.</p>
+                </div>
+                <!-- Doctor 5 -->
+                <div class="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 text-center hover:scale-105 transition-all duration-300 shadow-lg animate-on-scroll opacity-0">
+                    <div class="w-24 h-24 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl">
+                        <i class="fas fa-user-md text-white text-3xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2" data-lang-key="doctor5.name">Dr. Andrei Popa</h3>
+                    <p class="text-sm text-gray-600 mb-2" data-lang-key="doctor5.specialty">Specialist Estetică Dentară</p>
+                    <p class="text-xs text-gray-500 mb-3" data-lang-key="doctor5.experience">8 ani experiență</p>
+                    <p class="text-xs text-gray-600">Specializat în zâmbete Hollywood și fațete dentare. Perfecționat în clinici din SUA.</p>
+                </div>
+            </div>
+            
+            <!-- Additional Team Info -->
+            <div class="mt-16 text-center">
+                <div class="bg-white rounded-3xl p-8 shadow-lg max-w-4xl mx-auto animate-on-scroll opacity-0">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">De ce să ne alegi pe noi?</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-certificate text-white text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2">Certificări Internaționale</h4>
+                            <p class="text-sm text-gray-600">Toți medicii noștri sunt certificați și formați în clinici de top din Europa</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-accent to-accent/80 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-heart text-white text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2">Abordare Personalizată</h4>
+                            <p class="text-sm text-gray-600">Fiecare pacient este unic și merită un plan de tratament adaptat nevoilor sale</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-clock text-white text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2">Disponibilitate 24/7</h4>
+                            <p class="text-sm text-gray-600">Pentru urgențe dentare, suntem disponibili oricând să vă ajutăm</p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,11 +1,13 @@
-- stergem cea mai ieftina clinica | servicii stomatologice la cele mai ieftine preturi + poza -> mai jos intro sectiune 
-- logo mai mare
-- orarul clinicii slider sub nav sticky
-- urgente 24/7 de lasat
-h1: stomatologie premiala cu rafinament turcesc
-
-dedesubt - de ce alegem clinica udc? stranse conexiuni cu turcia + poze
 
 
 
- 
+
+
+
+
+
+astea 2 de scos 
+De la tratamente preventive la restaurări complexe, oferim o gamă completă de servicii dentare cu cele mai moderne tehnologii și tehnici. Echipa noastră de specialiști vă garantează rezultate excepționale.
+textul asta de scris cu rosu, sub el <hr> 
+
+Contacte > urgente dentare de marit pe tot widthul

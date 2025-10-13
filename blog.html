@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="blog.title">Blog - Sfaturi Dentare | UDC</title>
+    <link rel="icon" type="image/png" href="./assets/logo.png">
+    <meta name="description" content="Sfaturi utile pentru îngrijirea dentară, articole despre sănătatea orală și ghiduri practice de la experții UDC.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1B5E20',
+                        accent: '#4CAF50'
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                        'slide-up': 'slideUp 0.6s ease-out'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .animate-scroll {
+            animation: scroll 20s linear infinite;
+        }
+        
+        .blog-card {
+            transition: all 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .off-canvas-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .off-canvas-menu.open {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Fixed Navigation System -->
+    <div class="fixed top-0 left-0 right-0 z-50 w-full">
+        <!-- Main Navigation Bar -->
+        <header class="bg-white shadow-lg w-full">
+            <nav class="w-full">
+                <div class="container mx-auto px-4 py-4">
+                    <div class="flex justify-between items-center">
+                        <a href="index.html" class="flex items-center space-x-2 hover:scale-105 transition-transform duration-300">
+                            <div class="w-16 h-16 rounded-full overflow-hidden shadow-lg">
+                                <img src="./assets/logo.png" alt="UDC Logo" class="w-full h-full object-cover">
+                            </div>
+                            <span class="font-bold text-xl text-gray-800" data-lang-key="header.logo">UDC</span>
+                        </a>
+                        
+                        <div class="hidden md:flex items-center space-x-8">
+                            <!-- Desktop Menu -->
+                            <ul class="flex space-x-8">
+                                <li><a href="index.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.home">Acasă</a></li>
+                                <li><a href="about.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.about">Despre Noi</a></li>
+                                <li><a href="treatments.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.services">Servicii</a></li>
+                                <li><a href="blog.html" class="text-gray-800 hover:text-primary border-b-2 border-primary transition-all duration-300" data-lang-key="nav.blog">Blog</a></li>
+                                <li><a href="program.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.program">Program</a></li>
+                                <li><a href="contact.html" class="text-gray-600 hover:text-primary transition-all duration-300" data-lang-key="nav.contact">Contact</a></li>
+                            </ul>
+                            
+                            <!-- Language Switcher -->
+                            <div class="relative">
+                                <button id="lang-dropdown-btn" class="flex items-center space-x-2 bg-primary text-white px-3 py-2 rounded-lg hover:bg-primary/90 transition-all duration-300">
+                                    <i class="fas fa-globe"></i>
+                                    <span id="current-lang" data-lang-key="lang.current">RO</span>
+                                    <i class="fas fa-chevron-down text-sm"></i>
+                                </button>
+                                <div id="lang-dropdown" class="hidden absolute right-0 mt-2 bg-white shadow-lg rounded-lg py-2 min-w-[120px] z-50">
+                                    <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="ro" data-lang-key="lang.ro">🇷🇴 Română</button>
+                                    <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="en" data-lang-key="lang.en">🇺🇸 English</button>
+                                    <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="tr" data-lang-key="lang.tr">🇹🇷 Türkçe</button>
+                                    <button class="lang-option w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors" data-lang="ru" data-lang-key="lang.ru">🇷🇺 Русский</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Menu Button -->
+                        <button id="mobile-menu-btn" class="md:hidden relative z-50 transition-transform duration-300">
+                            <i id="menu-icon" class="fas fa-bars text-2xl text-gray-800"></i>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Working Hours Slider -->
+        <div class="bg-gradient-to-r from-primary/90 to-accent/90 text-white py-2 overflow-hidden w-full">
+            <div class="slider-container">
+                <div class="slider-track flex whitespace-nowrap animate-scroll">
+                    <div class="slider-item flex items-center space-x-8 px-8">
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-clock"></i>
+                            <span data-lang-key="slider.monday">Luni: 12:00-18:00</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span data-lang-key="slider.tuesday_friday">Marți-Vineri: 09:00-18:00</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-calendar-check"></i>
+                            <span data-lang-key="slider.weekend">Sâmbătă-Duminică: 09:00-16:00</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-exclamation-triangle text-red-300"></i>
+                            <span data-lang-key="slider.emergency">Urgențe 24/7 - Sunați oricând!</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-phone"></i>
+                            <span>+37368961136</span>
+                        </span>
+                    </div>
+                    <!-- Duplicate for infinite scroll -->
+                    <div class="slider-item flex items-center space-x-8 px-8">
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-clock"></i>
+                            <span data-lang-key="slider.monday">Luni: 12:00-18:00</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span data-lang-key="slider.tuesday_friday">Marți-Vineri: 09:00-18:00</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-calendar-check"></i>
+                            <span data-lang-key="slider.weekend">Sâmbătă-Duminică: 09:00-16:00</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-exclamation-triangle text-red-300"></i>
+                            <span data-lang-key="slider.emergency">Urgențe 24/7 - Sunați oricând!</span>
+                        </span>
+                        <span class="text-accent/30">|</span>
+                        <span class="flex items-center space-x-2">
+                            <i class="fas fa-phone"></i>
+                            <span>+37368961136</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Off-Canvas Mobile Menu -->
+    <div id="mobile-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300"></div>
+    <nav id="off-canvas-menu" class="fixed top-0 left-0 h-full w-80 bg-white shadow-2xl z-50 off-canvas-menu">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8">
+                <div class="flex items-center space-x-2">
+                    <div class="w-14 h-14 rounded-full overflow-hidden">
+                        <img src="./assets/logo.png" alt="UDC Logo" class="w-full h-full object-cover">
+                    </div>
+                    <span class="font-bold text-xl text-gray-800" data-lang-key="header.logo">UDC</span>
+                </div>
+                <button id="close-menu-btn" class="text-gray-600 hover:text-gray-800">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            
+            <ul class="space-y-4 mb-8">
+                <li><a href="index.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.home">Acasă</a></li>
+                <li><a href="about.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.about">Despre Noi</a></li>
+                <li><a href="treatments.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.services">Servicii</a></li>
+                <li><a href="blog.html" class="block text-gray-800 py-3 px-4 rounded-lg bg-primary/10 border-l-4 border-primary font-medium" data-lang-key="nav.blog">Blog</a></li>
+                <li><a href="program.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.program">Program</a></li>
+                <li><a href="contact.html" class="block text-gray-600 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors" data-lang-key="nav.contact">Contact</a></li>
+            </ul>
+            
+            <!-- Mobile Language Switcher -->
+            <div class="border-t pt-6">
+                <h4 class="text-sm font-semibold text-gray-500 mb-3" data-lang-key="lang.header">LIMBĂ / LANGUAGE</h4>
+                <div class="space-y-2">
+                    <button class="lang-option w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-lang="ro" data-lang-key="lang.ro">🇷🇴 Română</button>
+                    <button class="lang-option w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-lang="en" data-lang-key="lang.en">🇺🇸 English</button>
+                    <button class="lang-option w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-lang="tr" data-lang-key="lang.tr">🇹🇷 Türkçe</button>
+                    <button class="lang-option w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-lang="ru" data-lang-key="lang.ru">🇷🇺 Русский</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-40 pb-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">Blog - Sfaturi Dentare</h1>
+                <p class="text-lg font-semibold text-gray-800 mb-6">
+                    De la tratamente preventive la restaurări complexe, oferim o gamă completă de servicii dentare cu cele mai moderne tehnologii și tehnici. Echipa noastră de specialiști vă garantează rezultate excepționale.
+                </p>
+                <p class="text-xl text-gray-600 leading-relaxed mb-8">Descoperă sfaturi utile pentru îngrijirea dentară, articole despre sănătatea orală și ghiduri practice de la experții noștri</p>
+                <div class="w-24 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mx-auto"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Blog Post 1 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1606811841689-23dfdb7ee817?w=400&h=300&fit=crop" alt="Periaj dentar corect" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 text-sm text-gray-500 mb-3">
+                            <i class="fas fa-calendar"></i>
+                            <span>15 Decembrie 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Cum să îți perezi dinții corect</h3>
+                        <p class="text-gray-600 mb-4 blog-excerpt">Află tehnica corectă de periaj pentru o igienă orală optimă. Ghid pas cu pas pentru un zâmbet sănătos.</p>
+                        <div class="blog-content hidden mb-4">
+                            <p class="text-gray-600 mb-4">Un periaj corect este fundamentul unei igiene orale excelente. Iată pașii esențiali:</p>
+                            <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+                                <li>Folosește o periuță cu peri moi sau medii</li>
+                                <li>Aplică pastă de dinți cu fluor (mărimea unui bob de mazăre)</li>
+                                <li>Periază timp de 2 minute, de cel puțin 2 ori pe zi</li>
+                                <li>Folosește mișcări circulare, nu agresive</li>
+                                <li>Nu uita să periezi și limba pentru a elimina bacteriile</li>
+                            </ul>
+                            <p class="text-gray-600 mb-4">Schimbă periuța la fiecare 3-4 luni sau când perii se uzează. Un periaj corect previne cariile, gingivita și respirația urât mirositoare.</p>
+                        </div>
+                        <button onclick="toggleBlogPost(this)" class="text-primary font-medium hover:text-accent transition-colors read-more-btn">Citește mai mult →</button>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=400&h=300&fit=crop" alt="Alimente sănătoase pentru dinți" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 text-sm text-gray-500 mb-3">
+                            <i class="fas fa-calendar"></i>
+                            <span>12 Decembrie 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Alimentele care îți păstrează dinții sănătoși</h3>
+                        <p class="text-gray-600 mb-4 blog-excerpt">Descoperă ce alimente îți fortifică dinții și care sunt de evitat pentru o sănătate orală optimă.</p>
+                        <div class="blog-content hidden mb-4">
+                            <p class="text-gray-600 mb-4">Alimentația joacă un rol crucial în sănătatea dentară. Iată alimentele benefice:</p>
+                            <h4 class="font-bold text-gray-800 mb-2">Alimente benefice:</h4>
+                            <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+                                <li>Lapte, brânză, iaurt - riches în calciu și fosfat</li>
+                                <li>Verdeturi cu frunze - spanac, varză kale</li>
+                                <li>Pești grași - somon, sardine (omega-3)</li>
+                                <li>Nuci și semințe - migdale, semințe de susan</li>
+                                <li>Ceai verde - antioxidanți naturali</li>
+                            </ul>
+                            <h4 class="font-bold text-gray-800 mb-2">De evitat:</h4>
+                            <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+                                <li>Dulciuri și băuturi cu zahăr</li>
+                                <li>Alimente acide - citrice în exces</li>
+                                <li>Băuturi carbogazoase</li>
+                            </ul>
+                        </div>
+                        <button onclick="toggleBlogPost(this)" class="text-primary font-medium hover:text-accent transition-colors read-more-btn">Citește mai mult →</button>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop" alt="Prevenirea cariilor" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 text-sm text-gray-500 mb-3">
+                            <i class="fas fa-calendar"></i>
+                            <span>10 Decembrie 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Prevenirea cariilor dentare</h3>
+                        <p class="text-gray-600 mb-4 blog-excerpt">Metodele eficiente de prevenire a cariilor și importanța controalelor regulate la dentist.</p>
+                        <div class="blog-content hidden mb-4">
+                            <p class="text-gray-600 mb-4">Cariile sunt complet prevenibile cu îngrijirea adecvată. Iată strategiile cheie:</p>
+                            <h4 class="font-bold text-gray-800 mb-2">Prevenirea zilnică:</h4>
+                            <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+                                <li>Periaj de 2 ori pe zi cu pastă fluorată</li>
+                                <li>Folosirea aței dentare zilnic</li>
+                                <li>Clătire cu apă după mese</li>
+                                <li>Limitarea zahărului și a gustărilor</li>
+                            </ul>
+                            <h4 class="font-bold text-gray-800 mb-2">Controale profesionale:</h4>
+                            <p class="text-gray-600 mb-4">Vizitele regulate la dentist (la 6 luni) permit detectarea precoce a problemelor și curățarea profesională care elimină placa bacteriană acumulată.</p>
+                        </div>
+                        <button onclick="toggleBlogPost(this)" class="text-primary font-medium hover:text-accent transition-colors read-more-btn">Citește mai mult →</button>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=400&h=300&fit=crop" alt="Albire dentară" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 text-sm text-gray-500 mb-3">
+                            <i class="fas fa-calendar"></i>
+                            <span>8 Decembrie 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Beneficiile tratamentelor de albire dentară</h3>
+                        <p class="text-gray-600 mb-4 blog-excerpt">Tot ce trebuie să știi despre albirea dentară profesională și îngrijirea ulterioară.</p>
+                        <div class="blog-content hidden mb-4">
+                            <p class="text-gray-600 mb-4">Albirea dentară profesională oferă rezultate sigure și durabile. Beneficiile includ:</p>
+                            <h4 class="font-bold text-gray-800 mb-2">Avantajele albirii profesionale:</h4>
+                            <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+                                <li>Rezultate rapide - dinții mai albi cu 6-8 tonuri</li>
+                                <li>Siguranță maximă sub supraveghere medicală</li>
+                                <li>Durabilitate - efectele țin 2-3 ani</li>
+                                <li>Tratament personalizat pentru fiecare pacient</li>
+                            </ul>
+                            <h4 class="font-bold text-gray-800 mb-2">Îngrijirea post-albire:</h4>
+                            <p class="text-gray-600 mb-4">Pentru menținerea rezultatelor, evită coloranții puternici (cafea, vin roșu) primele 48 ore și folosește pastă albirea pentru întreținere.</p>
+                        </div>
+                        <button onclick="toggleBlogPost(this)" class="text-primary font-medium hover:text-accent transition-colors read-more-btn">Citește mai mult →</button>
+                    </div>
+                </article>
+
+                <!-- Blog Post 5 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=400&h=300&fit=crop" alt="Îngrijirea dentară la copii" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 text-sm text-gray-500 mb-3">
+                            <i class="fas fa-calendar"></i>
+                            <span>5 Decembrie 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Îngrijirea dentară la copii</h3>
+                        <p class="text-gray-600 mb-4 blog-excerpt">Ghid complet pentru părinți: când să înceapă îngrijirea dentară și cum să o faci distractiv.</p>
+                        <div class="blog-content hidden mb-4">
+                            <p class="text-gray-600 mb-4">Îngrijirea dentară trebuie să înceapă de timpuriu pentru a forma obiceiuri sănătoase:</p>
+                            <h4 class="font-bold text-gray-800 mb-2">Când să începi:</h4>
+                            <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+                                <li>Înainte de primul dinte - curățarea gingiilor cu o cârpă moale</li>
+                                <li>6 luni - primul dinte, prima vizită la dentist</li>
+                                <li>2-3 ani - învățarea periejului autonom</li>
+                            </ul>
+                            <h4 class="font-bold text-gray-800 mb-2">Cum să faci periajul distractiv:</h4>
+                            <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+                                <li>Cântece și povești în timpul periajului</li>
+                                <li>Periuțe colorate cu personajele preferate</li>
+                                <li>Sistem de recompense pentru periajul zilnic</li>
+                                <li>Periaj împreună - copiii imită părinții</li>
+                            </ul>
+                        </div>
+                        <button onclick="toggleBlogPost(this)" class="text-primary font-medium hover:text-accent transition-colors read-more-btn">Citește mai mult →</button>
+                    </div>
+                </article>
+
+                <!-- Blog Post 6 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=400&h=300&fit=crop" alt="Urgențe dentare" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 text-sm text-gray-500 mb-3">
+                            <i class="fas fa-calendar"></i>
+                            <span>3 Decembrie 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Ce să faci în caz de urgență dentară</h3>
+                        <p class="text-gray-600 mb-4 blog-excerpt">Primul ajutor pentru dureri dentare acute și când să suni la dentist de urgență.</p>
+                        <div class="blog-content hidden mb-4">
+                            <p class="text-gray-600 mb-4">Urgențele dentare necesită intervenție rapidă. Iată ce să faci:</p>
+                            <h4 class="font-bold text-gray-800 mb-2">Durere acută:</h4>
+                            <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+                                <li>Clătește gura cu apă sărată caldă</li>
+                                <li>Aplică gheață pe exterior pentru umflături</li>
+                                <li>Ia analgezice (ibuprofen sau paracetamol)</li>
+                                <li>Evită aspirina - poate crește sângerarea</li>
+                            </ul>
+                            <h4 class="font-bold text-gray-800 mb-2">Dinte rupt sau căzut:</h4>
+                            <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+                                <li>Păstrează fragmentele în lapte sau salivă</li>
+                                <li>Nu atinge rădăcina dinteleui</li>
+                                <li>Sună imediat la dentist - timpul este esențial</li>
+                            </ul>
+                            <p class="text-gray-600 font-semibold">La UDC suntem disponibili 24/7 pentru urgențe: +373 68 961 136</p>
+                        </div>
+                        <button onclick="toggleBlogPost(this)" class="text-primary font-medium hover:text-accent transition-colors read-more-btn">Citește mai mult →</button>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-20 bg-gradient-to-br from-primary/10 to-accent/10">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Abonează-te la Newsletter</h2>
+                <p class="text-lg text-gray-600 mb-8">Primește cele mai recente articole și sfaturi dentare direct în inbox</p>
+                
+                <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                    <input type="email" placeholder="Adresa ta de email" class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors">
+                    <button type="submit" class="bg-accent text-white px-8 py-3 rounded-lg font-medium hover:bg-accent/90 transition-all duration-300">
+                        Abonează-te
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Column 1 - LOC -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-16 h-16 rounded-full overflow-hidden shadow-lg">
+                            <img src="./assets/logo.png" alt="UDC Logo" class="w-full h-full object-cover">
+                        </div>
+                        <span class="font-bold text-2xl" data-lang-key="footer.logo">UDC</span>
+                    </div>
+                    <div class="space-y-3 text-gray-300">
+                        <p class="flex items-start space-x-2">
+                            <i class="fas fa-map-marker-alt text-primary mt-1"></i>
+                            <span data-lang-key="footer.address">Strada Principală 123, Chișinău</span>
+                        </p>
+                        <p class="flex items-center space-x-2">
+                            <i class="fas fa-phone text-primary"></i>
+                            <span>+37368961136</span>
+                        </p>
+                        <p class="flex items-center space-x-2">
+                            <i class="fas fa-envelope text-primary"></i>
+                            <span data-lang-key="footer.email">sandutilen@gmail.com</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Column 2 - Despre -->
+                <div class="space-y-4">
+                    <h4 class="text-lg font-bold text-primary" data-lang-key="footer.about">Despre</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="about.html" class="hover:text-primary transition-colors" data-lang-key="nav.about">Despre noi</a></li>
+                        <li><a href="treatments.html" class="hover:text-primary transition-colors" data-lang-key="footer.services">Servicii</a></li>
+                        <li><a href="treatments.html" class="hover:text-primary transition-colors" data-lang-key="nav.treatments">Tratamente</a></li>
+                        <li><a href="blog.html" class="hover:text-primary transition-colors" data-lang-key="nav.blog">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 - Program -->
+                <div class="space-y-4">
+                    <h4 class="text-lg font-bold text-primary">Program</h4>
+                    <div class="space-y-2 text-gray-300 text-sm">
+                        <p>Luni: 12:00-18:00</p>
+                        <p>Marți-Vineri: 09:00-18:00</p>
+                        <p>Sâmbătă-Duminică: 09:00-16:00</p>
+                        <p class="text-red-400 font-semibold">Urgențe: 24/7</p>
+                    </div>
+                </div>
+
+                <!-- Column 4 - UDC Social -->
+                <div class="space-y-4">
+                    <h4 class="text-lg font-bold text-primary" data-lang-key="footer.social">UDC Social</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Made with love bar -->
+    <div class="bg-gray-800 border-t border-gray-700 py-2">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-xs text-gray-400">Made with love by <a href="https://landings.md/" target="_blank" class="text-gray-300 hover:text-primary transition-colors underline">Landings.md</a></p>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/37368961136" target="_blank" class="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 z-50 animate-bounce">
+        <i class="fab fa-whatsapp text-white text-2xl"></i>
+    </a>
+
+    <!-- JavaScript for Blog Toggle -->
+    <script>
+        function toggleBlogPost(button) {
+            const article = button.closest('article');
+            const content = article.querySelector('.blog-content');
+            const excerpt = article.querySelector('.blog-excerpt');
+            
+            if (content.classList.contains('hidden')) {
+                // Expand
+                content.classList.remove('hidden');
+                excerpt.classList.add('hidden');
+                button.textContent = '← Citește mai puțin';
+                button.classList.add('text-accent');
+                button.classList.remove('text-primary');
+            } else {
+                // Collapse
+                content.classList.add('hidden');
+                excerpt.classList.remove('hidden');
+                button.textContent = 'Citește mai mult →';
+                button.classList.add('text-primary');
+                button.classList.remove('text-accent');
+            }
+        }
+    </script>
+
+    <script src="languages.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
