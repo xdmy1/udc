@@ -22,6 +22,26 @@ const translations = {
         "hero.text2": "Tehnologie de ultimă generație",
         "hero.button": "Vezi tratamentele",
         "hero.consultation": "Consultație gratuită",
+        "hero.description": "De la tratamente preventive la restaurări complexe, oferim o gamă completă de servicii dentare cu cele mai moderne tehnologii și tehnici. Echipa noastră de specialiști vă garantează rezultate excepționale.",
+        
+        // Hero Slideshow
+        "hero.slide1.title": "Îngrijire dentară de calitate în zona ta",
+        "hero.slide1.description": "Echipa noastră devotată și plină de compasiune oferă servicii pentru familii din inima Chișinăului și zonele înconjurătoare din Moldova, folosind tehnologiile avansate din Turcia.",
+        "hero.slide1.feature1": "Rezultate în 3-5 zile",
+        "hero.slide1.feature2": "Fațete de lux din Turcia",
+        "hero.slide1.button": "Solicită Hollywood Smile",
+        
+        "hero.slide2.title": "Zâmbete sănătoase încep aici",
+        "hero.slide2.description": "Te educăm, te încurajăm și te împuternicim să faci alegeri bune pentru îngrijirea dentară acum și în viitor, cu tehnologii moderne din Turcia.",
+        "hero.slide2.feature1": "Procedură într-o zi",
+        "hero.slide2.feature2": "Garanție pe viață",
+        "hero.slide2.button": "Consultație Implanturi",
+        
+        "hero.slide3.title": "Un zâmbet strălucitor lasă o impresie de durată",
+        "hero.slide3.description": "Dacă vrei să-ți îmbunătățești zâmbetul, UDC oferă o varietate de soluții, inclusiv tehnologii avansate din Turcia pentru a-ți crește încrederea în tine.",
+        "hero.slide3.feature1": "7+ ani experiență",
+        "hero.slide3.feature2": "Grijă personalizată",
+        "hero.slide3.button": "Programează-te Acum",
         
         // Form
         "form.name": "Nume",
@@ -29,6 +49,15 @@ const translations = {
         "form.message": "Mesajul dumneavoastră",
         "form.submit": "Trimite",
         "form.success": "Mulțumim! Mesajul dumneavoastră a fost trimis cu succes. Vă vom contacta în curând.",
+        "form.title": "Programează-te pentru o consultație",
+        
+        // Story Section
+        "story.title": "Clinica noastră – unde pasiunea pentru stomatologie întâlnește căldura unui concept turcesc",
+        "story.paragraph1": "Clinica noastră s-a născut din dorința de a oferi îngrijire medicală de calitate, bazată pe profesionalism, empatie și respect față de fiecare pacient. Fondatorul și directorul clinicii, dr. Murat Atbinici, originar din Turcia, a ales să-și urmeze vocația în domeniul stomatologiei în Republica Moldova, locul care i-a devenit între timp a doua casă. Aici și-a construit nu doar o carieră, ci și o familie, legându-și viața de această comunitate și de oamenii care o fac specială.",
+        "story.paragraph2": "Pentru dr. Atbinici, medicina înseamnă mai mult decât tratamente și rezultate – înseamnă grijă față de oameni, zâmbete sănătoase și relații bazate pe încredere. Valorile care stau la baza activității sale sunt responsabilitatea, empatia și respectul pentru sănătatea pacientului.",
+        "story.paragraph3": "Cu o experiență de peste 7 ani, clinica noastră oferă servicii stomatologice complete, de la prevenție și tratamente terapeutice, până la intervenții protetice și chirurgicale complexe. În plus, suntem alături de pacienții noștri și în situații de urgență, oferind asistență promptă ori de câte ori este nevoie.",
+        "story.paragraph4": "Activitatea noastră este susținută de un colectiv de medici dedicați – terapeuți, proteticieni și chirurgi – care lucrează împreună pentru a asigura cele mai bune soluții medicale. Profesionalismul lor, alături de abordarea atentă și umană, ne permite să oferim pacienților o experiență bazată pe încredere și confort.",
+        "story.paragraph5": "Dr. Murat Atbinici este, de asemenea, implicat activ în viața comunității turce din Moldova, contribuind la consolidarea legăturilor culturale și profesionale dintre cele două țări. Pentru noi, clinica nu este doar un loc unde se tratează dinții – este un spațiu în care fiecare pacient este primit cu respect, grijă și seriozitate.",
         
         // Why Choose UDC Section
         "why.title": "De ce să alegi UDC Clinic",
@@ -555,6 +584,26 @@ const translations = {
         "hero.text2": "State-of-the-art technology",
         "hero.button": "View treatments",
         "hero.consultation": "Free consultation",
+        "hero.description": "From preventive treatments to complex restorations, we offer a complete range of dental services with the most modern technologies and techniques. Our team of specialists guarantees exceptional results.",
+        
+        // Hero Slideshow
+        "hero.slide1.title": "Quality dental care in your area",
+        "hero.slide1.description": "Our dedicated and compassionate team cares for families from the heart of Chisinau and surrounding neighborhoods of Moldova, using advanced technologies from Turkey.",
+        "hero.slide1.feature1": "Results in 3-5 days",
+        "hero.slide1.feature2": "Luxury veneers from Turkey",
+        "hero.slide1.button": "Request Hollywood Smile",
+        
+        "hero.slide2.title": "Healthy smiles start here",
+        "hero.slide2.description": "We educate, encourage and empower our patients to make good choices for their dental care now and in the future, with modern technologies from Turkey.",
+        "hero.slide2.feature1": "One-day procedure",
+        "hero.slide2.feature2": "Lifetime warranty",
+        "hero.slide2.button": "Implant Consultation",
+        
+        "hero.slide3.title": "A dazzling smile makes a lasting impression",
+        "hero.slide3.description": "If you are looking to improve your smile, UDC has a variety of solutions, including advanced Turkish technologies and cosmetic dentistry, to boost your confidence.",
+        "hero.slide3.feature1": "7+ years experience",
+        "hero.slide3.feature2": "Personalized care",
+        "hero.slide3.button": "Book Now",
         
         // Form
         "form.name": "Name",
@@ -562,6 +611,15 @@ const translations = {
         "form.message": "Your message",
         "form.submit": "Send",
         "form.success": "Thank you! Your message has been sent successfully. We will contact you soon.",
+        "form.title": "Schedule an appointment for a consultation",
+        
+        // Story Section
+        "story.title": "Our clinic – where passion for dentistry meets the warmth of a Turkish concept",
+        "story.paragraph1": "Our clinic was born from the desire to provide quality medical care, based on professionalism, empathy and respect for each patient. The founder and director of the clinic, Dr. Murat Atbinici, originally from Turkey, chose to pursue his vocation in dentistry in the Republic of Moldova, the place that has become his second home. Here he built not only a career, but also a family, connecting his life to this community and the people who make it special.",
+        "story.paragraph2": "For Dr. Atbinici, medicine means more than treatments and results – it means caring for people, healthy smiles and relationships based on trust. The values that underlie his work are responsibility, empathy and respect for the patient's health.",
+        "story.paragraph3": "With over 7 years of experience, our clinic offers complete dental services, from prevention and therapeutic treatments to complex prosthetic and surgical interventions. Additionally, we are with our patients in emergency situations, providing prompt assistance whenever needed.",
+        "story.paragraph4": "Our activity is supported by a team of dedicated doctors – therapists, prosthetists and surgeons – who work together to ensure the best medical solutions. Their professionalism, along with their attentive and humane approach, allows us to offer patients an experience based on trust and comfort.",
+        "story.paragraph5": "Dr. Murat Atbinici is also actively involved in the life of the Turkish community in Moldova, contributing to strengthening cultural and professional ties between the two countries. For us, the clinic is not just a place where teeth are treated – it is a space where each patient is welcomed with respect, care and seriousness.",
         
         // Why Choose UDC Section
         "why.title": "Why Choose UDC Clinic",
@@ -1088,6 +1146,26 @@ const translations = {
         "hero.text2": "Son teknoloji cihazlar",
         "hero.button": "Tedavileri gör",
         "hero.consultation": "Ücretsiz konsültasyon",
+        "hero.description": "Önleyici tedavilerden karmaşık restorasyonlara kadar, en modern teknolojiler ve tekniklerle komple diş hizmetleri sunuyoruz. Uzman ekibimiz olağanüstü sonuçlar garanti eder.",
+        
+        // Hero Slideshow
+        "hero.slide1.title": "Bölgenizdeki kaliteli diş bakımı",
+        "hero.slide1.description": "Özverili ve şefkatli ekibimiz, Kişinev'in kalbinden ve Moldova'nın çevre mahallelerinden aileler için Türkiye'nin ileri teknolojilerini kullanarak hizmet vermektedir.",
+        "hero.slide1.feature1": "3-5 günde sonuçlar",
+        "hero.slide1.feature2": "Türkiye'den lüks kaplamalar",
+        "hero.slide1.button": "Hollywood Smile Talep Et",
+        
+        "hero.slide2.title": "Sağlıklı gülüşler burada başlar",
+        "hero.slide2.description": "Hastalarımızı eğitir, cesaretlendiriş ve şimdi ve gelecekte diş bakımları için doğru seçimler yapmalarını sağlıyoruz, Türkiye'nin modern teknolojileriyle.",
+        "hero.slide2.feature1": "Tek günde prosedür",
+        "hero.slide2.feature2": "Ömür boyu garanti",
+        "hero.slide2.button": "İmplant Konsültasyonu",
+        
+        "hero.slide3.title": "Göz kamaştırıcı bir gülüş kalıcı bir izlenim bırakır",
+        "hero.slide3.description": "Gülüşünüzü iyileştirmek istiyorsanız, UDC güveninizi artırmak için gelişmiş Türk teknolojileri ve kozmetik diş hekimliği dahil çeşitli çözümler sunar.",
+        "hero.slide3.feature1": "7+ yıl deneyim",
+        "hero.slide3.feature2": "Kişiselleştirilmiş bakım",
+        "hero.slide3.button": "Şimdi Randevu Al",
         
         // Form
         "form.name": "Ad",
@@ -1095,6 +1173,15 @@ const translations = {
         "form.message": "Mesajınız",
         "form.submit": "Gönder",
         "form.success": "Teşekkürler! Mesajınız başarıyla gönderildi. En kısa sürede sizinle iletişime geçeceğiz.",
+        "form.title": "Konsültasyon için randevu alın",
+        
+        // Story Section
+        "story.title": "Kliniğimiz – diş hekimliğine olan tutkunun Türk konseptinin sıcaklığıyla buluştuğu yer",
+        "story.paragraph1": "Kliniğimiz, her hastaya karşı profesyonellik, empati ve saygı temelinde kaliteli tıbbi bakım sunma arzusundan doğdu. Kliniğin kurucusu ve müdürü Dr. Murat Atbinici, Türkiye kökenli olup diş hekimliği alanındaki mesleğini Moldova Cumhuriyeti'nde sürdürmeyi seçti, burası zamanla onun ikinci evi haline geldi. Burada sadece bir kariyer değil, aynı zamanda bir aile kurdu ve hayatını bu topluma ve onu özel kılan insanlara bağladı.",
+        "story.paragraph2": "Dr. Atbinici için tıp, tedaviler ve sonuçlardan daha fazlasını ifade eder – insanlara özen göstermek, sağlıklı gülümsemeler ve güvene dayalı ilişkiler anlamına gelir. Çalışmasının temelini oluşturan değerler sorumluluk, empati ve hasta sağlığına saygıdır.",
+        "story.paragraph3": "7 yılı aşkın deneyimimizle kliniğimiz, koruyucu ve terapötik tedavilerden karmaşık protez ve cerrahi müdahalelere kadar kapsamlı diş hizmetleri sunmaktadır. Ayrıca, acil durumlarda da hastalarımızın yanındayız ve gerektiğinde hızlı yardım sağlıyoruz.",
+        "story.paragraph4": "Faaliyetimiz, en iyi tıbbi çözümleri sağlamak için birlikte çalışan özveli doktorlardan – terapistler, protez uzmanları ve cerrahlar – oluşan bir ekip tarafından desteklenmektedir. Onların profesyonelliği, özenli ve insancıl yaklaşımları ile birlikte hastalara güven ve konfor temelinde bir deneyim sunmamızı sağlıyor.",
+        "story.paragraph5": "Dr. Murat Atbinici ayrıca Moldova'daki Türk toplumunun yaşamında aktif olarak yer alarak iki ülke arasındaki kültürel ve mesleki bağları güçlendirmeye katkıda bulunmaktadır. Bizim için klinik sadece dişlerin tedavi edildiği bir yer değil – her hastanın saygı, özen ve ciddiyetle karşılandığı bir alandır.",
         
         // Why Choose UDC Section
         "why.title": "Neden UDC Clinic'i Seçmelisiniz",
@@ -1614,6 +1701,26 @@ const translations = {
         "hero.text2": "Современные технологии",
         "hero.button": "Посмотреть лечение",
         "hero.consultation": "Бесплатная консультация",
+        "hero.description": "От профилактических процедур до сложных реставраций, мы предлагаем полный спектр стоматологических услуг с самыми современными технологиями и методами. Наша команда специалистов гарантирует исключительные результаты.",
+        
+        // Hero Slideshow
+        "hero.slide1.title": "Качественная стоматологическая помощь в вашем районе",
+        "hero.slide1.description": "Наша преданная и заботливая команда оказывает услуги семьям из сердца Кишинёва и близлежащих районов Молдовы, используя передовые технологии из Турции.",
+        "hero.slide1.feature1": "Результаты за 3-5 дней",
+        "hero.slide1.feature2": "Люксовые виниры из Турции",
+        "hero.slide1.button": "Запросить Hollywood Smile",
+        
+        "hero.slide2.title": "Здоровые улыбки начинаются здесь",
+        "hero.slide2.description": "Мы обучаем, поощряем и даём возможность нашим пациентам делать правильный выбор для ухода за зубами сейчас и в будущем, с современными технологиями из Турции.",
+        "hero.slide2.feature1": "Процедура за один день",
+        "hero.slide2.feature2": "Пожизненная гарантия",
+        "hero.slide2.button": "Консультация по имплантатам",
+        
+        "hero.slide3.title": "Ослепительная улыбка производит неизгладимое впечатление",
+        "hero.slide3.description": "Если вы хотите улучшить свою улыбку, UDC предлагает различные решения, включая передовые турецкие технологии и косметическую стоматологию, чтобы повысить вашу уверенность.",
+        "hero.slide3.feature1": "7+ лет опыта",
+        "hero.slide3.feature2": "Персонализированный уход",
+        "hero.slide3.button": "Записаться сейчас",
         
         // Form
         "form.name": "Имя",
@@ -1621,6 +1728,15 @@ const translations = {
         "form.message": "Ваше сообщение",
         "form.submit": "Отправить",
         "form.success": "Спасибо! Ваше сообщение успешно отправлено. Мы свяжемся с вами в ближайшее время.",
+        "form.title": "Запишитесь на консультацию",
+        
+        // Story Section
+        "story.title": "Наша клиника – где страсть к стоматологии встречается с теплотой турецкой концепции",
+        "story.paragraph1": "Наша клиника родилась из желания предоставлять качественную медицинскую помощь, основанную на профессионализме, эмпатии и уважении к каждому пациенту. Основатель и директор клиники, доктор Мурат Атбиничи, родом из Турции, выбрал свое призвание в области стоматологии в Республике Молдова, месте, которое со временем стало его второй родиной. Здесь он построил не только карьеру, но и семью, связав свою жизнь с этим сообществом и людьми, которые делают его особенным.",
+        "story.paragraph2": "Для доктора Атбиничи медицина означает больше, чем лечение и результаты – это забота о людях, здоровые улыбки и отношения, основанные на доверии. Ценности, лежащие в основе его деятельности, – это ответственность, эмпатия и уважение к здоровью пациента.",
+        "story.paragraph3": "Имея опыт более 7 лет, наша клиника предлагает полный спектр стоматологических услуг, от профилактики и терапевтического лечения до сложных протезных и хирургических вмешательств. Кроме того, мы находимся рядом с нашими пациентами в экстренных ситуациях, оказывая оперативную помощь всякий раз, когда это необходимо.",
+        "story.paragraph4": "Нашу деятельность поддерживает коллектив преданных врачей – терапевтов, протезистов и хирургов – которые работают вместе, чтобы обеспечить лучшие медицинские решения. Их профессионализм, наряду с внимательным и гуманным подходом, позволяет нам предлагать пациентам опыт, основанный на доверии и комфорте.",
+        "story.paragraph5": "Доктор Мурат Атбиничи также активно участвует в жизни турецкого сообщества в Молдове, способствуя укреплению культурных и профессиональных связей между двумя странами. Для нас клиника – это не просто место, где лечат зубы – это пространство, где каждый пациент принимается с уважением, заботой и серьезностью.",
         
         // Why Choose UDC Section
         "why.title": "Почему стоит выбрать UDC Clinic",

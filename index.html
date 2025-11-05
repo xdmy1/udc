@@ -302,43 +302,103 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="px-4 sm:px-6 lg:px-10 hero-bg py-12 sm:py-16 lg:py-20 overflow-hidden hero-section pt-32 sm:pt-36 lg:pt-40">
-        <video class="hero-video" autoplay muted loop playsinline>
-            <source src="./assets/1758043168877972.MP4" type="video/mp4">
-        </video>
-        <div class="hero-overlay"></div>
-        <div class="container mx-auto px-4">
-            <div class="flex w-full h-[70vh] items-center justify-center">
-                <!-- Left Content -->
-                <div class="animate-slide-up text-center lg:text-left">
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-800 leading-tight mb-6 w-full" data-lang-key="hero.title1">
-                        Stomatologie premiala cu rafinament turcesc
+    <!-- Hero Section with Slideshow -->
+    <section class="hero-slideshow relative overflow-hidden hero-section min-h-[95vh] flex items-center">
+        <!-- Slide 1 -->
+        <div class="slide active absolute inset-0 transition-opacity duration-1000 ease-in-out" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./assets/hero-img1.avif'); background-size: cover; background-position: center;">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-10 py-20 sm:py-24 lg:py-32 h-full flex items-center">
+                <div class="w-full text-center lg:text-left text-white">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight mb-6" data-lang-key="hero.slide1.title">
+                        Hollywood Smile Premium
                     </h1>
-                    <p class="text-lg font-semibold text-gray-800 mb-6 text-center lg:text-left">
-                        De la tratamente preventive la restaurări complexe, oferim o gamă completă de servicii dentare cu cele mai moderne tehnologii și tehnici. Echipa noastră de specialiști vă garantează rezultate excepționale.
+                    <p class="text-lg font-semibold mb-6 text-center lg:text-left max-w-3xl" data-lang-key="hero.slide1.description">
+                        Transformă-ți zâmbetul cu cele mai avansate tehnologii de fațete dentare. Rezultate spectaculoase în doar câteva ședințe.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 justify-center lg:justify-start">
                         <div class="flex items-center justify-center lg:justify-start space-x-2">
-                            <i class="fas fa-check-circle text-accent"></i>
-                            <p class="text-gray-700 font-medium text-sm sm:text-base" data-lang-key="hero.text1">Proceduri fără durere</p>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <p class="font-medium text-sm sm:text-base" data-lang-key="hero.slide1.feature1">Rezultate în 3-5 zile</p>
                         </div>
                         <div class="flex items-center justify-center lg:justify-start space-x-2">
-                            <i class="fas fa-check-circle text-accent"></i>
-                            <p class="text-gray-700 font-medium text-sm sm:text-base" data-lang-key="hero.text2">Tehnologie de ultimă generație</p>
+                            <i class="fas fa-gem text-yellow-400"></i>
+                            <p class="font-medium text-sm sm:text-base" data-lang-key="hero.slide1.feature2">Fațete de lux din Turcia</p>
                         </div>
                     </div>
                     <div class="mt-6 sm:mt-8 text-center lg:text-left">
-                        <button class="group bg-accent text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-medium hover:bg-accent/90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base">
-                            <span data-lang-key="hero.button">Vezi tratamentele</span>
+                        <button class="group bg-yellow-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-medium hover:bg-yellow-600 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base">
+                            <span data-lang-key="hero.slide1.button">Solicită Hollywood Smile</span>
                             <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
                         </button>
                     </div>
                 </div>
-
-                <!-- Right Content - Consultation Form -->
-                
             </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./assets/hero-img2.webp'); background-size: cover; background-position: center;">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-10 py-20 sm:py-24 lg:py-32 h-full flex items-center">
+                <div class="w-full text-center lg:text-left text-white">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight mb-6" data-lang-key="hero.slide2.title">
+                        Implanturi All-on-6
+                    </h1>
+                    <p class="text-lg font-semibold mb-6 text-center lg:text-left max-w-3xl" data-lang-key="hero.slide2.description">
+                        Soluția completă pentru înlocuirea tuturor dinților. Tehnologie de vârf din Turcia pentru un zâmbet perfect și funcțional.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 justify-center lg:justify-start">
+                        <div class="flex items-center justify-center lg:justify-start space-x-2">
+                            <i class="fas fa-clock text-blue-400"></i>
+                            <p class="font-medium text-sm sm:text-base" data-lang-key="hero.slide2.feature1">Procedură într-o zi</p>
+                        </div>
+                        <div class="flex items-center justify-center lg:justify-start space-x-2">
+                            <i class="fas fa-shield-alt text-blue-400"></i>
+                            <p class="font-medium text-sm sm:text-base" data-lang-key="hero.slide2.feature2">Garanție pe viață</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 sm:mt-8 text-center lg:text-left">
+                        <button class="group bg-blue-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-medium hover:bg-blue-600 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base">
+                            <span data-lang-key="hero.slide2.button">Consultație Implanturi</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./assets/hero-img3.jpg'); background-size: cover; background-position: center;">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-10 py-20 sm:py-24 lg:py-32 h-full flex items-center">
+                <div class="w-full text-center lg:text-left text-white">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight mb-6" data-lang-key="hero.slide3.title">
+                        Experiență Turcească Premium
+                    </h1>
+                    <p class="text-lg font-semibold mb-6 text-center lg:text-left max-w-3xl" data-lang-key="hero.slide3.description">
+                        Cabinet modern cu echipamente de ultimă generație din Turcia. Standardele înalte ale stomatologiei turce la prețuri moldovenești.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 justify-center lg:justify-start">
+                        <div class="flex items-center justify-center lg:justify-start space-x-2">
+                            <i class="fas fa-award text-green-400"></i>
+                            <p class="font-medium text-sm sm:text-base" data-lang-key="hero.slide3.feature1">7+ ani experiență</p>
+                        </div>
+                        <div class="flex items-center justify-center lg:justify-start space-x-2">
+                            <i class="fas fa-heart text-green-400"></i>
+                            <p class="font-medium text-sm sm:text-base" data-lang-key="hero.slide3.feature2">Grijă personalizată</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 sm:mt-8 text-center lg:text-left">
+                        <button class="group bg-accent text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-medium hover:bg-accent/90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base">
+                            <span data-lang-key="hero.slide3.button">Programează-te Acum</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide Indicators -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10">
+            <button class="slide-indicator active w-3 h-3 rounded-full bg-white transition-all duration-300" data-slide="0"></button>
+            <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 transition-all duration-300" data-slide="1"></button>
+            <button class="slide-indicator w-3 h-3 rounded-full bg-white/50 transition-all duration-300" data-slide="2"></button>
         </div>
     </section>
 
