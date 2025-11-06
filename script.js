@@ -466,6 +466,74 @@ class NavbarScrollEffect {
     }
 }
 
+// Hero Slideshow Manager
+class HeroSlideshow {
+    constructor() {
+        this.slides = document.querySelectorAll('.slide');
+        this.indicators = document.querySelectorAll('.slide-indicator');
+        this.currentSlide = 0;
+        this.autoplayInterval = null;
+        this.init();
+    }
+
+    init() {
+        if (this.slides.length === 0) return;
+        
+        // Bind indicator clicks
+        this.indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                this.goToSlide(index);
+            });
+        });
+        
+        // Start autoplay
+        this.startAutoplay();
+        
+        // Pause on hover
+        const heroSection = document.querySelector('.hero-slideshow');
+        if (heroSection) {
+            heroSection.addEventListener('mouseenter', () => this.pauseAutoplay());
+            heroSection.addEventListener('mouseleave', () => this.startAutoplay());
+        }
+    }
+
+    goToSlide(index) {
+        // Remove active class from current slide and indicator
+        this.slides[this.currentSlide].classList.remove('active');
+        this.slides[this.currentSlide].style.opacity = '0';
+        this.indicators[this.currentSlide].classList.remove('active');
+        this.indicators[this.currentSlide].style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+        
+        // Set new current slide
+        this.currentSlide = index;
+        
+        // Add active class to new slide and indicator
+        this.slides[this.currentSlide].classList.add('active');
+        this.slides[this.currentSlide].style.opacity = '1';
+        this.indicators[this.currentSlide].classList.add('active');
+        this.indicators[this.currentSlide].style.backgroundColor = 'rgba(255, 255, 255, 1)';
+    }
+
+    nextSlide() {
+        const nextIndex = (this.currentSlide + 1) % this.slides.length;
+        this.goToSlide(nextIndex);
+    }
+
+    startAutoplay() {
+        this.pauseAutoplay(); // Clear any existing interval
+        this.autoplayInterval = setInterval(() => {
+            this.nextSlide();
+        }, 3000); // Change slide every 3 seconds
+    }
+
+    pauseAutoplay() {
+        if (this.autoplayInterval) {
+            clearInterval(this.autoplayInterval);
+            this.autoplayInterval = null;
+        }
+    }
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all managers
@@ -477,6 +545,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const buttonEffects = new ButtonEffects();
     const whatsappButton = new WhatsAppButton();
     const navbarScroll = new NavbarScrollEffect();
+    const heroSlideshow = new HeroSlideshow();
     
     // Make mobileNav globally accessible for language manager
     window.mobileNav = mobileNav;

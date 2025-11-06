@@ -1,13 +1,4 @@
+3 poze zambete care se muta singure pe pagina principala-iar textele se schimba la fiecare poza
+traducerile nus toate
+butonul vezi tratamente nu merge, si de schimbat -> programeaza-te iar sub el consultatie gratuita
 
-
-
-
-
-
-
-
-astea 2 de scos 
-De la tratamente preventive la restaurări complexe, oferim o gamă completă de servicii dentare cu cele mai moderne tehnologii și tehnici. Echipa noastră de specialiști vă garantează rezultate excepționale.
-textul asta de scris cu rosu, sub el <hr> 
-
-Contacte > urgente dentare de marit pe tot widthul
