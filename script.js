@@ -31,6 +31,14 @@ class LanguageManager {
             }
         });
 
+        // Update all elements with data-lang-placeholder attributes
+        document.querySelectorAll('[data-lang-placeholder]').forEach(element => {
+            const key = element.getAttribute('data-lang-placeholder');
+            if (translations[lang] && translations[lang][key]) {
+                element.placeholder = translations[lang][key];
+            }
+        });
+
         // Update HTML lang attribute
         document.documentElement.lang = lang;
         
